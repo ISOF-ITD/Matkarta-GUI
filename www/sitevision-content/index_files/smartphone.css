@@ -1,0 +1,219 @@
+/**
+ * Smartphone css
+ * Styling för smartphones
+ *
+ * Copyright (C) 2013 Limepark AB
+ */
+
+/* GRUNDLAYOUT */
+
+.content, .secondary-content, .submenu {
+   margin-top: 0;
+}
+
+header {
+   padding: 0 10px;
+}
+
+footer {
+   margin: 0;
+   padding: 20px
+}
+
+.content {
+   padding: 20px;
+}
+
+.secondary-content {
+   padding: 0 20px 20px 20px;
+}
+
+.logo img {
+margin: 10px 0 0;
+}
+
+/* TOPPMENY */
+
+.js #menu.mega {
+   display: none;
+}
+
+#menu.mega h2 a {
+   width: auto;
+   padding: 10px 10px;
+   border-right: none;
+   text-align: left;
+   background: #a6192e;
+   border-bottom: none;
+}
+
+#menu.mega li.current h2 a, #menu.mega .expanded a, #menu.mega .current a, #menu.mega a.active {
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+#menu.mega > ul > li {
+   overflow: hidden;
+   position: relative;
+   float: none;
+   display: block;
+   width: auto;
+   margin-bottom: 2px;
+}
+
+.lp-nav-bar {
+  background: none;
+  margin: 2px 0 0;
+}
+
+/* Knapp för att visa toppmeny */
+
+#mobile-navigation {
+   display: block;
+   width: 100%;
+   margin: 20px 0 0;
+   padding: 0;
+}
+
+#mobile-navigation .lp-menu {
+   list-style-type: none;
+   padding: 10px 22px 10px 10px;
+   background: no-repeat 93% 50% #333 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAMAAAC38k/IAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAUSURBVAjXY2RAAowoHEacHKrqAQAEZwAP2Ox3QgAAAABJRU5ErkJggg==);
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   color: #FFFFFF;
+   cursor: pointer;
+   font-family: Arial,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+}
+
+#mobile-navigation .lp-menu:active {
+   background-color: #555;
+}
+
+/* Länk till undermeny i toppmeny */
+
+#menu li span {
+   display: block;
+   position: absolute;
+   right: 0.4em;
+   top: 0.4em;
+}
+
+#menu li span a {
+   background: no-repeat 95% 50% #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAMAAAC38k/IAAAABlBMVEUzMzP///8jKH/HAAAAAnRSTlP/AOW3MEoAAAAYSURBVAjXY2BgYGRkQAAkDiMSQOVQVQ8AD+IAPQonzwYAAAAASUVORK5CYII=)!important;
+   -webkit-border-radius: 5px!important;
+   border-radius: 5px!important;
+   display: block!important;
+   padding: 7px 18px 7px 4px!important;
+   text-decoration: none!important;
+}
+
+#menu li span a:active {
+   background-color: #e4e4e4!important;
+}
+
+.lp-start-menu {
+   display: block;
+   margin: 0 0 20px;
+}
+
+.lp-start-menu li {
+   display: inline-block;
+   width: 49% !important;
+   margin: 0 !important;
+   padding: 0 0 5px;
+   border: none;
+}
+
+.lp-start-menu a {
+   min-height: 0;
+   width: auto;
+   margin: 0 !important;
+   padding: 5px 0;
+   background: none !important;
+   border: none;
+   font-size: 14px;
+   font-weight: normal;
+   background-color: #333 !important;
+   color: #fff;
+}
+
+.lp-start-menu a:hover, .lp-start-menu a:focus {
+   background-color: #555 !important;
+}
+
+.lp-news-menu {
+   display: block !important;
+   margin-bottom: 10px;
+}
+
+.lp-news-menu li {
+   display: block;
+}
+
+.go-to-submenu {
+   display: block;
+   margin-top: 10px;
+   text-align: right;
+}
+
+.go-to-submenu a {
+   padding: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background: #aaa;
+   color: #fff;
+   text-decoration: none;
+}
+
+header .sv-searchform-portlet {
+   margin: 10px 0 10px;
+}
+
+header .sv-searchform-portlet input[type="text"] {
+   padding: 8px 3px 8px 10px;
+}
+
+header .sv-searchform-portlet input[type="image"] {
+   top: 10px;
+}
+
+/* NYHETSLISTNINGAR */
+
+.news-listing.sv-archive-portlet li img {
+   float: right;
+   padding: 0 0 10px 10px !important;
+}
+
+
+
+
+/*
+---------------------------------------------------------
+LUCKKALENDER - LUCKA
+---------------------------------------------------------*/
+
+.lp-calendar-slot-header-day {
+   height: 130px;
+}
+
+.lp-calendar-slot-header-nr {
+   font-size: 66px;
+   line-height: 66px;
+}
+
+.lp-calendar-slot-header-month {
+   font-size: 18px;
+   line-height: 24px;
+}
+
+.lp-calendar-slot-header-image {
+   height: 160px;
+}
+
+.lp-calendar-slot-content {
+   margin: 10px 10px 0;
+   padding: 10px;
+}

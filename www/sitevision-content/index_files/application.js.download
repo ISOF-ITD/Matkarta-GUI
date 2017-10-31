@@ -1,0 +1,53 @@
+(function ($) {
+
+  $(function () {
+    // For flicker free JavaScript specific styling.
+    $('html').addClass('js');
+
+    $('a[href^="http://translate.google"]').googleTranslate();
+    $('.lp-css-tabs').svtabs();
+  });
+  
+  $(window).load(function () {
+    initializeMobileNavigation();
+    columnizeMegaMenuSubMenu();
+    $('.sv-archive-portlet li').clickableArea();
+  });
+
+  var initializeMobileNavigation = function () {
+    var menu = $('#menu');
+
+    $('#mobile-navigation .lp-menu').click(function () {
+      menu.slideToggle('fast', function () {
+         if (menu.css('display') == 'none') menu.css('display', '');
+      });
+    });
+
+    // Add button for navigation to secondary navigation
+    $('#menu li.expanded').each(function(index, element){
+      $(element).append('<span><a href="#submenu">Meny</a></span>');
+    });
+
+    // Jump to secondary navigation button
+    $('#menu li span a').click(function () {
+      $('html, body').animate({scrollTop: $("#submenu").offset().top}, 600);
+      return false;
+    });
+  };
+  
+  var columnizeMegaMenuSubMenu = function() {
+    var size = 8;
+    $("#menu .submenu ul").each(function(i, e) {
+      var $ul  = $(e),
+          $lis = $ul.children().filter(':gt(' + (size - 1) + ')'),
+          loop = Math.ceil($lis.length / size),
+          i    = 0;
+
+      $ul.css('float','left').wrap("<div style='overflow: hidden'></div>");
+    
+      for(; i < loop; i = i + 1){
+        $ul = $("<ul />").css('float','left').css('margin-left', '30px').append($lis.slice(i * size, (i * size) + 6)).insertAfter($ul);
+      }
+    });
+  };
+}(jQuery));

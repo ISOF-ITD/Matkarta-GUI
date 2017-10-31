@@ -16,6 +16,7 @@
 @import "../ISOF-React-modules/less/ui-components/popup-notification-message.less";
 @import "../ISOF-React-modules/less/ui-components/share-buttons.less";
 @import "../ISOF-React-modules/less/ui-components/image-map.less";
+@import "../ISOF-React-modules/less/ui-components/records-list.less";
 
 @import "../ISOF-React-modules/less/minimal-scrollbar.less";
 @import "../ISOF-React-modules/less/tables.less";
@@ -163,5 +164,152 @@ audio::-webkit-media-controls-enclosure {
 @media print {
 	a {
 		text-decoration: none !important;
+	}
+}
+
+.matkarta-categories {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+
+	max-height: 800px;
+
+	z-index: 1400;
+
+	.item {
+		display: block;
+
+		position: relative;
+
+		height: 92px;
+		width: 350px;
+
+		margin-bottom: 10px;
+
+		background-color: #fff;
+
+		border: 1px solid #b1b3b0;
+		box-sizing: border-box;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.31);
+
+		cursor: pointer;
+
+		overflow: hidden;
+
+		.transition(all 600ms ease-in-out);
+
+		opacity: 0;
+
+		.transform(translateY(-100px));
+
+		.app-initialized & {
+			opacity: 1;
+
+			.transform(translateY(0));
+		}
+
+		.item-border {
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			border: 3px solid #fff;
+
+			.transition(all 300ms ease-in-out);
+		}
+
+		.image {
+			display: block;
+
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			background-size: cover;
+			background-position: center;
+
+			opacity: 0.35;
+
+			.transition(all 300ms ease-in-out);
+		}
+
+		.label {
+			display: block;
+
+			position: absolute;
+
+			top: 50%;
+			left: 50%;
+
+			padding: 5px 0;
+
+			font-size: 1.2rem;
+
+			border-bottom: 3px solid transparent;
+
+			transform: translate(-50%, -50%);
+
+			.transition(all 300ms ease-in-out);
+		}
+
+		.background {
+			display: block;
+
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			background: #fff;
+
+			.transition(all 300ms ease-in-out);
+		}
+
+		&.selected {
+			.label {
+				padding: 5px 30px;
+
+				border-bottom: 3px solid @color-red;
+			}
+		}
+
+		&:hover {
+			.item-border {
+				top: 15px;
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+
+				border-width: 1px;
+				border-color: rgba(255, 255, 255, 0.6);
+			}
+
+			.image {
+				opacity: 0.5;
+
+				.transform(scale(1.1));
+			}
+
+			.label {
+				padding: 5px 30px;
+
+				color: #fff;
+
+				border-bottom: 3px solid @color-red;
+			}
+
+			.background {
+				background-color: #4e4e4e;
+			}
+		}
 	}
 }

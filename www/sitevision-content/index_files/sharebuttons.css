@@ -1,0 +1,105 @@
+
+
+/* Listan med knappar */ 
+
+.sharebuttonlist {
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.sharebuttonlist--horizontal .sharebuttonlist__item {
+    display: inline-block;
+}
+
+
+/* Delaknappar */
+
+.sharebutton {
+    display: inline-block;
+    height: 30px;
+    margin: 0 1em .5em 0;
+    padding: 0 16px;
+    background-color: #ccc;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2;
+    text-decoration: none;
+    background-size: 18px auto;
+    background-position: 12px 50%;
+    background-repeat: no-repeat;
+}
+
+.sharebutton--facebook {
+    background-color: #3b5998;
+}
+
+.sharebutton--twitter {
+    background-color: #00aced;
+}
+
+.sharebutton--linkedin {
+    background-color: #007bb6; 
+}
+
+.sharebutton--gplus {
+    background-color: #dd4b39;  
+}
+
+.sharebutton--email {
+    background-color: #57b51d; 
+}
+
+
+/* Ikoner på delaknapparna */
+
+.sharebutton--icon-facebook {
+    padding: 0 16px 0 32px;
+    background-size: 8px auto;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDE3IiB3aWR0aD0iOCIgaGVpZ2h0PSIxOCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTggOS4yaC0yLjd2Ny44aC0zLjN2LTcuOGgtMnYtMi43aDJ2LTIuOGMwLTEuOSAxLjMtMy43IDQuMS0zLjcgMS4yIDAgMS45LjEgMS45LjF2Mi43aC0xLjdjLTEgMC0xLjIuNS0xLjIgMS4zdjIuNGgyLjl2Mi43eiIvPjwvc3ZnPg==');
+}
+
+.sharebutton--icon-twitter {
+    padding: 0 16px 0 37px;
+    background-size: 16px auto;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNyAxMy43IiB3aWR0aD0iMTYiIGhlaWdodD0iMTMiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNyAxLjZjLS42LjMtMS4zLjUtMiAuNS43LS40IDEuMy0xLjEgMS41LTEuOS0uNy40LTEuNC43LTIuMi44LS42LS42LTEuNS0xLTIuNS0xLTIgMC0zLjUgMS42LTMuNSAzLjUgMCAuMyAwIC41LjEuOC0yLjktLjItNS41LTEuNi03LjItMy43LS4zLjUtLjUgMS4xLS41IDEuOCAwIDEuMi42IDIuMyAxLjUgMi45LS42IDAtMS4xLS4yLTEuNi0uNCAwIDEuNyAxLjIgMy4xIDIuOCAzLjQtLjIgMC0uNS4xLS44LjEtLjIgMC0uNCAwLS43LS4xLjQgMS40IDEuNyAyLjQgMy4zIDIuNC0xLjIuOS0yLjcgMS41LTQuMyAxLjVoLS44YzEuNSAxIDMuNCAxLjYgNS4zIDEuNiA2LjQgMCA5LjktNS4zIDkuOS05Ljl2LS40Yy42LS42IDEuMi0xLjIgMS43LTEuOXoiLz48L3N2Zz4=');
+}
+
+.sharebutton--icon-linkedin {
+    padding: 0 16px 0 37px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNjQwIiB2aWV3Qm94PSIwIDAgNjQwIDY0MCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTMyMCAxMi44Yy0xNjkuNjY0IDAtMzA3LjIgMTM3LjUzNi0zMDcuMiAzMDcuMnMxMzcuNTM2IDMwNy4yIDMwNy4yIDMwNy4yIDMwNy4yLTEzNy41MzYgMzA3LjItMzA3LjItMTM3LjUzNi0zMDcuMi0zMDcuMi0zMDcuMnptLTc1LjIgNDM0LjUyOGgtNjIuMjA4di0yMDAuMTkyaDYyLjIwOHYyMDAuMTkyem0tMzEuNDg4LTIyNC43NjhjLTE5LjY0OCAwLTMyLjM1Mi0xMy45Mi0zMi4zNTItMzEuMTM2IDAtMTcuNTY4IDEzLjA4OC0zMS4wNzIgMzMuMTUyLTMxLjA3MnMzMi4zNTIgMTMuNTA0IDMyLjczNiAzMS4wNzJjMCAxNy4yMTYtMTIuNjcyIDMxLjEzNi0zMy41MzYgMzEuMTM2em0yNTguNjg4IDIyNC43NjhoLTYyLjIwOHYtMTEwLjk0NGMwLTI1LjgyNC05LjAyNC00My4zNi0zMS41Mi00My4zNi0xNy4xODQgMC0yNy4zOTIgMTEuODcyLTMxLjkwNCAyMy4yOTYtMS42NjQgNC4wNjQtMi4wOCA5LjgyNC0yLjA4IDE1LjU1MnYxMTUuNDI0aC02Mi4yNHYtMTM2LjMyYzAtMjQuOTkyLS44LTQ1Ljg4OC0xLjYzMi02My44NzJoNTQuMDQ4bDIuODQ4IDI3LjgwOGgxLjI0OGM4LjE5Mi0xMy4wNTYgMjguMjU2LTMyLjMyIDYxLjgyNC0zMi4zMiA0MC45MjggMCA3MS42MTYgMjcuNDI0IDcxLjYxNiA4Ni4zNjh2MTE4LjM2OHoiLz48L3N2Zz4=');
+}
+
+.sharebutton--icon-gplus {
+    padding: 0 16px 0 37px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNjQwIiB2aWV3Qm94PSIwIDAgNjQwIDY0MCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTYzLjY0OCAxNzguODQ4YzAgNDcuODA4IDE1Ljk2OCA4Mi4zMDQgNDcuNDI0IDEwMi41NiAyNS43OTIgMTYuNjQgNTUuNjggMTkuMTM2IDcxLjIzMiAxOS4xMzYgMy43NzYgMCA2LjgxNi0uMTkyIDguOTI4LS4zMiAwIDAtNC45MjggMzIuMTI4IDE4Ljg4IDYzLjg3MmgtMS4wODhjLTQxLjI0OCAwLTE3NS43NzYgOC42MDgtMTc1Ljc3NiAxMTkuMjY0IDAgMTEyLjUxMiAxMjMuNTUyIDExOC4yNCAxNDguMzUyIDExOC4yNCAxLjk1MiAwIDMuMTA0LS4wNjQgMy4xMDQtLjA2NC4yNTYgMCAyLjAxNi4wNjQgNS4wNTYuMDY0IDE1LjkwNCAwIDU3LjAyNC0xLjk4NCA5NS4yLTIwLjU3NiA0OS41MzYtMjQgNzQuNjU2LTY1Ljg4OCA3NC42NTYtMTI0LjMyIDAtNTYuNDQ4LTM4LjI3Mi05MC4wNDgtNjYuMjA4LTExNC42MjQtMTcuMDU2LTE1LjAwOC0zMS44MDgtMjcuOTM2LTMxLjgwOC00MC41MTIgMC0xMi44IDEwLjc4NC0yMi40MzIgMjQuMzg0LTM0LjYyNCAyMi4wNDgtMTkuNjggNDIuODQ4LTQ3Ljc0NCA0Mi44NDgtMTAwLjggMC00Ni42MjQtNi4wNDgtNzcuOTUyLTQzLjMyOC05Ny44MjQgMy44NzItMS45ODQgMTcuNjMyLTMuNDI0IDI0LjQxNi00LjM4NCAyMC4xOTItMi43NTIgNDkuNzI4LTUuODg4IDQ5LjcyOC0yMi4zNjh2LTMuMTY4aC0xNDcuMTY4Yy0xLjQ3Mi4wNjQtMTQ4LjgzMiA1LjUwNC0xNDguODMyIDE0MC40NDh6bTIzNy41NjggMjg4LjQxNmMyLjgxNiA0NC45OTItMzUuNjggNzguMTc2LTkzLjUwNCA4Mi4zNjgtNTguNzIgNC4zMi0xMDcuMDQtMjIuMTEyLTEwOS44NTYtNjcuMDcyLTEuMzc2LTIxLjYzMiA4LjEyOC00Mi43NTIgMjYuNzItNTkuNjE2IDE4Ljg0OC0xNy4wNTYgNDQuNzM2LTI3LjYxNiA3Mi44OTYtMjkuNjk2IDMuMzI4LS4xOTIgNi42MjQtLjM4NCA5LjkyLS4zODQgNTQuMzY4LjAzMiA5MS4xNjggMzEuOTY4IDkzLjgyNCA3NC40em0tMzguNDMyLTMxOS4yMzJjMTQuNDMyIDUwLjgxNi03LjM2IDEwMy44NzItNDIuMTEyIDExMy42OTYtNCAxLjEyLTguMDk2IDEuNjY0LTEyLjI4OCAxLjY2NC0zMS44MDggMC02My4zMjgtMzIuMTkyLTc1LjA0LTc2LjU3Ni02LjUyOC0yNC44MzItNS45ODQtNDYuNjU2IDEuNTA0LTY3LjU4NCA3LjMyOC0yMC42NCAyMC41NzYtMzQuNDk2IDM3LjIxNi0zOS4yIDQtMS4xMiA4LjEyOC0xLjY5NiAxMi4zMi0xLjY5NiAzOC40IDAgNjMuMTA0IDE1LjkzNiA3OC40IDY5LjY5NnptMjQ5LjIxNiAxMDcuOTY4di05NmgtNjR2OTZoLTk2djY0aDk2djk2aDY0di05Nmg5NnYtNjRoLTk2eiIvPjwvc3ZnPg==');
+}
+
+.sharebutton--icon-email {
+    padding-left: 40px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAxNCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE0Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjAgMGgtMjB2MTRoMjJ2LTE0aC0yem0tMS43IDJsLTcuMyAzLjctNy4zLTMuN2gxNC42em0xLjcgMTBoLTE4di05LjFsOSA0LjcgOS00Ljd2OS4xeiIvPjwvc3ZnPg==');
+}
+
+
+/* Dölj text på delaknappen och gör den rund (kombinera med ikoner på knapparna =) */
+
+.sharebutton--hide-text {
+    width: 30px;
+    height: 30px;
+    margin: 0 .125em;
+    padding: 0;
+    background-position: 50% 50%;
+    border-radius: 15px;
+}
+
+.sharebutton--hide-text .sharebutton__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+

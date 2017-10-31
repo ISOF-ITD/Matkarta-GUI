@@ -16,16 +16,19 @@ export default {
 
 	categories: [
 		{
-			letter: 'MK-1',
-			label: 'Mjölk'
+			letter: 'MK-3',
+			label: 'Bröd',
+			image: 'img/category-brod.png'
 		},
 		{
 			letter: 'MK-2',
-			label: 'Bär och frukt'
+			label: 'Bär och frukt',
+			image: 'img/category-frukt.png'
 		},
 		{
-			letter: 'MK-3',
-			label: 'Bröd'
+			letter: 'MK-1',
+			label: 'Mjölk',
+			image: 'img/category-mjolk.png'
 		}
 	]
 }

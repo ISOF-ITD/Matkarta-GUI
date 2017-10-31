@@ -30,10 +30,10 @@ ReactDOM.render(
 		<Route path="/" component={Application}>
 
 			<Route path="/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)" 
-				manuallyOpenPopup={true} openButtonLabel="Visa sökträffar som lista" components={{popup: RecordListWrapper}}/>
+				manuallyOpenPopup={true} openButtonLabel="Visa sökträffar som lista" highlightRecordsWithMetadataField="sitevision_url" components={{popup: RecordListWrapper}}/>
 
 			<Route path="/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)" 
-				components={{popup: PlaceView}}/>
+				 highlightRecordsWithMetadataField="sitevision_url" components={{popup: PlaceView}}/>
 
 			<Route path="/person/:person_id" 
 				components={{popup: PersonView}}/>

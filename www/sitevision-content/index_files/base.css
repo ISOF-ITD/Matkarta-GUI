@@ -1,0 +1,108 @@
+/**
+ * Base css
+ * Contains the basic styling and improvements for the website
+ * 
+ * Copyright (C) 2013 Limepark AB
+ */
+
+/* GRUNDLAYOUT */
+
+.wrapper {
+   margin: 0 auto; 
+   -webkit-border-radius: 0 0 5px 5px; 
+   border-radius: 0 0 5px 5px; 
+   -webkit-box-shadow: 0 0 3px 3px #e8e8e8; 
+   box-shadow: 0 0 3px 3px #e8e8e8; 
+}
+
+header {
+   padding: 20px 0 40px;
+   background: #edeff1;
+}
+
+.submenu {
+   margin-top: 40px;
+}
+
+.content, .secondary-content {
+   margin-top: 20px;
+}
+
+.lp-multilevel {
+	margin-top: 40px;
+}
+
+footer {
+   margin: 40px 0 0;
+   padding: 40px 0;
+   background: #edeff1;
+   border-top: 10px solid #a6192e;
+   border-bottom: 5px solid #d7d9da;
+}
+
+#topmenu {
+   margin: 0 0;   
+}
+
+/* RETINA LOGO */
+
+.logo img {
+   max-width: 100% !important;
+   width: 163px !important; /* ändra till halva bildbredden */
+   margin: 15px 0 0;
+}
+
+
+/* FÖRBÄTTRINGAR */
+
+body {
+   -webkit-text-size-adjust: 100%;
+}
+
+.sv-responsive .sv-archive-portlet img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Modulavstånd i innehållsytor */
+
+.pagecontent > .sv-portlet {
+   margin-bottom: 10px;
+}
+
+/* Skapa artikel-länkar */
+
+a.sv-create-article-entry {
+   color: #900;
+}
+
+/* Fix för att högerspalt tar plats även vid tom */
+
+.secondary-content {
+   min-height: 1px;
+}
+
+/* Direktlänk till innehåll */
+
+a.skip {
+   position: absolute;
+   text-indent:-9999px;;
+   overflow: hidden;
+}
+
+/* Bildtextposition */
+
+.sv-portlet p, .sv-old-text-portlet p {
+   margin: 5px 0 0;
+}
+
+/* Responsiva iframes etc */
+
+iframe, object, embed {
+   border: medium none;
+   max-width: 100%;
+   overflow: hidden;
+}
+
+.fb-like-box, .fb-like-box span, .fb-like-box span iframe[style] { width: 100% !important; }

@@ -58,22 +58,24 @@ export default class MatkartaCategoryMenu extends React.Component {
 	}
 
 	render() {
-		return (
-			<div ref="container" className={'heading-list-wrapper'+(this.state.minimized ? ' minimized' : '')}>
-				<div className="list-heading panel-heading">
-					<span className="heading-label">{l('Kategorier')}<span className="selected-category">
-						{
-							this.state.selectedCategory ? ': '+categories.getCategoryName(this.state.selectedCategory) : ''
-						}
-					</span></span>
+		return <div className="matkarta-categories minimal-scrollbar">
+			<MatkartaCategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} />
+		</div>;
 
-					<button onClick={this.toggleMinimize} className="minimize-button"><span>Minimera</span></button>
-				</div>
+		return <div ref="container" className={'heading-list-wrapper'+(this.state.minimized ? ' minimized' : '')}>
+			<div className="list-heading panel-heading">
+				<span className="heading-label">{l('Kategorier')}<span className="selected-category">
+					{
+						this.state.selectedCategory ? ': '+categories.getCategoryName(this.state.selectedCategory) : ''
+					}
+				</span></span>
 
-				<div className={'list-container minimal-scrollbar'}>
-					<MatkartaCategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} />
-				</div>
+				<button onClick={this.toggleMinimize} className="minimize-button"><span>Minimera</span></button>
 			</div>
-		);
+
+			<div className={'list-container minimal-scrollbar'}>
+				<MatkartaCategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} />
+			</div>
+		</div>;
 	}
 }

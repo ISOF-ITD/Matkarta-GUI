@@ -1,0 +1,26 @@
+/* Visa vid utskrift */
+
+body .show-on-print, body .show-on-print div {
+   display:block !important; 
+}
+
+/* Dölj vid utskrift */
+
+body .hide-on-print, body .hide-on-print {
+  display: none !important; 
+}
+
+#google-translate-modal, #google-translate-modal div {
+   display: none !important;
+}
+
+/* Fix vid utskrift */
+
+.main-grid.sv-fixed-fluid-grid .sv-push-5 {
+   left: 0;
+}
+
+.logo img {
+   width: 220px !important; /* ändra till halva bildbredden */
+   margin: 0 0 30px;
+}

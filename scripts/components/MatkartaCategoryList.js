@@ -35,9 +35,10 @@ export default class MatkartaCategoryList extends React.Component {
 	}
 
 	itemClickHandler(event) {
+		console.log(event);
 		var selectedCategory = {
-			selectedCategory: categories.categories[event.target.dataset.index].letter,
-			selectedCategoryName: categories.categories[event.target.dataset.index].label
+			selectedCategory: categories.categories[event.currentTarget.dataset.index].letter,
+			selectedCategoryName: categories.categories[event.currentTarget.dataset.index].label
 		};
 
 		this.setState(selectedCategory);
@@ -74,7 +75,16 @@ export default class MatkartaCategoryList extends React.Component {
 				return <label key={index} data-index={index} className="item"><input value={item.letter} onChange={this.selectionChangeHandler} type="checkbox"/>{item.label}</label>;
 			}
 			else {
-				return <a key={index} data-index={index} className={'item'+(item.letter == this.state.selectedCategory ? ' selected' : '')} onClick={this.itemClickHandler}>{item.label}</a>;
+				return <a key={index} 
+					style={{transitionDelay: (0.4+(0.20*index))+'s', zIndex: categories.categories.length-index}}
+					data-index={index} 
+					className={'item'+(item.letter == this.state.selectedCategory ? ' selected' : '')} 
+					onClick={this.itemClickHandler}>
+					<span className="background" />
+					<span className="image" style={{backgroundImage: 'url('+item.image+')'}} />
+					<span className="item-border" />
+					<span className="label">{item.label}</span>
+				</a>;
 			}
 		}.bind(this));
 

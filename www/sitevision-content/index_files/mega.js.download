@@ -1,0 +1,73 @@
+(function($) {
+  $(window).load(function() {
+
+    // Create arrow and wrapper
+    var arrow = $('<div class="arrow"></div>').css('position', 'relative');
+    var submenuWrapper = $('<div class="mega-menu-content-wrapper">').css('display', 'none').css('position', 'absolute').css('z-index', '999');
+
+    // Set up showing/hiding based on hover
+    $('#menu.mega > ul > li').hoverIntent({
+      timeout: 500,
+      over: function() {
+        // Hide all before showing one
+        $('.mega-menu-content').parent().hide();
+        $('#menu.mega li a').removeClass('active');
+
+        $('.mega-menu-content', this).parent().show();
+        $('a', this).addClass('active');
+      },
+      out: function() {
+        $('.mega-menu-content', this).parent().hide();
+        $('a', this).removeClass('active');
+      }
+    });
+
+    // Set up showing
+    $('#menu.mega .mega-menu-content').css('display', 'block').css('visibility', 'visible');
+
+    // Set blurb height to submenu height if it's smaller
+    $('#menu.mega .mega-menu-content').each(function(index, element) {
+      var blurb = $('.blurb', element);
+      if (!blurb) {
+        return;
+      }
+
+      var submenu = $('.submenu', element);
+
+      if (blurb.height() < submenu.height()) {
+        blurb.height(submenu.height());
+      }
+    });
+
+    $('#menu.mega .mega-menu-content').wrap(submenuWrapper);
+    $('#menu.mega .mega-menu-content').before(arrow);
+
+    // Calculate position so we don't have submenues outside the main menu
+    var maxWidth = $('#menu.mega').outerWidth();
+    var offsetRight = $('#menu.mega').offset().left + maxWidth;
+    $('#menu.mega .mega-menu-content').each(function(index, element) {
+      var wrapper = $(element).parent();
+      var li = wrapper.parent();
+      var totalWidth = wrapper.offset().left + wrapper.outerWidth() + li.offset().left - $('#menu.mega').offset().left;
+      if (totalWidth > maxWidth) {
+        wrapper.css('right', $(window).width() - offsetRight + 'px');
+      }
+    });
+
+    // Position arrow in center of li
+    $('#menu.mega .arrow').each(function(index, element) {
+      var arrow = $(element);
+      var wrapper = arrow.parent();
+      var li = wrapper.parent();
+
+      var arrowWidth = parseInt(arrow.css('width'), 10);
+
+      arrow.css('left', li.outerWidth(true) / 2 - arrowWidth / 2);
+      var totalWidth = wrapper.offset().left + wrapper.outerWidth() + li.offset().left - $('#menu.mega').offset().left;
+      if (totalWidth > maxWidth) {
+        arrow.css('left', (totalWidth - maxWidth) + parseInt(arrow.css('left'), 10));
+      }
+    });
+  });
+})(jQuery);
+
