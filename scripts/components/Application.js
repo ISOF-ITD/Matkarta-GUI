@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import _ from 'underscore';
 
 import MatkartaMenu from './MatkartaMenu';
 import MapView from './../../ISOF-React-modules/components/views/MapView';
@@ -10,9 +11,13 @@ import FeedbackOverlay from './../../ISOF-React-modules/components/views/Feedbac
 import TranscriptionOverlay from './../../ISOF-React-modules/components/views/TranscriptionOverlay';
 import PopupNotificationMessage from './../../ISOF-React-modules/components/controls/PopupNotificationMessage';
 import OverlayWindow from './../../ISOF-React-modules/components/controls/OverlayWindow';
+import GlobalAudioPlayer from './../../ISOF-React-modules/components/views/GlobalAudioPlayer';
+import SitevisionContent from './../../ISOF-React-modules/components/controls/SitevisionContent';
 
 import routeHelper from './../utils/routeHelper';
 import WindowScroll from './../../ISOF-React-modules/utils/windowScroll';
+
+import config from './../config.js';
 
 import EventBus from 'eventbusjs';
 
@@ -30,6 +35,9 @@ export default class Application extends React.Component {
 		window.applicationSettings = {
 			includeNordic: false
 		};
+
+		// Lissna på event när ljudspelare syns, lägger till .has-docked-control till body class
+		window.eventBus.addEventListener('audio.playervisible', this.audioPlayerVisibleHandler.bind(this));
 
 		// Bind event handlers till "this" (själva Application instance)
 		this.mapMarkerClick = this.mapMarkerClick.bind(this);
@@ -51,11 +59,20 @@ export default class Application extends React.Component {
 		};
 	}
 
+	audioPlayerVisibleHandler() {
+		// När GlobalAudioPlayer visas lägger vi till class till document.body för att
+		// få utrymme för ljudspelaren i gränssnittet
+		document.body.classList.add('has-docked-control');
+	}
+
 	mapMarkerClick(placeId) {
+		// När användaren klickar på en prick, lägger till #place/[id] till url:et,
+		// detta kommer att hanteras av application router
 		hashHistory.push(routeHelper.createPlacePathFromPlaces(placeId, this.props.location.pathname));
 	}
 
 	popupCloseHandler() {
+		// Lägg till rätt route när användaren stänger popuprutan
 		if (hashHistory.getCurrentLocation().pathname.indexOf('record/') > -1) {
 			hashHistory.push(routeHelper.createPlacesPathFromRecord(hashHistory.getCurrentLocation().pathname));
 		}
@@ -68,6 +85,8 @@ export default class Application extends React.Component {
 	}
 
 	popupWindowShowHandler() {
+		// När popup-rutan är synlig, lägg till popupVisible: true till state,
+		// i render() lägger detta till has-overlay class till <div id="app" />
 		setTimeout(function() {
 			this.setState({
 				popupVisible: true
@@ -76,6 +95,7 @@ export default class Application extends React.Component {
 	}
 
 	popupWindowHideHandler() {
+		// När popup-rutan är döljd, lägg till popupVisible: false till state
 		setTimeout(function() {
 			this.setState({
 				popupVisible: false
@@ -84,19 +104,22 @@ export default class Application extends React.Component {
 	}
 
 	introOverlayCloseButtonClickHandler() {
+		// Skickar overlay.hide via globala eventBus, OverlayWindow tar emot det
 		eventBus.dispatch('overlay.hide');
 
+		// Registrerar till localStorage om användaren har valt att inte visa intro igen
 		if (this.state.neverShowIntro) {
 			localStorage.setItem('neverShowIntro', true);
 		}
 	}
 
 	languageChangedHandler() {
-		console.log('language changed');
+		// force render när språk har ändras
 		this.forceUpdate();
 	}
 
 	componentDidMount() {
+		// Skickar alla sök-parametrar via global eventBus
 		if (window.eventBus) {
 			window.eventBus.dispatch('application.searchParams', {
 				selectedCategory: this.props.params.category,
@@ -110,6 +133,7 @@ export default class Application extends React.Component {
 
 			window.eventBus.addEventListener('Lang.setCurrentLang', this.languageChangedHandler);
 
+			// Väntar två och halv sekund för att visa intro, om användaren inte har valt att visa den inte igen
 			setTimeout(function() {
 				if (!localStorage.getItem('neverShowIntro')) {
 					eventBus.dispatch('overlay.intro');
@@ -128,18 +152,16 @@ export default class Application extends React.Component {
 			params: this.props.params
 		}, function() {
 			setTimeout(function() {
+				// Väntar en sekund, lägger till app-initialized till body class,
+				// detta kör css transition som animerar gränssnittet i början
 				document.body.classList.add('app-initialized');
 			}.bind(this), 1000);
 		}.bind(this));
-
-		setTimeout(function() {
-			this.setState({
-				overlayWindowHtml: window.document.getElementsByClassName('sv-text-portlet-content').length > 0 ? window.document.getElementsByClassName('sv-text-portlet-content')[0].innerHTML : null
-			});
-		}.bind(this), 10);
 	}
 
 	componentWillReceiveProps(props) {
+		// När application tar emot parametrar från url:et, skicka dem via eventBus
+		// MapView, RecordsList och sökfält tar emot dem
 		if (window.eventBus) {
 			eventBus.dispatch('application.searchParams', {
 				selectedCategory: props.params.category,
@@ -161,14 +183,31 @@ export default class Application extends React.Component {
 			searchPersonRelation: props.params.person_relation,
 			searchGender: props.params.gender,
 			params: props.params
+		}, function() {
+			this.updateDocumentClass();
+		}.bind(this));
+	}
+
+	updateDocumentClass() {
+		// Lägger till kategory id till body class
+		_.each(document.body.classList, function(className) {
+			if (className.substr(0, 13) == 'map-category-') {
+				document.body.classList.remove(className);
+			}
 		});
+
+		if (this.state.selectedCategory) {
+			document.body.classList.add('map-category-'+this.state.selectedCategory);
+		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
+		// Checkar om gränssnittet skulle uppdateras med att jämföra nya parametrar med förre parametrar
 		return (JSON.stringify(nextState) != JSON.stringify(this.state));
 	}
 
 	render() {
+		// Innehåll av RoutePopupWindow, kommer från application route i app.js
 		var popup = this.props.popup;
 
 		return (
@@ -179,6 +218,8 @@ export default class Application extends React.Component {
 					<MatkartaMenu />
 
 					<LocalLibraryView headerText={l('Mina sägner')} />
+
+					<GlobalAudioPlayer />
 
 				</MapView>
 
@@ -192,7 +233,9 @@ export default class Application extends React.Component {
 				<FeedbackOverlay />
 				<TranscriptionOverlay />
 				<PopupNotificationMessage />
-				<OverlayWindow title="Velkommen till sägenkartan" htmlContent={this.state.overlayWindowHtml}>
+
+				<OverlayWindow title="Välkommen till matkartan">
+					<SitevisionContent url={config.startPageUrl} disableScriptExecution={true} />
 					<div>
 						<hr className="margin-bottom-35"/>
 						<button className="button-primary margin-bottom-0" onClick={this.introOverlayCloseButtonClickHandler}>Stäng</button>

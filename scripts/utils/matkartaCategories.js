@@ -29,6 +29,11 @@ export default {
 			letter: 'MK-1',
 			label: 'Mjölk',
 			image: 'img/category-mjolk.png'
+		},
+		{
+			letter: 'MK-10',
+			label: 'Kokboken',
+			image: 'img/category-kokbok.png'
 		}
 	]
 }

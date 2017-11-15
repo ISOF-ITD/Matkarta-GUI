@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
 import categories from './../utils/matkartaCategories.js';
+import config from './../config.js';
 
 export default class MatkartaCategoryList extends React.Component {
 	constructor(props) {
@@ -81,7 +82,7 @@ export default class MatkartaCategoryList extends React.Component {
 					className={'item'+(item.letter == this.state.selectedCategory ? ' selected' : '')} 
 					onClick={this.itemClickHandler}>
 					<span className="background" />
-					<span className="image" style={{backgroundImage: 'url('+item.image+')'}} />
+					<span className="image" style={{backgroundImage: 'url('+config.appUrl+item.image+')'}} />
 					<span className="item-border" />
 					<span className="label">{item.label}</span>
 				</a>;

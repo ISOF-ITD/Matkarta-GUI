@@ -167,6 +167,75 @@ audio::-webkit-media-controls-enclosure {
 	}
 }
 
+.sitevision-content-frame {
+	padding: 30px 50px;
+
+	background-image: url("../img/paper-background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	border-radius: 2px;
+	box-shadow: inset 0 0 90px rgba(115, 94, 71, 0.65), 2px 3px 5px rgba(0, 0, 0, 0.19), inset 0 0 6px rgba(0, 0, 0, 0.5);
+
+	z-index: 3;
+
+}
+
+.map-category-MK-10 {
+	.sitevision-content {
+		.sitevision-content-frame();
+
+		position: relative;
+
+		margin: 0 20%;
+
+		.transform(rotate(-2deg));
+
+		@media (max-width: 750px) {
+			margin: 0 30px;
+		}
+
+		@media (max-width: 450px) {
+			margin: 0 5px;
+
+			padding: 5px 30px;
+		}
+
+		&:after {
+			.sitevision-content-frame();
+
+			content: " ";
+
+			display: block;
+
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.transform(rotate(2deg));
+
+			z-index: 0;
+		}
+
+		>* {
+			position: relative;
+
+			.transform(rotate(2deg));
+
+			z-index: 1;
+
+			.sv-text-portlet {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+
 .matkarta-categories {
 	position: absolute;
 
@@ -176,6 +245,8 @@ audio::-webkit-media-controls-enclosure {
 	max-height: 800px;
 
 	z-index: 1400;
+
+	pointer-events: none;
 
 	.item {
 		display: block;
@@ -202,6 +273,8 @@ audio::-webkit-media-controls-enclosure {
 		opacity: 0;
 
 		.transform(translateY(-100px));
+
+		pointer-events: all;
 
 		.app-initialized & {
 			opacity: 1;
