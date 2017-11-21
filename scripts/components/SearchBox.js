@@ -9,21 +9,17 @@ export default class SearchBox extends React.Component {
 	constructor(props) {
 		super(props);
 
+		// Bind all event handlers to this (the actual component) to make component variables available inside the functions
 		this.inputKeyPressHandler = this.inputKeyPressHandler.bind(this);
-
 		this.searchValueChangeHandler = this.searchValueChangeHandler.bind(this);
 		this.searchFieldChangeHandler = this.searchFieldChangeHandler.bind(this);
 		this.searchPersonRelationChangeHandler = this.searchPersonRelationChangeHandler.bind(this);
 		this.searchGenderChangeHandler = this.searchGenderChangeHandler.bind(this);
 		this.searchCategoriesChangeHandler = this.searchCategoriesChangeHandler.bind(this);
-
 		this.searchButtonClickHandler = this.searchButtonClickHandler.bind(this);
-
 		this.executeSimpleSearch = this.executeSimpleSearch.bind(this);
-
 		this.searchBoxClickHandler = this.searchBoxClickHandler.bind(this);
 		this.toggleAdvanced = this.toggleAdvanced.bind(this);
-
 		this.languageChangedHandler = this.languageChangedHandler.bind(this);
 
 		if (window.eventBus) {

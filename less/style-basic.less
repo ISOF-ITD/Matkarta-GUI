@@ -7,7 +7,6 @@
 @import "../ISOF-React-modules/less/ui-components/map-ui.less";
 @import "../ISOF-React-modules/less/ui-components/popupwindow.less";
 
-@import "../ISOF-React-modules/less/ui-components/mapmenu.less";
 @import "../ISOF-React-modules/less/ui-components/dropdownmenu.less";
 @import "../ISOF-React-modules/less/ui-components/local-library.less";
 @import "../ISOF-React-modules/less/ui-components/overlay.less";
@@ -236,17 +235,60 @@ audio::-webkit-media-controls-enclosure {
 	}
 }
 
+.menu-wrapper {
+	.categories-button {
+		display: block;
+		
+		position: fixed;
+		
+		top: 20px;
+		right: 15px;
+		bottom: 0;
+		
+		width: 50px;
+		height: 50px;
+		
+		margin: 0;
+		padding: 0;
+		
+		background-image: url('../img/icon-menu-expand.png');
+		background-color: @color-gray;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		box-sizing: border-box;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+		cursor: pointer;
+
+		z-index: 500;
+
+		.menu-expanded& {
+			background-image: url('../img/icon-arrow-right.png');
+		}
+
+		@media (min-width: 450px) {
+			display: none;
+		}
+	}
+}
 .matkarta-categories {
 	position: absolute;
-
-	top: 0;
-	bottom: 0;
-
+	
+	top: 92px;
+	bottom: 100px;
+	right: 20px;
+	
 	max-height: 800px;
-
+	
 	z-index: 1400;
-
+	
 	pointer-events: none;
+
+	@media (max-width: 450px) {
+		left: 12px;
+		right: 12px;
+	}
 
 	.item {
 		display: block;
@@ -276,10 +318,18 @@ audio::-webkit-media-controls-enclosure {
 
 		pointer-events: all;
 
-		.app-initialized & {
+		pointer-events: none;
+
+		@media (max-width: 450px) {
+			width: 100%;
+		}
+
+		.app-initialized .menu-expanded & {
 			opacity: 1;
 
 			.transform(translateY(0));
+
+			pointer-events: all;
 		}
 
 		.item-border {
@@ -324,6 +374,7 @@ audio::-webkit-media-controls-enclosure {
 			padding: 5px 0;
 
 			font-size: 1.2rem;
+			text-align: center;
 
 			border-bottom: 3px solid transparent;
 

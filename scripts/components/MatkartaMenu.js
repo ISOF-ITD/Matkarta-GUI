@@ -9,9 +9,11 @@ export default class MatkartaMenu extends React.Component {
 
 		this.searchBoxSizeChangeHandler = this.searchBoxSizeChangeHandler.bind(this);
 
+		window.matkartaMenu = this;
+
 		this.state = {
 			selectedCategory: null,
-			expanded: false,
+			expanded: window.innerWidth > 450,
 			advanced: false
 		};
 	}
@@ -50,6 +52,8 @@ export default class MatkartaMenu extends React.Component {
 	render() {
 		return (
 			<div className={'menu-wrapper'+(this.state.expanded ? ' menu-expanded' : '')+(this.state.advanced ? ' advanced-menu-view' : '')}>
+
+				<a className="categories-button" onClick={function() {this.setState({expanded: !this.state.expanded})}.bind(this)}></a>
 
 				{/*<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler} />*/}
