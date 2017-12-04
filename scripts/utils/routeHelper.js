@@ -1,10 +1,10 @@
 import RouteParser from 'route-parser';
 import { hashHistory } from 'react-router';
 
-const searchRoute = '(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)';
-const placesRoute = '/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)';
-const placeRoute = '/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)';
-const recordRoute = '/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)';
+const searchRoute = '(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
+const placesRoute = '/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
+const placeRoute = '/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
+const recordRoute = '/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
 
 export default {
 	createPlacePathFromPlaces(placeId, placesPath) {
@@ -48,6 +48,6 @@ export default {
 	createSearchRoute(params) {
 		var router = new RouteParser(searchRoute);
 
-		return router.reverse(params);
+		return router.reverse(params) || '';
 	}
 }

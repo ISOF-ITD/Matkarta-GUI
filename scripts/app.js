@@ -29,16 +29,16 @@ ReactDOM.render(
 		<Redirect from="/" to="/places"/>
 		<Route path="/" component={Application}>
 
-			<Route path="/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)" 
+			<Route path="/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)(/page/:page)" 
 				manuallyOpenPopup={true} openButtonLabel="Visa sökträffar som lista" highlightRecordsWithMetadataField="sitevision_url" components={{popup: RecordListWrapper}}/>
 
-			<Route path="/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)" 
+			<Route path="/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)" 
 				 highlightRecordsWithMetadataField="sitevision_url" components={{popup: PlaceView}}/>
 
 			<Route path="/person/:person_id" 
 				components={{popup: PersonView}}/>
 
-			<Route path="/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/type/:type)(/category/:category)(/year_from/:year_from)(/year_to/:year_to)(/person_relation/:person_relation)(/gender/:gender)(/person_landskap/:person_landskap)(/person_county/:person_county)(/person_harad/:person_harad)(/person_socken/:person_socken)" 
+			<Route path="/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)" 
 				fullWidthContentArea={true} components={{popup: RecordView}}/>
 
 		</Route>

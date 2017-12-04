@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import _ from 'underscore';
+import L from 'leaflet';
 
 import MatkartaMenu from './MatkartaMenu';
 import MapView from './../../ISOF-React-modules/components/views/MapView';
@@ -48,15 +49,30 @@ export default class Application extends React.Component {
  
 		this.languageChangedHandler = this.languageChangedHandler.bind(this);
 
+		// DefaultMarker
+		this.defaultMarkerIcon = L.icon({
+			iconUrl: config.appUrl+'img/map-marker-blue-location-smaller.png',
+			shadowUrl: config.appUrl+'img/marker-shadow.png',
+
+			iconSize:     [20, 26],	// size of the icon
+			shadowSize:   [41, 41],	// size of the shadow
+			iconAnchor:   [10, 26],	// point of the icon which will correspond to marker's location
+			shadowAnchor: [12, 40],  // the same for the shadow
+			popupAnchor:  [-1, -15] // point from which the popup should open relative to the iconAnchor
+		});
+
 		this.state = {
 			selectedCategory: null,
 
 			searchValue: '',
 			searchField: '',
+			searchMetadata: false,
 
 			params: this.props.params,
 			popupVisible: false
 		};
+
+		window.matkarta = this;
 	}
 
 	audioPlayerVisibleHandler() {
@@ -128,7 +144,8 @@ export default class Application extends React.Component {
 				searchYearFrom: this.props.params.year_from,
 				searchYearTo: this.props.params.year_to,
 				searchPersonRelation: this.props.params.person_relation,
-				searchGender: this.props.params.gender
+				searchGender: this.props.params.gender,
+				searchMetadata: this.props.params.has_metadata
 			});
 
 			window.eventBus.addEventListener('Lang.setCurrentLang', this.languageChangedHandler);
@@ -149,8 +166,11 @@ export default class Application extends React.Component {
 			searchYearTo: this.props.params.year_to,
 			searchPersonRelation: this.props.params.person_relation,
 			searchGender: this.props.params.gender,
+			searchMetadata: this.props.params.has_metadata,
 			params: this.props.params
 		}, function() {
+			this.updateDocumentClass();
+
 			setTimeout(function() {
 				// Väntar en sekund, lägger till app-initialized till body class,
 				// detta kör css transition som animerar gränssnittet i början
@@ -171,6 +191,7 @@ export default class Application extends React.Component {
 				searchYearTo: props.params.year_to,
 				searchPersonRelation: props.params.person_relation,
 				searchGender: props.params.gender,
+				searchMetadata: props.params.has_metadata
 			});
 		}
 
@@ -182,6 +203,7 @@ export default class Application extends React.Component {
 			searchYearTo: props.params.year_to,
 			searchPersonRelation: props.params.person_relation,
 			searchGender: props.params.gender,
+			searchMetadata: props.params.has_metadata,
 			params: props.params
 		}, function() {
 			this.updateDocumentClass();
@@ -191,7 +213,7 @@ export default class Application extends React.Component {
 	updateDocumentClass() {
 		// Lägger till kategory id till body class
 		_.each(document.body.classList, function(className) {
-			if (className.substr(0, 13) == 'map-category-') {
+			if (className && className.substr(0, 13) == 'map-category-') {
 				document.body.classList.remove(className);
 			}
 		});
@@ -213,9 +235,9 @@ export default class Application extends React.Component {
 		return (
 			<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
 
-				<MapView searchParams={this.state.params} onMarkerClick={this.mapMarkerClick}>
+				<MapView searchParams={this.state.params} onMarkerClick={this.mapMarkerClick} defaultMarkerIcon={this.defaultMarkerIcon}>
 
-					<MatkartaMenu />
+					<MatkartaMenu searchMetadata={this.state.searchMetadata} selectedCategory={this.state.selectedCategory} />
 
 					<LocalLibraryView headerText={l('Mina sägner')} />
 

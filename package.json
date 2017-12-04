@@ -13,6 +13,7 @@
     "eventbusjs": "^0.1.0",
     "gulp-uglify": "^2.0.0",
     "leaflet": "^1.2.0",
+    "leaflet.locatecontrol": "^0.62.0",
     "leaflet.markercluster": "^1.0.4",
     "leaflet.vectorgrid": "^1.2.0",
     "masonry-layout": "^4.1.1",

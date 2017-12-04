@@ -1286,6 +1286,18 @@ there.
     right: 0%;
   }
 }
+.leaflet-control .map-location-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../img/icon-locate.png');
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.following.leaflet-control .map-location-icon {
+  background-image: url('../img/icon-locate-following.png');
+}
 @media print {
   .leaflet-control {
     display: none;
@@ -1484,6 +1496,7 @@ there.
   margin-bottom: 1.5rem;
 }
 .popup-wrapper .popup-content-wrapper .page-content .archive-image {
+  max-width: 100%;
   cursor: pointer;
 }
 .popup-wrapper .popup-content-wrapper .page-content .archive-image .pdf-icon {
@@ -2593,7 +2606,7 @@ header #Meny + ul > li a {
   top: 160px;
 }
 .map-viewmode-menu {
-  top: 301px !important;
+  top: 348px !important;
 }
 .sv-editing-mode .sv-text-portlet-content:before {
   content: "Dold modul - klicka för att editera";
@@ -2820,7 +2833,7 @@ audio::-webkit-media-controls-enclosure {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.menu-wrapper .categories-button {
+.menu-wrapper .hamburger-button {
   display: block;
   position: fixed;
   top: 20px;
@@ -2839,17 +2852,79 @@ audio::-webkit-media-controls-enclosure {
   cursor: pointer;
   z-index: 500;
 }
-.menu-expanded.menu-wrapper .categories-button {
+.menu-expanded.menu-wrapper .hamburger-button {
   background-image: url('../img/icon-arrow-right.png');
 }
 @media (min-width: 450px) {
-  .menu-wrapper .categories-button {
+  .menu-wrapper .hamburger-button {
     display: none;
   }
 }
-.matkarta-categories {
+.point-type-options {
   position: absolute;
   top: 92px;
+  bottom: 100px;
+  right: 20px;
+  width: 350px;
+  height: 72px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 1450;
+}
+.point-type-options .option-item {
+  display: inline-block;
+  width: 50%;
+  height: 72px;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 72px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.point-type-options .option-item:first-child {
+  border-right: 1px solid #e8e8e8;
+}
+.point-type-options .option-item .icon {
+  display: inline-block;
+  width: 19px;
+  height: 24px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.point-type-options .option-item .icon.icon-marker-normal {
+  background-image: url('../img/icon-marker-normal.png');
+}
+.point-type-options .option-item .icon.icon-marker-curated {
+  background-image: url('../img/icon-marker-curated.png');
+}
+.point-type-options .option-item .label {
+  display: inline-block;
+}
+.point-type-options .selected-line {
+  display: block;
+  position: absolute;
+  left: 25%;
+  bottom: 14px;
+  height: 2px;
+  width: 35%;
+  background: #a6192e;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.option-2.point-type-options .selected-line {
+  left: 75%;
+}
+.matkarta-categories {
+  position: absolute;
+  top: 179px;
   bottom: 100px;
   right: 20px;
   max-height: 800px;

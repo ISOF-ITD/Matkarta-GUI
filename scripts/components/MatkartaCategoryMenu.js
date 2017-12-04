@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
-import { hashHistory } from 'react-router';
 
 import MatkartaCategoryList from './MatkartaCategoryList';
 
@@ -28,11 +27,21 @@ export default class MatkartaCategoryMenu extends React.Component {
 
 	categoryItemClickHandler(event) {
 		if (event.selectedCategory == this.state.selectedCategory) {
-			hashHistory.push('/places');
+			var selectedCategory = null;
 		}
 		else {
-			hashHistory.push('/places/category/'+event.selectedCategory);
+			var selectedCategory = event.selectedCategory;
 		}
+
+		this.setState({
+			selectedCategory: selectedCategory
+		}, function() {
+			if (this.props.onChange) {
+				this.props.onChange({
+					selectedCategory: this.state.selectedCategory
+				});
+			}
+		}.bind(this));
 	}
 
 	menuButtonClick() {
