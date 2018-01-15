@@ -33,6 +33,6 @@ export default {
 	appUrl: 'http://www4.sprakochfolkminnen.se/matkarta/',
 	siteUrl: 'http://www.sprakochfolkminnen.se/om-oss/kartor/sagenkartan.html',
 
-	apiUrl: 'http://frigg-test.sprakochfolkminnen.se/sagendatabas/api/es/',
-	djangoApiUrl: 'http://frigg-test.sprakochfolkminnen.se/sagendatabas/api/'
+	apiUrl: 'http://frigg.sprakochfolkminnen.se/sagendatabas/api/es/',
+	restApiUrl: 'http://frigg.sprakochfolkminnen.se/sagendatabas/api/'
 };

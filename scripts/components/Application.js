@@ -235,7 +235,7 @@ export default class Application extends React.Component {
 		return (
 			<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
 
-				<MapView searchParams={this.state.params} onMarkerClick={this.mapMarkerClick} defaultMarkerIcon={this.defaultMarkerIcon}>
+				<MapView searchParams={this.state.params} onMarkerClick={this.mapMarkerClick} defaultMarkerIcon={this.defaultMarkerIcon} hideMapmodeMenu={true}>
 
 					<MatkartaMenu searchMetadata={this.state.searchMetadata} selectedCategory={this.state.selectedCategory} />
 
