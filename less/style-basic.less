@@ -64,6 +64,10 @@ body {
 	font-size: 0.9rem;
 }
 
+.text-smaller {
+	font-size: 0.7rem;
+}
+
 h2 {
 	.lighter {
 		font-size: 1.4rem;
@@ -166,6 +170,51 @@ audio::-webkit-media-controls-enclosure {
 	}
 }
 
+.sitevision-content {
+	.sv-layout {
+		background: none !important;
+	}
+
+	.map-category-MK-10 & {
+		.sv-text-portlet {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+}
+
+header {
+	#Meny {
+		+ ul {
+			width: 200px;
+			max-height: 50px;
+
+			overflow: hidden;
+
+			white-space: nowrap;
+
+			z-index: 1500;
+
+			.transition(all 300ms ease-in-out);
+
+		}
+	}
+
+	.menu-expanded {
+		ul {
+			max-height: 80vh !important;
+
+			white-space: initial !important;
+
+			overflow-y: scroll !important;
+
+			li {
+				display: block !important;
+			}
+		}
+	}
+}
+/*
 .sitevision-content-frame {
 	padding: 30px 50px;
 
@@ -180,7 +229,6 @@ audio::-webkit-media-controls-enclosure {
 	z-index: 3;
 
 }
-
 .map-category-MK-10 {
 	.sitevision-content {
 		.sitevision-content-frame();
@@ -234,7 +282,9 @@ audio::-webkit-media-controls-enclosure {
 		}
 	}
 }
+*/
 
+.si
 .menu-wrapper {
 	.hamburger-button {
 		display: block;

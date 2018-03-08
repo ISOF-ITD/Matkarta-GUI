@@ -2655,6 +2655,9 @@ body {
 .text-small {
   font-size: 0.9rem;
 }
+.text-smaller {
+  font-size: 0.7rem;
+}
 h2 .lighter {
   font-size: 1.4rem;
   color: #8d8d8d;
@@ -2769,78 +2772,101 @@ audio::-webkit-media-controls-enclosure {
     text-decoration: none !important;
   }
 }
-.sitevision-content-frame {
-  padding: 30px 50px;
-  background-image: url("../img/paper-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 2px;
-  box-shadow: inset 0 0 90px rgba(115, 94, 71, 0.65), 2px 3px 5px rgba(0, 0, 0, 0.19), inset 0 0 6px rgba(0, 0, 0, 0.5);
-  z-index: 3;
+.sitevision-content .sv-layout {
+  background: none !important;
 }
-.map-category-MK-10 .sitevision-content {
-  padding: 30px 50px;
-  background-image: url("../img/paper-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 2px;
-  box-shadow: inset 0 0 90px rgba(115, 94, 71, 0.65), 2px 3px 5px rgba(0, 0, 0, 0.19), inset 0 0 6px rgba(0, 0, 0, 0.5);
-  z-index: 3;
-  position: relative;
-  margin: 0 20%;
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  transform: rotate(-2deg);
-}
-@media (max-width: 750px) {
-  .map-category-MK-10 .sitevision-content {
-    margin: 0 30px;
-  }
-}
-@media (max-width: 450px) {
-  .map-category-MK-10 .sitevision-content {
-    margin: 0 5px;
-    padding: 5px 30px;
-  }
-}
-.map-category-MK-10 .sitevision-content:after {
-  padding: 30px 50px;
-  background-image: url("../img/paper-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 2px;
-  box-shadow: inset 0 0 90px rgba(115, 94, 71, 0.65), 2px 3px 5px rgba(0, 0, 0, 0.19), inset 0 0 6px rgba(0, 0, 0, 0.5);
-  z-index: 3;
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  transform: rotate(2deg);
-  z-index: 0;
-}
-.map-category-MK-10 .sitevision-content > * {
-  position: relative;
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  transform: rotate(2deg);
-  z-index: 1;
-}
-.map-category-MK-10 .sitevision-content > * .sv-text-portlet {
+.map-category-MK-10 .sitevision-content .sv-text-portlet {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.menu-wrapper .hamburger-button {
+header #Meny + ul {
+  width: 200px;
+  max-height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1500;
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+header .menu-expanded ul {
+  max-height: 80vh !important;
+  white-space: initial !important;
+  overflow-y: scroll !important;
+}
+header .menu-expanded ul li {
+  display: block !important;
+}
+/*
+.sitevision-content-frame {
+	padding: 30px 50px;
+
+	background-image: url("../img/paper-background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	border-radius: 2px;
+	box-shadow: inset 0 0 90px rgba(115, 94, 71, 0.65), 2px 3px 5px rgba(0, 0, 0, 0.19), inset 0 0 6px rgba(0, 0, 0, 0.5);
+
+	z-index: 3;
+
+}
+.map-category-MK-10 {
+	.sitevision-content {
+		.sitevision-content-frame();
+
+		position: relative;
+
+		margin: 0 20%;
+
+		.transform(rotate(-2deg));
+
+		@media (max-width: 750px) {
+			margin: 0 30px;
+		}
+
+		@media (max-width: 450px) {
+			margin: 0 5px;
+
+			padding: 5px 30px;
+		}
+
+		&:after {
+			.sitevision-content-frame();
+
+			content: " ";
+
+			display: block;
+
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.transform(rotate(2deg));
+
+			z-index: 0;
+		}
+
+		>* {
+			position: relative;
+
+			.transform(rotate(2deg));
+
+			z-index: 1;
+
+			.sv-text-portlet {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+*/
+.si .menu-wrapper .hamburger-button {
   display: block;
   position: fixed;
   top: 20px;
@@ -2859,11 +2885,11 @@ audio::-webkit-media-controls-enclosure {
   cursor: pointer;
   z-index: 500;
 }
-.menu-expanded.menu-wrapper .hamburger-button {
+.menu-expanded.si .menu-wrapper .hamburger-button {
   background-image: url('../img/icon-arrow-right.png');
 }
 @media (min-width: 450px) {
-  .menu-wrapper .hamburger-button {
+  .si .menu-wrapper .hamburger-button {
     display: none;
   }
 }

@@ -71,8 +71,6 @@ export default class Application extends React.Component {
 			params: this.props.params,
 			popupVisible: false
 		};
-
-		window.matkarta = this;
 	}
 
 	audioPlayerVisibleHandler() {
@@ -177,6 +175,8 @@ export default class Application extends React.Component {
 				document.body.classList.add('app-initialized');
 			}.bind(this), 1000);
 		}.bind(this));
+
+		this.initSitevisonMenu();
 	}
 
 	componentWillReceiveProps(props) {
@@ -208,6 +208,16 @@ export default class Application extends React.Component {
 		}, function() {
 			this.updateDocumentClass();
 		}.bind(this));
+	}
+
+	initSitevisonMenu() {
+		var menu = document.getElementById('Meny').parentElement;
+		menu.onmouseover = function() {
+			menu.classList.add('menu-expanded');
+		};
+		menu.onmouseout = function() {
+			menu.classList.remove('menu-expanded');
+		};
 	}
 
 	updateDocumentClass() {
