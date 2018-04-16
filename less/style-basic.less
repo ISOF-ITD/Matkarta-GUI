@@ -28,6 +28,7 @@
 @color-gray: #edeff1;
 @color-gray-border: #d1d1d1;
 @color-gray-background: #f5f5f5;
+@color-yellow: #ffcd00;
 @notification-background: #7d1b1f;
 
 @viewport {
@@ -572,4 +573,43 @@ header {
 			}
 		}
 	}
+}
+
+.map-floating-control {
+	background-color: @color-yellow;
+}
+
+.overlay-container .overlay-window .overlay-header {
+	color: #000;
+
+	background: @color-yellow;
+}
+
+.popup-wrapper .popup-content-wrapper .page-content {
+	.container-header {
+		color: #000;
+
+		background: @color-yellow;
+
+		h2 {
+			color: #000;
+		}
+	}
+}
+
+.close-button {
+	&.white {
+		&:before, &:after {
+			background: #000;
+		}
+	}
+}
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+	background: @color-yellow;
+	color: #000;
+}
+
+.popup-open-button {
+	color: #000 !important;
 }
