@@ -30,7 +30,7 @@ export default {
 	imageUrl: 'http://www4.sprakochfolkminnen.se/Folkminnen/Svenska_sagor_filer/',
 	audioUrl: 'http://www4.sprakochfolkminnen.se/Folkminnen/Svenska_sagor_filer/inspelningar/',
 
-	appUrl: 'http://www4.sprakochfolkminnen.se/matkarta/',
+	appUrl: 'http://frigg-test.sprakochfolkminnen.se/static/js-apps/matkartan/',
 	siteUrl: 'http://www.sprakochfolkminnen.se/om-oss/kartor/matkartan.html',
 
 	apiUrl: 'http://frigg.sprakochfolkminnen.se/sagendatabas/api/es/',

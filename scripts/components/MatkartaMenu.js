@@ -26,7 +26,6 @@ export default class MatkartaMenu extends React.Component {
 		this.setState({
 			selectedCategory: this.props.selectedCategory,
 			searchValue: this.props.searchValue,
-			searchField: this.props.searchField,
 			searchYearFrom: this.props.searchYearFrom,
 			searchYearTo: this.props.searchYearTo,
 			searchPersonRelation: this.props.searchPersonRelation,
@@ -39,7 +38,6 @@ export default class MatkartaMenu extends React.Component {
 		this.setState({
 			selectedCategory: props.selectedCategory,
 			searchValue: props.searchValue,
-			searchField: props.searchField,
 			searchYearFrom: props.searchYearFrom,
 			searchYearTo: props.searchYearTo,
 			searchPersonRelation: props.searchPersonRelation,
@@ -84,6 +82,8 @@ export default class MatkartaMenu extends React.Component {
 				{/*<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler} />*/}
 
+				<a href="http://www.sprakochfolkminnen.se/matkult/matkult.html" className="matkult-header"></a>
+
 				<div className={'point-type-options option-'+this.state.pointTypeOption}>
 
 					<a className="option-item" data-option="1" onClick={this.pointTypeOptionClickHandler}>
@@ -99,6 +99,9 @@ export default class MatkartaMenu extends React.Component {
 					<span className="selected-line"></span>
 
 				</div>
+
+				<SearchBox ref="searchBox" 
+					onSizeChange={this.searchBoxSizeChangeHandler} />
 
 				<MatkartaCategoryMenu onChange={this.categoryChangeHandler} />
 
