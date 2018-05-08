@@ -19,6 +19,22 @@ export default class SearchBox extends React.Component {
 			window.eventBus.addEventListener('application.searchParams', this.receivedSearchParams.bind(this))
 		}
 
+		this.searchSuggestions = [
+			'tunnbröd',
+//			'mandel',
+			'krydda',
+			'kolbulle',
+			'knäckebröd',
+			'nödbröd',
+			'surdeg',
+//			'ostkaka ',
+//			'ölsupa',
+//			'brynost',
+//			'nävgröt',
+			'kroppkakor',
+			'kanel'
+		];
+
 		this.state = {
 			searchValue: '',
 			expanded: false
@@ -78,22 +94,28 @@ export default class SearchBox extends React.Component {
 		if (window.eventBus) {
 			window.eventBus.addEventListener('Lang.setCurrentLang', this.languageChangedHandler)
 		}
-/*
-		this.setState({
-			searchValue: this.props.searchValue || '',
-			searchField: this.props.searchField || 'record',
-			searchYearFrom: this.props.searchYearFrom,
-			searchYearTo: this.props.searchYearTo,
-			searchPersonRelation: this.props.searchPersonRelation || '',
-			searchGender: this.props.searchGender || ''
-		});
-*/
+
+		this.updateSuggestions();
 	}
 
 	componentWillUnmount() {
 		if (window.eventBus) {
 			window.eventBus.removeEventListener('Lang.setCurrentLang', this.languageChangedHandler)
 		}
+	}
+
+	updateSuggestions() {
+		this.setState({
+			searchSuggestion: 't.ex. '+this.searchSuggestions[Math.floor(Math.random()*this.searchSuggestions.length)]
+		});
+
+		this.updateSuggetionInterval = setInterval(function() {
+			if (this.state.expanded) {
+				this.setState({
+					searchSuggestion: 't.ex. '+this.searchSuggestions[Math.floor(Math.random()*this.searchSuggestions.length)]
+				});
+			}
+		}.bind(this), 10000);
 	}
 
 	windowClickHandler(event) {
@@ -147,26 +169,12 @@ export default class SearchBox extends React.Component {
 			>
 				<input ref="searchInput" type="text" 
 					value={this.state.searchValue} 
+					// placeholder={'t.ex. '+this.searchSuggestions[Math.floor(Math.random()*this.searchSuggestions.length)]}
 					onChange={this.searchValueChangeHandler} 
 					onKeyPress={this.inputKeyPressHandler}
 				></input>
-				
-				<div className="search-label">
-					{
-						this.state.searchValue != '' ?
-						(
-							this.state.searchField == 'record' ? 'Innehåll: ' :
-							this.state.searchField == 'person' ? 'Person: ' :
-							this.state.searchField == 'place' ? 'Ort: ' : ''
-						) : l('Sök')
-					}
-					<strong>
-						{
-							this.state.searchValue != '' ?
-							this.state.searchValue : ''
-						}
-					</strong>
-				</div>
+
+				<div className={'search-placeholder'+(this.state.searchValue.length == 0 ? ' visible' : '')}>{this.state.expanded ? this.state.searchSuggestion : 'Sök'}</div>
 
 				<button className="search-button" onClick={this.executeSimpleSearch}></button>
 			</div>

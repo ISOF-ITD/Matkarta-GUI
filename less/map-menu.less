@@ -26,6 +26,14 @@
 		}
 	}
 
+	@media (max-width: 750px) {
+		top: 0;
+		left: 0;
+		right: 0;
+
+		width: auto;
+	}
+
 	.matkult-header {
 		display: block;
 
@@ -39,6 +47,10 @@
 		background-size: 180px 40px;
 		background-repeat: no-repeat;
 		background-position: center;
+
+		@media (max-width: 550px) {
+			height: 50px;
+		}
 	}
 
 	.point-type-options {
@@ -49,8 +61,14 @@
 		background: @color-yellow;
 
 		border-radius: 2px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
 
 		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+
+		@media (max-width: 550px) {
+			height: 50px;
+		}
 
 		.option-item {
 			display: inline-block;
@@ -67,7 +85,13 @@
 			cursor: pointer;
 
 			&:first-child {
-				border-right: 1px solid #0000003b;
+				border-right: 1px solid #b69f40;
+			}
+
+			@media (max-width: 550px) {
+				height: 50px;
+
+				line-height: 50px;
 			}
 
 			.icon {
@@ -112,6 +136,10 @@
 			
 			.transform(translateX(-50%));
 			.transition(all 300ms ease-in-out);
+
+			@media (max-width: 550px) {
+				bottom: 6px;
+			}
 		}
 
 		&.option-2 {
@@ -282,6 +310,8 @@
 	}
 
 	.search-box {
+		margin-bottom: 5px;
+
 		cursor: pointer;
 
 		opacity: 0;
@@ -291,7 +321,7 @@
 		.transition(all 400ms ease-in-out);
 		.transition-delay(0ms);
 
-		border-top: 1px solid #0000003b;
+		border-top: 1px solid #b69f40;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 
@@ -319,9 +349,7 @@
 
 			margin-bottom: 0;
 
-			opacity: 0;
-
-			pointer-events: none;
+			border-color: transparent;
 
 			.transition(all 300ms ease-in-out);
 		}
@@ -343,6 +371,21 @@
 			@media (max-width: 550px) {
 				top: 21px;
 				left: 20px;
+			}
+		}
+
+		.search-placeholder {
+			display: none;
+
+			position: absolute;
+
+			top: 28px;
+			left: 22px;
+
+			pointer-events: none;
+
+			&.visible {
+				display: block;
 			}
 		}
 
@@ -497,6 +540,81 @@
 
 				>* {
 					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.heading-list-wrapper {
+		position: relative;
+
+		top: 0 !important;
+
+		height: 473px;
+		max-height: 55vh;
+
+		.panel-heading {
+			background: @color-yellow;
+		}
+
+		.minimize-button {
+			border-color: #d2a800 !important;
+		}
+
+		.list-container {
+			border: 0;
+
+			.item {
+				position: relative;
+
+				border-color: #d2a800;
+
+				&.selected {
+					background: @color-yellow;
+
+					color: #000;
+					font-weight: bold;
+
+					.info-link, &:hover .info-link {
+						opacity: 1;
+					}
+				}
+
+				&:hover {
+					.info-link {
+						opacity: 0.8;
+					}
+				}
+
+				.info-link {
+					display: block;
+
+					position: absolute;
+
+					right: 0;
+					top: 0;
+
+					width: 41px;
+					height: 41px;
+
+					border-left: 1px solid #d2a800;
+
+					background-image: url('../img/icon-info.png');
+					background-size: 22px 22px;
+					background-position: center;
+					background-repeat: no-repeat;
+
+					text-indent: 1000px;
+
+					opacity: 0.2;
+
+					overflow: hidden;
+
+					.transition(all 100ms ease-in-out);
+
+					&:hover {
+						background-size: 26px 26px;
+					}
 				}
 			}
 		}

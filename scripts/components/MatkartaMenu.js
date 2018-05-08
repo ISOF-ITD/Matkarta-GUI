@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, hashHistory } from 'react-router';
 
-import MatkartaCategoryMenu from './MatkartaCategoryMenu';
+import CategoryMenu from './CategoryMenu';
 import SearchBox from './SearchBox';
 
 export default class MatkartaMenu extends React.Component {
@@ -82,7 +82,7 @@ export default class MatkartaMenu extends React.Component {
 				{/*<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler} />*/}
 
-				<a href="http://www.sprakochfolkminnen.se/matkult/matkult.html" className="matkult-header"></a>
+				<a href="http://www.sprakochfolkminnen.se/matkult" className="matkult-header"></a>
 
 				<div className={'point-type-options option-'+this.state.pointTypeOption}>
 
@@ -103,7 +103,7 @@ export default class MatkartaMenu extends React.Component {
 				<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler} />
 
-				<MatkartaCategoryMenu onChange={this.categoryChangeHandler} />
+				<CategoryMenu onChange={this.categoryChangeHandler} />
 
 			</div>
 		);
