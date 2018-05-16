@@ -11,6 +11,7 @@ export default class MatkartaMenu extends React.Component {
 		this.searchBoxSizeChangeHandler = this.searchBoxSizeChangeHandler.bind(this);
 		this.pointTypeOptionClickHandler = this.pointTypeOptionClickHandler.bind(this);
 		this.categoryChangeHandler = this.categoryChangeHandler.bind(this);
+		this.searchBoxSearchHandler = this.searchBoxSearchHandler.bind(this);
 
 		window.matkartaMenu = this;
 
@@ -18,7 +19,8 @@ export default class MatkartaMenu extends React.Component {
 			selectedCategory: null,
 			expanded: window.innerWidth > 450,
 			advanced: false,
-			pointTypeOption: 1
+			pointTypeOption: 1,
+			searchValue: ''
 		};
 	}
 
@@ -69,8 +71,19 @@ export default class MatkartaMenu extends React.Component {
 		}.bind(this));
 	}
 
+	searchBoxSearchHandler(event) {
+		console.log('searchBoxSearchHandler')
+		this.setState({
+			searchValue: event.searchValue
+		}, function() {
+			this.updateRoute();
+		}.bind(this));
+	}
+
 	updateRoute() {
-		hashHistory.push('/places'+(this.state.selectedCategory ? '/category/'+this.state.selectedCategory : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
+		console.log('updateRoute');
+		console.log(this.state);
+		hashHistory.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(this.state.selectedCategory ? '/category/'+this.state.selectedCategory : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
 	}
 
 	render() {
@@ -101,7 +114,8 @@ export default class MatkartaMenu extends React.Component {
 				</div>
 
 				<SearchBox ref="searchBox" 
-					onSizeChange={this.searchBoxSizeChangeHandler} />
+					onSizeChange={this.searchBoxSizeChangeHandler}
+					onSearch={this.searchBoxSearchHandler} />
 
 				<CategoryMenu onChange={this.categoryChangeHandler} />
 

@@ -2531,6 +2531,15 @@ there.
   margin-top: 10px;
   font-size: 1.05rem;
 }
+.records-list td.table-buttons a {
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 0 5px 5px 0;
+  background: #ffffff;
+  border-radius: 3px;
+  color: #a6192e;
+  font-size: 0.8rem;
+}
 .records-list thead tr th:first-child {
   width: 50%;
 }
@@ -3309,6 +3318,9 @@ header #Meny + ul > li a {
   top: 0 !important;
   height: 473px;
   max-height: 55vh;
+}
+.menu-wrapper .heading-list-wrapper.minimized {
+  height: auto;
 }
 .menu-wrapper .heading-list-wrapper .panel-heading {
   background: #ffcd00;

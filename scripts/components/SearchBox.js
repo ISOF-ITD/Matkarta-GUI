@@ -50,7 +50,13 @@ export default class SearchBox extends React.Component {
 	}
 
 	executeSimpleSearch() {
-		hashHistory.push('/places'+(this.state.searchValue != '' ? '/search/'+this.state.searchValue : ''));
+//		hashHistory.push('/places'+(this.state.searchValue != '' ? '/search/'+this.state.searchValue : ''));
+		if (this.props.onSearch) {
+			console.log('execute onSearch')
+			this.props.onSearch({
+				searchValue: this.state.searchValue
+			});
+		}
 	}
 
 	searchValueChangeHandler(event) {

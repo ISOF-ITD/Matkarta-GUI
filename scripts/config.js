@@ -18,8 +18,17 @@ export default {
 			// Vilka kategorier vi vill visa i listan, här vill vi bara visa matkarta kategorier men dölja frågolista-kategorier
 			visibleCategories: ['matkarta']
 		},
+
+		recordView: {
+			// Döljd materialtyp i RecordView, används för matkartan
+			hideMaterialType: true
+		},
+
 		// Inaktivera länker till personer, visa bara namnet
-		disablePersonLinks: true
+		disablePersonLinks: true,
+
+		feedbackText: 'Har du hittat några fel i kartan? Har du kompletterande information om frågelistsvaren eller personerna som nämns? Kontakta oss gärna!',
+		feedbackEmail: 'matkult'
 	},
 
 	// Webbsida som kommer visas i en popup-ruta när folk kommer först till kartan
