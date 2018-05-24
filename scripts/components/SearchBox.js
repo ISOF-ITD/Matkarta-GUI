@@ -15,10 +15,6 @@ export default class SearchBox extends React.Component {
 		this.searchBoxClickHandler = this.searchBoxClickHandler.bind(this);
 		this.languageChangedHandler = this.languageChangedHandler.bind(this);
 
-		if (window.eventBus) {
-			window.eventBus.addEventListener('application.searchParams', this.receivedSearchParams.bind(this))
-		}
-
 		this.searchSuggestions = [
 			'tunnbröd',
 //			'mandel',
@@ -80,13 +76,6 @@ export default class SearchBox extends React.Component {
 			this.refs.searchInput.focus();
 		}
 
-	}
-
-
-	receivedSearchParams(event) {
-		this.setState({
-			searchValue: event.target.searchValue || ''
-		});
 	}
 
 	languageChangedHandler() {

@@ -13,6 +13,7 @@ export default class CategoryMenu extends React.Component {
 
 		this.state = {
 			selectedCategory: null,
+			selectedSubcategory: null,
 			selectedCategoryName: null,
 			selectedCategories: []
 		};
@@ -21,6 +22,7 @@ export default class CategoryMenu extends React.Component {
 	componentDidMount() {
 		this.setState({
 			selectedCategory: this.props.selectedCategory,
+			selectedSubcategory: this.props.selectedSubcategory,
 			selectedCategoryName: categories.getCategoryName(this.props.selectedCategory)
 		});
 	}
@@ -29,16 +31,24 @@ export default class CategoryMenu extends React.Component {
 		if (this.props.selectedCategory !== props.selectedCategory) {
 			this.setState({
 				selectedCategory: props.selectedCategory,
+				selectedSubcategory: props.selectedSubcategory,
 				selectedCategoryName: categories.getCategoryName(props.selectedCategory)
 			});
 		}
 	}
 
 	itemClickHandler(event) {
+		event.stopPropagation();
+
 		var selectedCategory = {
-			selectedCategory: categories.categories[event.target.dataset.index].letter,
-			selectedCategoryName: categories.categories[event.target.dataset.index].label
+			selectedCategory: categories.categories[event.currentTarget.dataset.index].category,
+			selectedCategoryName: categories.categories[event.currentTarget.dataset.index].label,
+			selectedSubcategory: null
 		};
+
+		if (event.currentTarget.dataset.subindex != null) {
+			selectedCategory.selectedSubcategory = categories.categories[event.currentTarget.dataset.index].subCategories[event.currentTarget.dataset.subindex].category;
+		}
 
 		this.setState(selectedCategory);
 
@@ -48,7 +58,6 @@ export default class CategoryMenu extends React.Component {
 	}
 
 	selectionChangeHandler(event) {
-		console.log(event.target.value);
 		var value = event.target.value;
 		var selectedCategories = this.state.selectedCategories;
 
@@ -71,11 +80,36 @@ export default class CategoryMenu extends React.Component {
 	render() {
 		var items = categories.categories.map(function(item, index) {
 			if (this.props.multipleSelect) {
-				return <label key={index} data-index={index} className="item"><input value={item.letter} onChange={this.selectionChangeHandler} type="checkbox"/>{item.label}</label>;
+				return <label key={index} data-index={index} className="item"><input value={item.category} onChange={this.selectionChangeHandler} type="checkbox"/>{item.label}</label>;
 			}
 			else {
-				return <a key={index} data-index={index} className={'item'+(item.letter == this.state.selectedCategory ? ' selected' : '')} onClick={this.itemClickHandler}>
-					{item.label}
+				return <a key={index} 
+					data-index={index} 
+					className={'item'+(item.category == this.state.selectedCategory ? ' selected' : '')} 
+					onClick={this.itemClickHandler}>
+
+					{
+						item.image &&
+						<span className="image" style={{backgroundImage: 'url("'+item.image+'")'}} />
+					}
+
+					<span className="label">{item.label}</span>
+
+					{
+						item.subCategories &&
+						<div className="extra-links">
+							{
+								item.subCategories.map(function(link, subIndex) {
+									return <span className={'extra-item'+(item.category == this.state.selectedCategory && link.category == this.state.selectedSubcategory ? ' selected' : '')} 
+									data-index={index}
+									data-subindex={subIndex}
+									onClick={this.itemClickHandler}
+									key={index+'-'+subIndex}>{link.label}</span>
+								}.bind(this))
+							}
+						</div>
+					}
+
 					{
 						item.url &&
 						<span className="info-link" onClick={function(event) {
@@ -83,12 +117,13 @@ export default class CategoryMenu extends React.Component {
 							window.location.href = item.url;
 						}}>Mer</span>
 					}
+
 				</a>;
 			}
 		}.bind(this));
 
 		return (
-			<div>
+			<div className="matkarta-categories">
 				{items}
 			</div>
 		);

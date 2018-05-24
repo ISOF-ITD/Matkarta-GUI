@@ -17,6 +17,7 @@ export default class MatkartaMenu extends React.Component {
 
 		this.state = {
 			selectedCategory: null,
+			selectedSubcategory: null,
 			expanded: window.innerWidth > 450,
 			advanced: false,
 			pointTypeOption: 1,
@@ -37,7 +38,7 @@ export default class MatkartaMenu extends React.Component {
 	}
 
 	componentWillReceiveProps(props) {
-		this.setState({
+		var state = {
 			selectedCategory: props.selectedCategory,
 			searchValue: props.searchValue,
 			searchYearFrom: props.searchYearFrom,
@@ -45,7 +46,9 @@ export default class MatkartaMenu extends React.Component {
 			searchPersonRelation: props.searchPersonRelation,
 			searchGender: props.searchGender,
 			pointTypeOption: props.searchMetadata == 'sitevision_url' ? 2 : 1
-		});
+		};
+
+		this.setState(state);
 	}
 
 	searchBoxSizeChangeHandler(event) {
@@ -65,14 +68,14 @@ export default class MatkartaMenu extends React.Component {
 
 	categoryChangeHandler(event) {
 		this.setState({
-			selectedCategory: event.selectedCategory
+			selectedCategory: event.selectedCategory,
+			selectedSubcategory: event.selectedSubcategory
 		}, function() {
 			this.updateRoute();
 		}.bind(this));
 	}
 
 	searchBoxSearchHandler(event) {
-		console.log('searchBoxSearchHandler')
 		this.setState({
 			searchValue: event.searchValue
 		}, function() {
@@ -81,9 +84,7 @@ export default class MatkartaMenu extends React.Component {
 	}
 
 	updateRoute() {
-		console.log('updateRoute');
-		console.log(this.state);
-		hashHistory.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(this.state.selectedCategory ? '/category/'+this.state.selectedCategory : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
+		hashHistory.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(this.state.selectedCategory ? '/category/'+this.state.selectedCategory+(this.state.selectedSubcategory ? ','+this.state.selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
 	}
 
 	render() {
@@ -106,7 +107,7 @@ export default class MatkartaMenu extends React.Component {
 
 					<a className="option-item" data-option="2" onClick={this.pointTypeOptionClickHandler}>
 						<span className="icon icon-marker-curated"></span>
-						<span className="label">Kurerade</span>
+						<span className="label">Utvalda</span>
 					</a>
 
 					<span className="selected-line"></span>

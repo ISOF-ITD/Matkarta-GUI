@@ -45,7 +45,6 @@ export default class Application extends React.Component {
 		this.popupCloseHandler = this.popupCloseHandler.bind(this);
 		this.popupWindowHideHandler = this.popupWindowHideHandler.bind(this);
 		this.popupWindowShowHandler = this.popupWindowShowHandler.bind(this);
-		this.introOverlayCloseButtonClickHandler = this.introOverlayCloseButtonClickHandler.bind(this);
  
 		this.languageChangedHandler = this.languageChangedHandler.bind(this);
 
@@ -117,45 +116,12 @@ export default class Application extends React.Component {
 		}.bind(this), 10);
 	}
 
-	introOverlayCloseButtonClickHandler() {
-		// Skickar overlay.hide via globala eventBus, OverlayWindow tar emot det
-		eventBus.dispatch('overlay.hide');
-
-		// Registrerar till localStorage om användaren har valt att inte visa intro igen
-		if (this.state.neverShowIntro) {
-			localStorage.setItem('neverShowIntro', true);
-		}
-	}
-
 	languageChangedHandler() {
 		// force render när språk har ändras
 		this.forceUpdate();
 	}
 
 	componentDidMount() {
-		// Skickar alla sök-parametrar via global eventBus
-		if (window.eventBus) {
-			window.eventBus.dispatch('application.searchParams', {
-				selectedCategory: this.props.params.category,
-				searchValue: this.props.params.search,
-				searchField: this.props.params.search_field,
-				searchYearFrom: this.props.params.year_from,
-				searchYearTo: this.props.params.year_to,
-				searchPersonRelation: this.props.params.person_relation,
-				searchGender: this.props.params.gender,
-				searchMetadata: this.props.params.has_metadata
-			});
-
-			window.eventBus.addEventListener('Lang.setCurrentLang', this.languageChangedHandler);
-
-			// Väntar två och halv sekund för att visa intro, om användaren inte har valt att visa den inte igen
-			setTimeout(function() {
-				if (!localStorage.getItem('neverShowIntro')) {
-					eventBus.dispatch('overlay.intro');
-				}
-			}, 2500);
-		}
-
 		this.setState({
 			selectedCategory: this.props.params.category,
 			searchValue: this.props.params.search,
@@ -211,13 +177,15 @@ export default class Application extends React.Component {
 	}
 
 	initSitevisonMenu() {
-		var menu = document.getElementById('Meny').parentElement;
-		menu.onmouseover = function() {
-			menu.classList.add('menu-expanded');
-		};
-		menu.onmouseout = function() {
-			menu.classList.remove('menu-expanded');
-		};
+		if (document.getElementById('Meny')) {
+			var menu = document.getElementById('Meny').parentElement;
+			menu.onmouseover = function() {
+				menu.classList.add('menu-expanded');
+			};
+			menu.onmouseout = function() {
+				menu.classList.remove('menu-expanded');
+			};
+		}
 	}
 
 	updateDocumentClass() {
@@ -265,15 +233,6 @@ export default class Application extends React.Component {
 				<FeedbackOverlay />
 				<TranscriptionOverlay />
 				<PopupNotificationMessage />
-
-				<OverlayWindow title="Välkommen till matkartan">
-					<SitevisionContent url={config.startPageUrl} disableScriptExecution={true} />
-					<div>
-						<hr className="margin-bottom-35"/>
-						<button className="button-primary margin-bottom-0" onClick={this.introOverlayCloseButtonClickHandler}>Stäng</button>
-						<label className="margin-top-10 margin-bottom-0 font-weight-normal u-pull-right"><input className="margin-bottom-0" onChange={function(event) {this.setState({neverShowIntro: event.currentTarget.checked})}.bind(this)} type="checkbox" /> Klicka här för att inte visa den rutan igen.</label>
-					</div>
-				</OverlayWindow>
 
 			</div>
 		);

@@ -14,32 +14,39 @@ export default class CategoryMenu extends React.Component {
 		this.toggleMinimize = this.toggleMinimize.bind(this);
 		this.categoryItemClickHandler = this.categoryItemClickHandler.bind(this);
 
-		if (window.eventBus) {
-			window.eventBus.addEventListener('application.searchParams', this.receivedSearchParams.bind(this))
-		}
-
 		this.state = {
 			menuOpen: false,
 			selectedCategory: null,
+			selectedSubcategory: null,
 			includeNordic: false,
 			minimized: document.documentElement.clientWidth < 500 || false
 		};
 	}
 
 	categoryItemClickHandler(event) {
-		if (event.selectedCategory == this.state.selectedCategory) {
-			var selectedCategory = null;
+		var selectedCategory;
+		var selectedSubcategory;
+
+		if (event.selectedCategory == this.state.selectedCategory && !event.selectedSubcategory && !this.state.selectedSubcategory) {
+			selectedCategory = null;
+			selectedSubcategory = null;
 		}
 		else {
-			var selectedCategory = event.selectedCategory;
+			selectedCategory = event.selectedCategory;
+
+			if (event.selectedSubcategory) {
+				selectedSubcategory = event.selectedSubcategory;
+			}
 		}
 
 		this.setState({
-			selectedCategory: selectedCategory
+			selectedCategory: selectedCategory,
+			selectedSubcategory: selectedSubcategory
 		}, function() {
 			if (this.props.onChange) {
 				this.props.onChange({
-					selectedCategory: this.state.selectedCategory
+					selectedCategory: this.state.selectedCategory,
+					selectedSubcategory: this.state.selectedSubcategory
 				});
 			}
 		}.bind(this));
@@ -54,13 +61,6 @@ export default class CategoryMenu extends React.Component {
 	toggleMinimize() {
 		this.setState({
 			minimized: !this.state.minimized
-		});
-	}
-
-	receivedSearchParams(event) {
-		this.setState({
-			selectedCategory: event.target.selectedCategory,
-			includeNordic: event.target.includeNordic
 		});
 	}
 
@@ -83,7 +83,7 @@ export default class CategoryMenu extends React.Component {
 				</div>
 
 				<div className={'list-container minimal-scrollbar'}>
-					<CategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} />
+					<CategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} selectedSubcategory={this.state.selectedSubcategory} />
 				</div>
 			</div>
 		);

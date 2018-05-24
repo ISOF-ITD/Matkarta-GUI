@@ -28,7 +28,9 @@ export default {
 		disablePersonLinks: true,
 
 		feedbackText: 'Har du hittat några fel i kartan? Har du kompletterande information om frågelistsvaren eller personerna som nämns? Kontakta oss gärna!',
-		feedbackEmail: 'matkult'
+		feedbackEmail: 'matkult',
+
+		copyrightContent: '<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nd/2.5/se/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/2.5/se/88x31.png" /></a><br />Detta verk är licensierat under en <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nd/2.5/se/">Creative Commons Erkännande-IngaBearbetningar 2.5 Sverige Licens</a>.'
 	},
 
 	// Webbsida som kommer visas i en popup-ruta när folk kommer först till kartan
@@ -40,7 +42,7 @@ export default {
 	audioUrl: 'http://www4.sprakochfolkminnen.se/Folkminnen/Svenska_sagor_filer/inspelningar/',
 
 	appUrl: 'http://frigg.sprakochfolkminnen.se/static/js-apps/matkartan/',
-	siteUrl: 'http://www.sprakochfolkminnen.se/matkult/matkartan.html',
+	siteUrl: 'http://www.sprakochfolkminnen.se/matkult/kartan.html',
 
 	apiUrl: 'http://frigg.sprakochfolkminnen.se/sagendatabas/api/es/',
 	restApiUrl: 'http://frigg.sprakochfolkminnen.se/sagendatabas/api/'
