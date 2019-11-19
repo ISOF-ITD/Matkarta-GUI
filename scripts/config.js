@@ -34,16 +34,16 @@ export default {
 	},
 
 	// Webbsida som kommer visas i en popup-ruta när folk kommer först till kartan
-	startPageUrl: 'https://www.sprakochfolkminnen.se/om-oss/kartor/matkartan/om-matkartan---for-popup-ruta-pa-sjalva-kartan.html',
+	startPageUrl: 'https://www.isof.se/om-oss/kartor/matkartan/om-matkartan---for-popup-ruta-pa-sjalva-kartan.html',
 
 	country: 'sweden',
 
-	imageUrl: 'https://www4.sprakochfolkminnen.se/Folkminnen/Svenska_sagor_filer/',
-	audioUrl: 'https://www4.sprakochfolkminnen.se/Folkminnen/Svenska_sagor_filer/dialekter/',
+	imageUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/',
+	audioUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/dialekter/',
 
-	appUrl: 'https://frigg.sprakochfolkminnen.se/static/js-apps/matkartan/',
-	siteUrl: 'https://www.sprakochfolkminnen.se/matkult/kartan.html',
+	appUrl: 'https://frigg.isof.se/static/js-apps/matkartan/',
+	siteUrl: 'https://www.isof.se/matkult/kartan.html',
 
-	apiUrl: 'https://frigg.sprakochfolkminnen.se/sagendatabas/api/es/',
-	restApiUrl: 'https://frigg.sprakochfolkminnen.se/sagendatabas/api/'
+	apiUrl: 'https://frigg.isof.se/sagendatabas/api/es/',
+	restApiUrl: 'https://frigg.isof.se/sagendatabas/api/'
 };

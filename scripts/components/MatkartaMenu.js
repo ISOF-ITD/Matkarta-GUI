@@ -96,7 +96,7 @@ export default class MatkartaMenu extends React.Component {
 				{/*<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler} />*/}
 
-				<a href="https://www.sprakochfolkminnen.se/matkult" className="matkult-header"></a>
+				<a href="https://www.isof.se/matkult" className="matkult-header"></a>
 
 				<div className={'point-type-options option-'+this.state.pointTypeOption}>
 
