@@ -45,5 +45,6 @@ export default {
 	siteUrl: 'https://www.isof.se/matkult/kartan.html',
 
 	apiUrl: 'https://frigg.isof.se/sagendatabas/api/es/',
-	restApiUrl: 'https://frigg.isof.se/sagendatabas/api/'
+	restApiUrl: 'https://frigg.isof.se/sagendatabas/api/',
+	isofHomepageUrl: 'https://frigg.isof.se/sagendatabas/api/isofhomepage/'
 };
