@@ -24,7 +24,6 @@
     "route-parser": "0.0.5",
     "turf-inside": "3.0.12",
     "underscore": "1.8.3",
-    "vinyl-buffer": "1.0.0",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
@@ -34,7 +33,7 @@
     "babelify": "10.0.0",
     "browser-sync": "2.9.6",
     "browserify": "16.5.1",
-    "gulp": "3.9.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "3.0.2",
     "gulp-babel": "5.2.1",
     "gulp-concat": "2.6.0",
@@ -53,6 +52,7 @@
     "path": "0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "vinyl-source-stream": "1.1.0"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
