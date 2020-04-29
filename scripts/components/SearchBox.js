@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { hashHistory } from 'react-router';
 
 import DropdownMenu from './../../ISOF-React-modules/components/controls/DropdownMenu';
 
@@ -46,7 +45,7 @@ export default class SearchBox extends React.Component {
 	}
 
 	executeSimpleSearch() {
-//		hashHistory.push('/places'+(this.state.searchValue != '' ? '/search/'+this.state.searchValue : ''));
+//		history.push('/places'+(this.state.searchValue != '' ? '/search/'+this.state.searchValue : ''));
 		if (this.props.onSearch) {
 			console.log('execute onSearch')
 			this.props.onSearch({
@@ -91,6 +90,10 @@ export default class SearchBox extends React.Component {
 		}
 
 		this.updateSuggestions();
+
+		this.setState({
+			searchValue: this.props.match.params.search || "",
+		})
 	}
 
 	componentWillUnmount() {
@@ -116,7 +119,7 @@ export default class SearchBox extends React.Component {
 	windowClickHandler(event) {
 		var componentEl = ReactDOM.findDOMNode(this.refs.container);
 
-		if (!componentEl.contains(event.target)) {
+		if (!!componentEl && !componentEl.contains(event.target)) {
 			this.setState({
 				expanded: false
 			}, function() {
@@ -127,34 +130,16 @@ export default class SearchBox extends React.Component {
 		}
 	}
 
-/*
+
 	componentWillReceiveProps(props) {
-		if (this.props.searchValue !== props.searchValue || 
-			this.props.searchField !== props.searchField || 
-			this.props.searchYearFrom !== props.searchYearFrom || 
-			this.props.searchYearTo !== props.searchYearTo || 
-			this.props.searchPersonRelation !== props.searchPersonRelation || 
-			this.props.searchGender !== props.searchGender
-		) {
-			var advandedSearch = props.searchYearFrom || props.searchYearTo || props.searchPersonRelation || props.searchGender;
+		if (this.state.searchValue !== props.match.params.search){
 
 			this.setState({
-				searchValue: props.searchValue || '',
-				searchField: props.searchField || 'record',
-				searchYearFrom: props.searchYearFrom,
-				searchYearTo: props.searchYearTo,
-				searchPersonRelation: props.searchPersonRelation || '',
-				searchGender: props.searchGender || '',
-				expanded: advandedSearch,
-				advanced: advandedSearch
-			}, function() {
-				if (this.props.onSizeChange) {
-					this.props.onSizeChange(this.state)
-				}
-			}.bind(this));
+				searchValue: props.match.params.search || '',
+			});
 		}
 	}
-*/
+
 
 	render() {
 		return (

@@ -1,14 +1,16 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { Route } from 'react-router-dom';
 import _ from 'underscore';
 import L from 'leaflet';
 
 import MatkartaMenu from './MatkartaMenu';
 import MapView from './../../ISOF-React-modules/components/views/MapView';
+import PlaceView from './../../ISOF-React-modules/components/views/PlaceView';
 import RoutePopupWindow from './../../ISOF-React-modules/components/controls/RoutePopupWindow';
 import LocalLibraryView from './../../ISOF-React-modules/components/views/LocalLibraryView';
 import ImageOverlay from './../../ISOF-React-modules/components/views/ImageOverlay';
 import FeedbackOverlay from './../../ISOF-React-modules/components/views/FeedbackOverlay';
+import ContributeInfoOverlay from './../../ISOF-React-modules/components/views/ContributeInfoOverlay';
 import TranscriptionOverlay from './../../ISOF-React-modules/components/views/TranscriptionOverlay';
 import PopupNotificationMessage from './../../ISOF-React-modules/components/controls/PopupNotificationMessage';
 import OverlayWindow from './../../ISOF-React-modules/components/controls/OverlayWindow';
@@ -62,12 +64,11 @@ export default class Application extends React.Component {
 
 		this.state = {
 			selectedCategory: null,
+			selectedSubcategory: null,
 
 			searchValue: '',
 			searchField: '',
 			searchMetadata: false,
-
-			params: this.props.params,
 			popupVisible: false
 		};
 	}
@@ -79,21 +80,21 @@ export default class Application extends React.Component {
 	}
 
 	mapMarkerClick(placeId) {
-		// När användaren klickar på en prick, lägger till #place/[id] till url:et,
+		// När användaren klickar på en prick, lägger till #places/[id] till url:et,
 		// detta kommer att hanteras av application router
-		hashHistory.push(routeHelper.createPlacePathFromPlaces(placeId, this.props.location.pathname));
+		this.props.history.push(routeHelper.createPlacePathFromPlaces(placeId, this.props.location.pathname));
 	}
 
 	popupCloseHandler() {
 		// Lägg till rätt route när användaren stänger popuprutan
-		if (hashHistory.getCurrentLocation().pathname.indexOf('record/') > -1) {
-			hashHistory.push(routeHelper.createPlacesPathFromRecord(hashHistory.getCurrentLocation().pathname));
+		if (this.props.location.pathname.indexOf('record/') > -1) {
+			this.props.history.push(routeHelper.createPlacesPathFromRecord(this.props.location.pathname));
 		}
-		else if (hashHistory.getCurrentLocation().pathname.indexOf('place/') > -1) {
-			hashHistory.push(routeHelper.createPlacesPathFromPlace(hashHistory.getCurrentLocation().pathname));
+		else if (this.props.location.pathname.indexOf('places/') > -1) {
+			this.props.history.push(routeHelper.createPlacesPathFromPlace(this.props.location.pathname));
 		}
 		else {
-			hashHistory.push('places');
+			this.props.history.push('places');
 		}
 	}
 
@@ -123,15 +124,15 @@ export default class Application extends React.Component {
 
 	componentDidMount() {
 		this.setState({
-			selectedCategory: this.props.params.category,
-			searchValue: this.props.params.search,
-			searchField: this.props.params.search_field,
-			searchYearFrom: this.props.params.year_from,
-			searchYearTo: this.props.params.year_to,
-			searchPersonRelation: this.props.params.person_relation,
-			searchGender: this.props.params.gender,
-			searchMetadata: this.props.params.has_metadata,
-			params: this.props.params
+			selectedCategory: this.props.match.params.category,
+			selectedSubcategory: this.props.match.params.subcategory,
+			searchValue: this.props.match.params.search,
+			searchField: this.props.match.params.search_field,
+			searchYearFrom: this.props.match.params.year_from,
+			searchYearTo: this.props.match.params.year_to,
+			searchPersonRelation: this.props.match.params.person_relation,
+			searchGender: this.props.match.params.gender,
+			searchMetadata: this.props.match.params.has_metadata,
 		}, function() {
 			this.updateDocumentClass();
 
@@ -150,27 +151,28 @@ export default class Application extends React.Component {
 		// MapView, RecordsList och sökfält tar emot dem
 		if (window.eventBus) {
 			eventBus.dispatch('application.searchParams', {
-				selectedCategory: props.params.category,
-				searchValue: props.params.search,
-				searchField: props.params.search_field,
-				searchYearFrom: props.params.year_from,
-				searchYearTo: props.params.year_to,
-				searchPersonRelation: props.params.person_relation,
-				searchGender: props.params.gender,
-				searchMetadata: props.params.has_metadata
+				selectedCategory: props.match.params.category,
+				selectedSubategory: props.match.params.category,
+				searchValue: props.match.params.search,
+				searchField: props.match.params.search_field,
+				searchYearFrom: props.match.params.year_from,
+				searchYearTo: props.match.params.year_to,
+				searchPersonRelation: props.match.params.person_relation,
+				searchGender: props.match.params.gender,
+				searchMetadata: props.match.params.has_metadata
 			});
 		}
 
 		this.setState({
-			selectedCategory: props.params.category,
-			searchValue: props.params.search,
-			searchField: props.params.search_field,
-			searchYearFrom: props.params.year_from,
-			searchYearTo: props.params.year_to,
-			searchPersonRelation: props.params.person_relation,
-			searchGender: props.params.gender,
-			searchMetadata: props.params.has_metadata,
-			params: props.params
+			selectedCategory: props.match.params.category,
+			selectedSubcategory: props.match.params.subcategory,
+			searchValue: props.match.params.search,
+			searchField: props.match.params.search_field,
+			searchYearFrom: props.match.params.year_from,
+			searchYearTo: props.match.params.year_to,
+			searchPersonRelation: props.match.params.person_relation,
+			searchGender: props.match.params.gender,
+			searchMetadata: props.match.params.has_metadata,
 		}, function() {
 			this.updateDocumentClass();
 		}.bind(this));
@@ -208,33 +210,82 @@ export default class Application extends React.Component {
 
 	render() {
 		// Innehåll av RoutePopupWindow, kommer från application route i app.js
-		var popup = this.props.popup;
+		const _props = this.props;
 
 		return (
-			<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
+				<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
 
-				<MapView searchParams={this.state.params} onMarkerClick={this.mapMarkerClick} defaultMarkerIcon={this.defaultMarkerIcon} hideMapmodeMenu={true}>
 
-					<MatkartaMenu searchMetadata={this.state.searchMetadata} selectedCategory={this.state.selectedCategory} />
+					<Route 
+						exact path={[
+							"/places/:place_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+							"/places/:place_id/category/:category/(has_metadata)?/:has_metadata?",
+							"/places/:place_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+							"/places/:place_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+							"/places/:place_id/search/:search/(has_metadata)?/:has_metadata?",
+							"/places/:place_id/has_metadata/:has_metadata",
+							"/places/:place_id",
+						]}
+						render={(_props) =>
+							<RoutePopupWindow
+								onShow={this.popupWindowShowHandler}
+								onHide={this.popupWindowHideHandler}
+								onClose={this.popupCloseHandler}
+								router={this.context.router}>
+									<PlaceView {..._props}/>
+							</RoutePopupWindow>
+						}
+					/>
+					<Route path = "/places" render={() =>
+						<RoutePopupWindow
+							onShow={this.popupWindowShowHandler}
+							onHide={this.popupWindowHideHandler}
+							onClose={this.popupCloseHandler}
+							router={this.context.router}>
+								{_props.popup}
+						</RoutePopupWindow>
+					}/>
+					<Route path = "/record" render={() =>
+						<RoutePopupWindow
+							onShow={this.popupWindowShowHandler}
+							onHide={this.popupWindowHideHandler}
+							onClose={this.popupCloseHandler}
+							router={this.context.router}>
+								{_props.popup}
+						</RoutePopupWindow>
+					}/>
 
-					<LocalLibraryView headerText={l('Mina sägner')} />
+					<MapView
+						searchParams={this.props.match.params}
+						onMarkerClick={this.mapMarkerClick}
+						defaultMarkerIcon={this.defaultMarkerIcon}
+						hideMapmodeMenu={true}
+					>
 
-					<GlobalAudioPlayer />
+						<MatkartaMenu
+							searchMetadata={this.state.searchMetadata}
+							selectedCategory={this.state.selectedCategory}
+							selectedSubcategory={this.state.selectedSubcategory}
+							{..._props}
+						/>
 
-				</MapView>
+						<LocalLibraryView headerText={l('Mina sägner')} {..._props} />
 
-				<RoutePopupWindow onShow={this.popupWindowShowHandler} onHide={this.popupWindowHideHandler} router={this.context.router} onClose={this.popupCloseHandler}>
-					{popup}
-				</RoutePopupWindow>
+						<GlobalAudioPlayer />
 
-				<div className="map-progress"><div className="indicator"></div></div>
+					</MapView>
 
-				<ImageOverlay />
-				<FeedbackOverlay />
-				<TranscriptionOverlay />
-				<PopupNotificationMessage />
+					
 
-			</div>
+					<div className="map-progress"><div className="indicator"></div></div>
+
+					<ImageOverlay />
+					<FeedbackOverlay />
+					<ContributeInfoOverlay />
+					<TranscriptionOverlay />
+					<PopupNotificationMessage />
+
+				</div>
 		);
 	}
 }

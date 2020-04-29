@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
-import { hashHistory } from 'react-router';
 
 import CategoryList from './CategoryList';
 import categories from './../utils/matkartaCategories.js';
@@ -16,18 +15,15 @@ export default class CategoryMenu extends React.Component {
 
 		this.state = {
 			menuOpen: false,
-			selectedCategory: null,
-			selectedSubcategory: null,
-			includeNordic: false,
+			// includeNordic: false, //not used here. remove? /rico
 			minimized: document.documentElement.clientWidth < 500 || false
 		};
 	}
-
 	categoryItemClickHandler(event) {
-		var selectedCategory;
-		var selectedSubcategory;
+		let selectedCategory;
+		let selectedSubcategory;
 
-		if (event.selectedCategory == this.state.selectedCategory && !event.selectedSubcategory && !this.state.selectedSubcategory) {
+		if (event.selectedCategory == this.props.selectedCategory && !event.selectedSubcategory && !this.props.selectedSubcategory) {
 			selectedCategory = null;
 			selectedSubcategory = null;
 		}
@@ -39,17 +35,14 @@ export default class CategoryMenu extends React.Component {
 			}
 		}
 
-		this.setState({
-			selectedCategory: selectedCategory,
-			selectedSubcategory: selectedSubcategory
-		}, function() {
-			if (this.props.onChange) {
-				this.props.onChange({
-					selectedCategory: this.state.selectedCategory,
-					selectedSubcategory: this.state.selectedSubcategory
-				});
-			}
-		}.bind(this));
+		
+		if (this.props.onChange) {
+			this.props.onChange({
+				selectedCategory: selectedCategory,
+				selectedSubcategory: selectedSubcategory
+			});
+		}
+
 	}
 
 	menuButtonClick() {
@@ -64,18 +57,14 @@ export default class CategoryMenu extends React.Component {
 		});
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
-		return this.state.selectedCategory != nextState.selectedCategory || this.state.minimized != nextState.minimized;
-	}
-
 	render() {
 		return (
 			<div ref="container" className={'heading-list-wrapper'+(this.state.minimized ? ' minimized' : '')}>
 				<div className="list-heading panel-heading">
 					<span className="heading-label">{l('Kategorier')}<span className="selected-category">
 						{
-							this.state.selectedCategory &&
-							<span>: <strong>{categories.getCategoryName(this.state.selectedCategory)}</strong></span>
+							this.props.selectedCategory &&
+							<span>: <strong>{categories.getCategoryName(this.props.selectedCategory)}</strong></span>
 						}
 					</span></span>
 
@@ -83,7 +72,7 @@ export default class CategoryMenu extends React.Component {
 				</div>
 
 				<div className={'list-container minimal-scrollbar'}>
-					<CategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.state.selectedCategory} selectedSubcategory={this.state.selectedSubcategory} />
+					<CategoryList onItemClick={this.categoryItemClickHandler} ref="categoryList" selectedCategory={this.props.selectedCategory} selectedSubcategory={this.props.selectedSubcategory} />
 				</div>
 			</div>
 		);

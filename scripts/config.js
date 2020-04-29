@@ -30,7 +30,9 @@ export default {
 		feedbackText: 'Har du hittat några fel i kartan? Har du kompletterande information om frågelistsvaren eller personerna som nämns? Kontakta oss gärna!',
 		feedbackEmail: 'matkult',
 
-		copyrightContent: '<a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/2.5/se/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/2.5/se/88x31.png" /></a><br />Detta verk är licensierat under en <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/2.5/se/">Creative Commons Erkännande-IngaBearbetningar 2.5 Sverige Licens</a>.'
+		copyrightContent: '<a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/2.5/se/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/2.5/se/88x31.png" /></a><br />Detta verk är licensierat under en <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nd/2.5/se/">Creative Commons Erkännande-IngaBearbetningar 2.5 Sverige Licens</a>.',
+
+		contributeInfoText: 'Har du hittat några fel i Matkartan? Har du kompletterande information? Eller vill du hjälpa till med att skriva rent uppteckningar som vi kan lägga ut på Matkartan? Kontakta oss gärna!'
 	},
 
 	// Webbsida som kommer visas i en popup-ruta när folk kommer först till kartan

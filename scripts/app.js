@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, hashHistory, Redirect } from 'react-router'
+import { HashRouter, Route, Redirect } from 'react-router-dom'
 
 import Application from './components/Application';
 import RecordListWrapper from './../ISOF-React-modules/components/views/RecordListWrapper';
 import RecordView from './../ISOF-React-modules/components/views/RecordView';
-import PlaceView from './../ISOF-React-modules/components/views/PlaceView';
-import PersonView from './../ISOF-React-modules/components/views/PersonView';
 
-console.log('Matkartan running React.js version '+React.version);
+console.log(`Matkartan running React.js version ${React.version} and ReactDOM version ${ReactDOM.version}`);
 
 /*
 Object.assign polyfill
@@ -59,23 +57,64 @@ window.l = Lang.get;
 
 // Initalisera React.js Router som bestämmer vilken "sida" användaren ser baserad på url:et
 ReactDOM.render(
-	<Router history={hashHistory}>
-		<Redirect from="/" to="/places"/>
-		<Route path="/" component={Application}>
 
-			<Route path="/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)(/page/:page)" 
-				manuallyOpenPopup={true} openButtonLabel="Visa sökträffar som lista" highlightRecordsWithMetadataField="sitevision_url" components={{popup: RecordListWrapper}}/>
-
-			<Route path="/place/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)" 
-				 highlightRecordsWithMetadataField="sitevision_url" components={{popup: PlaceView}}/>
-
-			<Route path="/person/:person_id" 
-				components={{popup: PersonView}}/>
-
-			<Route path="/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)" 
-				fullWidthContentArea={true} components={{popup: RecordView}}/>
-
+	<HashRouter>
+		<Route exact path="/">
+			<Redirect to="/places" />
 		</Route>
-	</Router>,
+		<Route 
+			path={[
+				"/places/text_ids/:text_ids",
+				"/places/search/:search?/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/places/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+				"/places/search/:search/(has_metadata)?/:has_metadata?",
+				"/places/search_field/:search_field",
+				"/places/:place_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/places/:place_id/category/:category/(has_metadata)?/:has_metadata?",
+				"/places/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/places/category/:category/(has_metadata)?/:has_metadata?",
+				"/places/:place_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/places/:place_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+				"/places/:place_id/search/:search/(has_metadata)?/:has_metadata?",
+				"/places/:place_id/(has_metadata)?/:has_metadata?",
+				"/places/(has_metadata)?/:has_metadata?", // this has to be the last item in order to match the other routes, 
+				// otherwise it will match longer paths as well
+			]}
+			render={(match) =>
+				<Application
+					popup={<RecordListWrapper 
+						{...match} 
+						manuallyOpenPopup={true}
+						highlightRecordsWithMetadataField="sitevision_url" 
+						openButtonLabel="Visa sökträffar som lista"
+						disableRouterPagination={true}
+						/>}
+					{...match}	
+				/>
+			}
+			/>
+		<Route 
+			path={[
+				"/record/:record_id/text_ids/:text_ids/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/search/:search/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/search_field/:search_field/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/category/:category/(has_metadata)?/:has_metadata?",
+				"/record/:record_id/(has_metadata)?/:has_metadata?",
+			]}
+			render={(match) =>
+				<Application
+					popup={<RecordView
+						{...match} 
+						fullWidthContentArea={true}
+						/>}
+					{...match}	
+				/>
+			}
+		/>
+	</HashRouter>,
 	document.getElementById('app')
+
 );

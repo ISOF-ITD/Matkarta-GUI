@@ -1,5 +1,6 @@
 import React from 'react';
-import { Router, hashHistory } from 'react-router';
+import { Router } from 'react-router-dom';
+//import history from './../../ISOF-React-modules/components/History';
 
 import CategoryMenu from './CategoryMenu';
 import SearchBox from './SearchBox';
@@ -16,35 +17,22 @@ export default class MatkartaMenu extends React.Component {
 		window.matkartaMenu = this;
 
 		this.state = {
-			selectedCategory: null,
-			selectedSubcategory: null,
+			// selectedSubcategory: null,
 			expanded: window.innerWidth > 450,
 			advanced: false,
 			pointTypeOption: 1,
-			searchValue: ''
+			searchValue: '',
 		};
 	}
 
 	componentDidMount() {
 		this.setState({
-			selectedCategory: this.props.selectedCategory,
-			searchValue: this.props.searchValue,
-			searchYearFrom: this.props.searchYearFrom,
-			searchYearTo: this.props.searchYearTo,
-			searchPersonRelation: this.props.searchPersonRelation,
-			searchGender: this.props.searchGender,
 			pointTypeOption: this.props.searchMetadata == 'sitevision_url' ? 2 : 1
 		});
 	}
 
 	componentWillReceiveProps(props) {
 		var state = {
-			selectedCategory: props.selectedCategory,
-			searchValue: props.searchValue,
-			searchYearFrom: props.searchYearFrom,
-			searchYearTo: props.searchYearTo,
-			searchPersonRelation: props.searchPersonRelation,
-			searchGender: props.searchGender,
 			pointTypeOption: props.searchMetadata == 'sitevision_url' ? 2 : 1
 		};
 
@@ -67,12 +55,7 @@ export default class MatkartaMenu extends React.Component {
 	}
 
 	categoryChangeHandler(event) {
-		this.setState({
-			selectedCategory: event.selectedCategory,
-			selectedSubcategory: event.selectedSubcategory
-		}, function() {
-			this.updateRoute();
-		}.bind(this));
+		this.updateRoute(event.selectedCategory, event.selectedSubcategory);
 	}
 
 	searchBoxSearchHandler(event) {
@@ -83,11 +66,12 @@ export default class MatkartaMenu extends React.Component {
 		}.bind(this));
 	}
 
-	updateRoute() {
-		hashHistory.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(this.state.selectedCategory ? '/category/'+this.state.selectedCategory+(this.state.selectedSubcategory ? ','+this.state.selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
+	updateRoute(selectedCategory = this.props.selectedCategory, selectedSubcategory = this.props.selectedSubcategory) {
+		this.props.history.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(selectedCategory ? '/category/'+selectedCategory+(selectedSubcategory ? ','+selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
 	}
 
 	render() {
+		let _props = this.props
 		return (
 			<div className={'menu-wrapper'+(this.state.expanded ? ' menu-expanded' : '')+(this.state.advanced ? ' advanced-menu-view' : '')}>
 
@@ -116,9 +100,11 @@ export default class MatkartaMenu extends React.Component {
 
 				<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler}
-					onSearch={this.searchBoxSearchHandler} />
+					onSearch={this.searchBoxSearchHandler} 
+					{..._props}
+				/>
 
-				<CategoryMenu onChange={this.categoryChangeHandler} />
+				<CategoryMenu onChange={this.categoryChangeHandler} {..._props} selectedSubcategory={this.props.selectedSubcategory} />
 
 			</div>
 		);
