@@ -9,7 +9,7 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
@@ -63,7 +63,7 @@ function bundleApp(isProduction) {
   		// transform ES6 and JSX to ES5 with babelify
 	  	.transform("babelify", {presets: ["@babel/preset-env", "@babel/preset-react"]})
 	    .bundle()
-	    .on('error', gutil.log)
+	    .on('error', log)
 	    .pipe(source('app.js'))
     	.pipe(buffer())
         .pipe(gulpif(production, uglify()))
