@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import _ from 'underscore';
 import L from 'leaflet';
 
@@ -215,45 +215,46 @@ export default class Application extends React.Component {
 		return (
 				<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
 
-
-					<Route 
-						exact path={[
-							"/places/:place_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
-							"/places/:place_id/category/:category/(has_metadata)?/:has_metadata?",
-							"/places/:place_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
-							"/places/:place_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
-							"/places/:place_id/search/:search/(has_metadata)?/:has_metadata?",
-							"/places/:place_id/has_metadata/:has_metadata",
-							"/places/:place_id",
-						]}
-						render={(_props) =>
+					<Switch>
+						<Route 
+							exact path={[
+								"/places/:place_id([0-9]+)/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+								"/places/:place_id([0-9]+)/category/:category/(has_metadata)?/:has_metadata?",
+								"/places/:place_id([0-9]+)/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+								"/places/:place_id([0-9]+)/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+								"/places/:place_id([0-9]+)/search/:search/(has_metadata)?/:has_metadata?",
+								"/places/:place_id([0-9]+)/(has_metadata)?/:has_metadata?",
+								// "/places/:place_id",
+							]}
+							render={(_props) =>
+								<RoutePopupWindow
+								onShow={this.popupWindowShowHandler}
+									onHide={this.popupWindowHideHandler}
+									onClose={this.popupCloseHandler}
+									router={this.context.router}>
+										<PlaceView {..._props}/>
+								</RoutePopupWindow>
+							}
+						/>
+						<Route path = "/places" render={() =>
 							<RoutePopupWindow
 								onShow={this.popupWindowShowHandler}
 								onHide={this.popupWindowHideHandler}
 								onClose={this.popupCloseHandler}
 								router={this.context.router}>
-									<PlaceView {..._props}/>
+									{_props.popup}
 							</RoutePopupWindow>
-						}
-					/>
-					<Route path = "/places" render={() =>
-						<RoutePopupWindow
-							onShow={this.popupWindowShowHandler}
-							onHide={this.popupWindowHideHandler}
-							onClose={this.popupCloseHandler}
-							router={this.context.router}>
-								{_props.popup}
-						</RoutePopupWindow>
-					}/>
-					<Route path = "/record" render={() =>
-						<RoutePopupWindow
-							onShow={this.popupWindowShowHandler}
-							onHide={this.popupWindowHideHandler}
-							onClose={this.popupCloseHandler}
-							router={this.context.router}>
-								{_props.popup}
-						</RoutePopupWindow>
-					}/>
+						}/>
+						<Route path = "/record" render={() =>
+							<RoutePopupWindow
+								onShow={this.popupWindowShowHandler}
+								onHide={this.popupWindowHideHandler}
+								onClose={this.popupCloseHandler}
+								router={this.context.router}>
+									{_props.popup}
+							</RoutePopupWindow>
+						}/>
+					</Switch>
 
 					<MapView
 						searchParams={this.props.match.params}
