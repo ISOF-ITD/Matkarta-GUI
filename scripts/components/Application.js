@@ -211,6 +211,7 @@ export default class Application extends React.Component {
 	render() {
 		// Innehåll av RoutePopupWindow, kommer från application route i app.js
 		const _props = this.props;
+		const match = this.props.match;
 
 		return (
 				<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
@@ -224,7 +225,7 @@ export default class Application extends React.Component {
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
 									router={this.context.router}>
-										<PlaceView {..._props}/>
+										<PlaceView {..._props} match={match}/>
 								</RoutePopupWindow>
 							}
 						/>
