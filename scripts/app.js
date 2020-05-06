@@ -95,14 +95,14 @@ ReactDOM.render(
 			/>
 		<Route 
 			path={[
-				"/record/:record_id/text_ids/:text_ids/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/search/:search/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/search_field/:search_field/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/category/:category/(has_metadata)?/:has_metadata?",
-				"/record/:record_id/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/text_ids/:text_ids/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/search/:search/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/search_field/:search_field/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/category/:category/(has_metadata)?/:has_metadata?",
+				"/records/:record_id/(has_metadata)?/:has_metadata?",
 			]}
 			render={(match) =>
 				<Application

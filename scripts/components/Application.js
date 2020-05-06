@@ -87,7 +87,7 @@ export default class Application extends React.Component {
 
 	popupCloseHandler() {
 		// Lägg till rätt route när användaren stänger popuprutan
-		if (this.props.location.pathname.indexOf('record/') > -1) {
+		if (this.props.location.pathname.indexOf('records/') > -1) {
 			this.props.history.push(routeHelper.createPlacesPathFromRecord(this.props.location.pathname));
 		}
 		else if (this.props.location.pathname.indexOf('places/') > -1) {
@@ -241,7 +241,7 @@ export default class Application extends React.Component {
 								</RoutePopupWindow>
 						}/>
 						<Route
-							path="/record"
+							path="/records"
 							render={() =>
 								<RoutePopupWindow
 									onShow={this.popupWindowShowHandler}

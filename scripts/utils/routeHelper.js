@@ -3,7 +3,7 @@ import RouteParser from 'route-parser';
 const searchRoute = '(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
 const placesRoute = '/places(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
 const placeRoute = '/places/:place_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
-const recordRoute = '/record/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
+const recordRoute = '/records/:record_id(/text_ids/:text_ids)(/search/:search)(/search_field/:search_field)(/category/:category)(/has_metadata/:has_metadata)';
 
 export default {
 	createPlacePathFromPlaces(placeId, placesPath) {
