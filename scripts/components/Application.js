@@ -94,7 +94,7 @@ export default class Application extends React.Component {
 			this.props.history.push(routeHelper.createPlacesPathFromPlace(this.props.location.pathname));
 		}
 		else {
-			this.props.history.push('places');
+			this.props.history.push('/places');
 		}
 	}
 
