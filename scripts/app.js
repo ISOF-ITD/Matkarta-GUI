@@ -70,11 +70,9 @@ ReactDOM.render(
 		)} />
 		<Route 
 			path={[
-				"/places/text_ids/:text_ids",
-				"/places/search/:search?/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
+				"/places/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/places/search/:search/category/:category/(has_metadata)?/:has_metadata?",
 				"/places/search/:search/(has_metadata)?/:has_metadata?",
-				"/places/search_field/:search_field",
 				"/places/:place_id([0-9]+)/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/places/:place_id([0-9]+)/category/:category/(has_metadata)?/:has_metadata?",
 				"/places/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
@@ -101,11 +99,9 @@ ReactDOM.render(
 			/>
 		<Route 
 			path={[
-				"/records/:record_id/text_ids/:text_ids/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/search/:search/category/:category/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/search/:search/(has_metadata)?/:has_metadata?",
-				"/records/:record_id/search_field/:search_field/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/category/:category/(has_metadata)?/:has_metadata?",
 				"/records/:record_id/(has_metadata)?/:has_metadata?",

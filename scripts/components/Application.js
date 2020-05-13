@@ -67,7 +67,6 @@ export default class Application extends React.Component {
 			selectedSubcategory: null,
 
 			searchValue: '',
-			searchField: '',
 			searchMetadata: false,
 			popupVisible: false
 		};
@@ -127,7 +126,6 @@ export default class Application extends React.Component {
 			selectedCategory: this.props.match.params.category,
 			selectedSubcategory: this.props.match.params.subcategory,
 			searchValue: this.props.match.params.search,
-			searchField: this.props.match.params.search_field,
 			searchYearFrom: this.props.match.params.year_from,
 			searchYearTo: this.props.match.params.year_to,
 			searchPersonRelation: this.props.match.params.person_relation,
@@ -154,7 +152,6 @@ export default class Application extends React.Component {
 				selectedCategory: props.match.params.category,
 				selectedSubategory: props.match.params.category,
 				searchValue: props.match.params.search,
-				searchField: props.match.params.search_field,
 				searchYearFrom: props.match.params.year_from,
 				searchYearTo: props.match.params.year_to,
 				searchPersonRelation: props.match.params.person_relation,
@@ -167,7 +164,6 @@ export default class Application extends React.Component {
 			selectedCategory: props.match.params.category,
 			selectedSubcategory: props.match.params.subcategory,
 			searchValue: props.match.params.search,
-			searchField: props.match.params.search_field,
 			searchYearFrom: props.match.params.year_from,
 			searchYearTo: props.match.params.year_to,
 			searchPersonRelation: props.match.params.person_relation,
