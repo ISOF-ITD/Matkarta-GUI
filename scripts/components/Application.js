@@ -69,7 +69,8 @@ export default class Application extends React.Component {
 
 			searchValue: '',
 			searchMetadata: false,
-			popupVisible: false
+			popupVisible: false,
+			match: '',
 		};
 	}
 
@@ -132,6 +133,7 @@ export default class Application extends React.Component {
 			searchPersonRelation: this.props.match.params.person_relation,
 			searchGender: this.props.match.params.gender,
 			searchMetadata: this.props.match.params.has_metadata,
+			match: this.props.match,
 		}, function() {
 			this.updateDocumentClass();
 
@@ -170,6 +172,7 @@ export default class Application extends React.Component {
 			searchPersonRelation: props.match.params.person_relation,
 			searchGender: props.match.params.gender,
 			searchMetadata: props.match.params.has_metadata,
+			match: props.match,
 		}, function() {
 			this.updateDocumentClass();
 		}.bind(this));
