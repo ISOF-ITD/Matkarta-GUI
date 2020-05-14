@@ -66,7 +66,7 @@ export default class MatkartaMenu extends React.Component {
 		}.bind(this));
 	}
 
-	updateRoute(selectedCategory = this.props.selectedCategory, selectedSubcategory = this.props.selectedSubcategory) {
+	updateRoute(selectedCategory, selectedSubcategory) {
 		this.props.history.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(selectedCategory ? '/category/'+selectedCategory+(selectedSubcategory ? ','+selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
 	}
 

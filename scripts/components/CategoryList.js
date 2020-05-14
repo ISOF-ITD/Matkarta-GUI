@@ -22,7 +22,7 @@ export default class CategoryList extends React.Component {
 			selectedSubcategory: null
 		};
 
-		if (event.currentTarget.dataset.subindex != null) {
+		if (event.currentTarget.dataset.subindex && event.currentTarget.dataset.subindex != null) {
 			selectedCategory.selectedSubcategory = categories.categories[event.currentTarget.dataset.index].subCategories[event.currentTarget.dataset.subindex].category;
 		}
 		if (this.props.onItemClick) {
@@ -72,7 +72,7 @@ export default class CategoryList extends React.Component {
 							{
 								item.subCategories.map(function(link, subIndex) {
 				
-									return <span className={'extra-item'+(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() && link.category.toUpperCase() == this.props.selectedSubcategory.toUpperCase() ? ' selected' : '')} 
+									return <span className={'extra-item'+(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() && this.props.selectedSubcategory && link.category.toUpperCase() == this.props.selectedSubcategory.toUpperCase() ? ' selected' : '')} 
 									data-index={index}
 									data-subindex={subIndex}
 									onClick={this.itemClickHandler}
