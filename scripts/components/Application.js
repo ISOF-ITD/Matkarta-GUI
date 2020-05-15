@@ -267,7 +267,7 @@ export default class Application extends React.Component {
 							{...props}
 						/>
 
-						<LocalLibraryView headerText={l('Mina sägner')}  />
+						<LocalLibraryView headerText={l('Mina sägner')} history={props.history} />
 
 						<GlobalAudioPlayer />
 
