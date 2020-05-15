@@ -65,11 +65,12 @@ ReactDOM.render(
 		<Route exact path="/record/:record_id" render={({ match }) => (
 			<Redirect to={`/records/${match.params.record_id}`} />
 		)} />
-		<Route exact path="/place/:place_id" render={({ match }) => (
+		<Route exact path="/place/:place_id([0-9]+)" render={({ match }) => (
 			<Redirect to={`/places/${match.params.place_id}`} />
 		)} />
 		<Route 
 			path={[
+				"/places/record_ids/:record_ids",
 				"/places/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/places/search/:search/category/:category/(has_metadata)?/:has_metadata?",
 				"/places/search/:search/(has_metadata)?/:has_metadata?",
