@@ -147,7 +147,7 @@ export default class Application extends React.Component {
 		this.initSitevisonMenu();
 	}
 
-	componentWillReceiveProps(props) {
+	UNSAFE_componentWillReceiveProps(props) {
 		// När application tar emot parametrar från url:et, skicka dem via eventBus
 		// MapView, RecordsList och sökfält tar emot dem
 		if (window.eventBus) {
@@ -209,9 +209,6 @@ export default class Application extends React.Component {
 	}
 
 	render() {
-		// Innehåll av RoutePopupWindow, kommer från application route i app.js
-		let props = this.props;
-		let match = this.props.match;
 
 		return (
 				<div className={'app-container'+(this.state.popupVisible ? ' has-overlay' : '')}>
@@ -224,7 +221,7 @@ export default class Application extends React.Component {
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
 									router={this.context.router}>
-										<PlaceView match={match} />
+										<PlaceView match={this.props.match} />
 								</RoutePopupWindow>
 						</Route>
 						<Route 
@@ -235,7 +232,7 @@ export default class Application extends React.Component {
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
 									router={this.context.router}>
-										{props.popup}
+										{this.props.popup}
 								</RoutePopupWindow>
 						}/>
 						<Route
@@ -246,7 +243,7 @@ export default class Application extends React.Component {
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
 									router={this.context.router}>
-										<RecordView {...props}
+										<RecordView {...this.props}
 										// fullWidthContentArea={true}
 										/>
 								</RoutePopupWindow>
@@ -264,10 +261,10 @@ export default class Application extends React.Component {
 							searchMetadata={this.state.searchMetadata}
 							selectedCategory={this.state.selectedCategory}
 							selectedSubcategory={this.state.selectedSubcategory}
-							{...props}
+							{...this.props}
 						/>
 
-						<LocalLibraryView headerText={l('Mina sägner')} history={props.history} />
+						<LocalLibraryView headerText={l('Mina sägner')} history={this.props.history} />
 
 						<GlobalAudioPlayer />
 

@@ -70,6 +70,7 @@ ReactDOM.render(
 		)} />
 		<Route 
 			path={[
+				"/places/:place_id([0-9]+)/record_ids/:record_ids",
 				"/places/record_ids/:record_ids",
 				"/places/search/:search/category/:category,:subcategory/(has_metadata)?/:has_metadata?",
 				"/places/search/:search/category/:category/(has_metadata)?/:has_metadata?",

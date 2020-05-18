@@ -31,7 +31,7 @@ export default class MatkartaMenu extends React.Component {
 		});
 	}
 
-	componentWillReceiveProps(props) {
+	UNSAFE_componentWillReceiveProps(props) {
 		var state = {
 			pointTypeOption: props.searchMetadata == 'sitevision_url' ? 2 : 1
 		};

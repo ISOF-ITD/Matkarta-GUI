@@ -131,7 +131,7 @@ export default class SearchBox extends React.Component {
 	}
 
 
-	componentWillReceiveProps(props) {
+	UNSAFE_componentWillReceiveProps(props) {
 		if (this.state.searchValue !== props.match.params.search){
 
 			this.setState({
