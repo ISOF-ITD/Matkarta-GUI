@@ -67,10 +67,10 @@ export default class Application extends React.Component {
 			selectedCategory: null,
 			selectedSubcategory: null,
 
-			searchValue: '',
+			// searchValue: '',
 			searchMetadata: false,
 			popupVisible: false,
-			match: '',
+			// match: '',
 		};
 	}
 
@@ -124,17 +124,17 @@ export default class Application extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({
-			selectedCategory: this.props.match.params.category,
-			selectedSubcategory: this.props.match.params.subcategory,
-			searchValue: this.props.match.params.search,
-			searchYearFrom: this.props.match.params.year_from,
-			searchYearTo: this.props.match.params.year_to,
-			searchPersonRelation: this.props.match.params.person_relation,
-			searchGender: this.props.match.params.gender,
-			searchMetadata: this.props.match.params.has_metadata,
-			match: this.props.match,
-		}, function() {
+		// this.setState({
+		// 	selectedCategory: this.props.match.params.category,
+		// 	selectedSubcategory: this.props.match.params.subcategory,
+		// 	searchValue: this.props.match.params.search,
+		// 	searchYearFrom: this.props.match.params.year_from,
+		// 	searchYearTo: this.props.match.params.year_to,
+		// 	searchPersonRelation: this.props.match.params.person_relation,
+		// 	searchGender: this.props.match.params.gender,
+		// 	searchMetadata: this.props.match.params.has_metadata,
+		// 	match: this.props.match,
+		// }, function() {
 			this.updateDocumentClass();
 
 			setTimeout(function() {
@@ -142,7 +142,7 @@ export default class Application extends React.Component {
 				// detta kör css transition som animerar gränssnittet i början
 				document.body.classList.add('app-initialized');
 			}.bind(this), 1000);
-		}.bind(this));
+		// }.bind(this));
 
 		this.initSitevisonMenu();
 	}
@@ -163,19 +163,19 @@ export default class Application extends React.Component {
 			});
 		}
 
-		this.setState({
-			selectedCategory: props.match.params.category,
-			selectedSubcategory: props.match.params.subcategory,
-			searchValue: props.match.params.search,
-			searchYearFrom: props.match.params.year_from,
-			searchYearTo: props.match.params.year_to,
-			searchPersonRelation: props.match.params.person_relation,
-			searchGender: props.match.params.gender,
-			searchMetadata: props.match.params.has_metadata,
-			match: props.match,
-		}, function() {
+		// this.setState({
+		// 	selectedCategory: props.match.params.category,
+		// 	selectedSubcategory: props.match.params.subcategory,
+		// 	searchValue: props.match.params.search,
+		// 	searchYearFrom: props.match.params.year_from,
+		// 	searchYearTo: props.match.params.year_to,
+		// 	searchPersonRelation: props.match.params.person_relation,
+		// 	searchGender: props.match.params.gender,
+		// 	searchMetadata: props.match.params.has_metadata,
+		// 	match: props.match,
+		// }, function() {
 			this.updateDocumentClass();
-		}.bind(this));
+		// }.bind(this));
 	}
 
 	initSitevisonMenu() {
@@ -215,14 +215,18 @@ export default class Application extends React.Component {
 
 					<Switch>
 						<Route 
-							path="/places/:place_id([0-9]+)">
+							path="/places/:place_id([0-9]+)"
+							render={()=>
 								<RoutePopupWindow
-								onShow={this.popupWindowShowHandler}
+									onShow={this.popupWindowShowHandler}
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
-									router={this.context.router}>
-										<PlaceView match={this.props.match} />
-								</RoutePopupWindow>
+									manuallyOpenPopup={false}
+									// component={PlaceView}
+									/>
+										// {/* <PlaceView match={this.props.match} key={`place-view-${this.props.match.params.place_id}`}/> */}
+								// </RoutePopupWindow>
+							}>
 						</Route>
 						<Route 
 							path="/places"
@@ -231,8 +235,12 @@ export default class Application extends React.Component {
 									onShow={this.popupWindowShowHandler}
 									onHide={this.popupWindowHideHandler}
 									onClose={this.popupCloseHandler}
-									router={this.context.router}>
-										{this.props.popup}
+									router={this.context.router}
+									manuallyOpenPopup={true}
+									openButtonLabel="Visa sökträffar som lista">
+									{/* render={()=>
+										
+									} */}
 								</RoutePopupWindow>
 						}/>
 						<Route

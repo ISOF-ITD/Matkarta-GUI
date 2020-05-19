@@ -94,13 +94,13 @@ ReactDOM.render(
 			]}
 			render={(props) =>
 				<Application
-					popup={<RecordListWrapper 
-						{...props} 
-						manuallyOpenPopup={true}
-						highlightRecordsWithMetadataField="sitevision_url" 
-						openButtonLabel="Visa sökträffar som lista"
-						disableRouterPagination={true}
-						/>}
+					// popup={<RecordListWrapper 
+					// 	{...props} 
+					// 	manuallyOpenPopup={true}
+					// 	highlightRecordsWithMetadataField="sitevision_url" 
+					// 	openButtonLabel="Visa sökträffar som lista"
+					// 	disableRouterPagination={true}
+					// 	/>}
 					{...props}	
 				/>
 			}
