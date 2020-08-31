@@ -26,22 +26,22 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❌ | Låg kontrast i kategorierna: ![](Accessibility_files/4.png)
 |	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ✔️/🟡 | - Fungerar med moderna webbläsare som kan förstora/zooma hela sidan.<br/>- Att bara zooma text fungerar inte: ![](Accessibility_files/5.png) 
 |	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ✔️ |
-|	2.1.1 | (A) |	[Utveckla systemet så att det går att hantera med enbart tangentbordet](https://webbriktlinjer.se/riktlinjer/129-gar-att-hantera-med-tangentbord/) | ❔ |
-|	2.1.2 | (A) |	[Se till att markören inte fastnar vid tangentbordsnavigation](https://webbriktlinjer.se/riktlinjer/130-se-till-att-markoren-inte-fastnar-vid-tangentbordsnavigation/) | ❔ |
-|	2.1.4 | (A) |	[Skapa kortkommandon med varsamhet](https://webbriktlinjer.se/riktlinjer/68-skapa-snabbkommandon-for-viktiga-funktioner/) | ❔ |
-|	2.2.1 | (A) |	[Ge användarna möjlighet att justera tidsbegränsningar](https://webbriktlinjer.se/riktlinjer/131-ge-anvandarna-mojlighet-att-justera-tidsbegransningar/) | ❔ |
-|	2.2.2 | (A) |	[Ge användarna möjlighet att pausa eller stänga av rörelser](https://webbriktlinjer.se/riktlinjer/132-ge-anvandarna-mojlighet-att-pausa-eller-stanga-av-rorelser/) | ❔ |
-|	2.3.1 | (A) |	[Orsaka inte epileptiska anfall genom blinkande](https://webbriktlinjer.se/riktlinjer/133-orsaka-inte-epileptiska-anfall-genom-blinkande/) | ❔ |
-|	2.4.1 | (A) |	[Erbjud möjlighet att hoppa förbi återkommande innehåll](https://webbriktlinjer.se/riktlinjer/75-gruppera-och-skapa-mojlighet-att-hoppa-forbi-delar-pa-sidorna/) | ❔ |
-|	2.4.3 | (A) |	[Gör en logisk tab-ordning](https://webbriktlinjer.se/riktlinjer/136-gor-en-logisk-tab-ordning/) | ❔ |
-|	2.4.5 | (AA) |	[Erbjud användarna flera olika sätt att navigera](https://webbriktlinjer.se/riktlinjer/32-erbjud-besokaren-alternativa-orienteringsstod/) | ❔ |
-|	2.4.7 | (AA) |	[Markera tydligt vilket fält eller element som är i fokus](https://webbriktlinjer.se/riktlinjer/140-markera-element-i-fokus/) | ❔ |
-|	2.5.1 | (A) |	[Erbjud alternativ till komplexa fingerrörelser](https://webbriktlinjer.se/riktlinjer/160-erbjud-alternativ-till-komplexa-fingerrorelser/) | ❔ |
-|	2.5.2 | (A) |	[Gör det möjligt att ångra klick](https://webbriktlinjer.se/riktlinjer/161-gor-det-mojligt-att-angra-klick/) | ❔ |
-|	2.5.3 | (A) |	[Se till att text på knappar och kontroller överensstämmer med maskinläsbara etiketter](https://webbriktlinjer.se/riktlinjer/162-mojliggor-roststyrning-av-knappar-och-kontroller/) | ❔ |
-|	2.5.4 | (A) |	[Erbjud alternativ till rörelsestyrning](https://webbriktlinjer.se/riktlinjer/163-erbjud-alternativ-till-rorelsestyrning/) | ❔ |
-|	3.1.1 | (A) |	[Ange sidans språk i koden](https://webbriktlinjer.se/riktlinjer/141-ange-sidans-sprak-i-koden/) | ❔ |
-|	3.1.2 | (AA) |	[Ange språkförändringar i koden](https://webbriktlinjer.se/riktlinjer/142-ange-sprakforandringar-koden/) | ❔ |
+|	2.1.1 | (A) |	[Utveckla systemet så att det går att hantera med enbart tangentbordet](https://webbriktlinjer.se/riktlinjer/129-gar-att-hantera-med-tangentbord/) | ❌ | Omöjligt att fokussera category menu bara med tangentbord
+|	2.1.2 | (A) |	[Se till att markören inte fastnar vid tangentbordsnavigation](https://webbriktlinjer.se/riktlinjer/130-se-till-att-markoren-inte-fastnar-vid-tangentbordsnavigation/) | ❌ | relaterad till 2.1.1
+|	2.1.4 | (A) |	[Skapa kortkommandon med varsamhet](https://webbriktlinjer.se/riktlinjer/68-skapa-snabbkommandon-for-viktiga-funktioner/) | ✔️ | Inga kortkommandon
+|	2.2.1 | (A) |	[Ge användarna möjlighet att justera tidsbegränsningar](https://webbriktlinjer.se/riktlinjer/131-ge-anvandarna-mojlighet-att-justera-tidsbegransningar/) | ➖ |
+|	2.2.2 | (A) |	[Ge användarna möjlighet att pausa eller stänga av rörelser](https://webbriktlinjer.se/riktlinjer/132-ge-anvandarna-mojlighet-att-pausa-eller-stanga-av-rorelser/) | ➖ |
+|	2.3.1 | (A) |	[Orsaka inte epileptiska anfall genom blinkande](https://webbriktlinjer.se/riktlinjer/133-orsaka-inte-epileptiska-anfall-genom-blinkande/) | ✔️ |
+|	2.4.1 | (A) |	[Erbjud möjlighet att hoppa förbi återkommande innehåll](https://webbriktlinjer.se/riktlinjer/75-gruppera-och-skapa-mojlighet-att-hoppa-forbi-delar-pa-sidorna/) | ❌ |
+|	2.4.3 | (A) |	[Gör en logisk tab-ordning](https://webbriktlinjer.se/riktlinjer/136-gor-en-logisk-tab-ordning/) | ❌ | Relaterad till 2.1.1
+|	2.4.5 | (AA) |	[Erbjud användarna flera olika sätt att navigera](https://webbriktlinjer.se/riktlinjer/32-erbjud-besokaren-alternativa-orienteringsstod/) | 🟡 | - Det finns en sökfunktion och kartan. Borde vi även införa en lista/tabell med alla uppteckningar uppdelade efter landskap/socken? Eller är det utanför kartans användningsområde?<br/>- Borde vi ha en FAQ (Vanliga frågor)?
+|	2.4.7 | (AA) |	[Markera tydligt vilket fält eller element som är i fokus](https://webbriktlinjer.se/riktlinjer/140-markera-element-i-fokus/) | ❌ |
+|	2.5.1 | (A) |	[Erbjud alternativ till komplexa fingerrörelser](https://webbriktlinjer.se/riktlinjer/160-erbjud-alternativ-till-komplexa-fingerrorelser/) | ❌ | Lägg till pilknappar för att förflytta sig i olika riktningar på kartan!
+|	2.5.2 | (A) |	[Gör det möjligt att ångra klick](https://webbriktlinjer.se/riktlinjer/161-gor-det-mojligt-att-angra-klick/) | 🟡 | Osäker i vilka fall det ska tillämpas här. Vilka klick ska kunna ångras efter ***mouse up***?
+|	2.5.3 | (A) |	[Se till att text på knappar och kontroller överensstämmer med maskinläsbara etiketter](https://webbriktlinjer.se/riktlinjer/162-mojliggor-roststyrning-av-knappar-och-kontroller/) | ❌ |
+|	2.5.4 | (A) |	[Erbjud alternativ till rörelsestyrning](https://webbriktlinjer.se/riktlinjer/163-erbjud-alternativ-till-rorelsestyrning/) | ➖ |
+|	3.1.1 | (A) |	[Ange sidans språk i koden](https://webbriktlinjer.se/riktlinjer/141-ange-sidans-sprak-i-koden/) | ✔️ | OBS: Vid inbäddning måste SiteVision erbjuda lang.
+|	3.1.2 | (AA) |	[Ange språkförändringar i koden](https://webbriktlinjer.se/riktlinjer/142-ange-sprakforandringar-koden/) | ➖ | Berör redaktionen
 |	3.2.1 | (A) |	[Utför inga oväntade förändringar vid fokusering](https://webbriktlinjer.se/riktlinjer/143-utfor-inga-ovantade-forandringar-vid-fokusering/) | ❔ |
 |	3.2.2 | (A) |	[Utför inga oväntade förändringar vid inmatning](https://webbriktlinjer.se/riktlinjer/144-utfor-inga-ovantade-forandringar-vid-inmatning/) | ❔ |
 |	3.2.3 | (AA) |	[Var konsekvent i navigation, struktur och utformning](https://webbriktlinjer.se/riktlinjer/29-var-konsekvent-i-navigation-struktur-och-utformning/) | ❔ |
