@@ -84,10 +84,7 @@ export default class CategoryList extends React.Component {
 
 					{
 						item.url &&
-						<span className="info-link" onClick={function(event) {
-							event.preventDefault();
-							window.location.href = item.url;
-						}}>Mer</span>
+						<a href={item.url} title="Mer" className="info-link" >Mer</a>
 					}
 
 				</a>;
