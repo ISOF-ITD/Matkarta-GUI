@@ -19,19 +19,19 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.3.5 | (AA) |	[Märk upp vanliga formulärfält i koden](https://webbriktlinjer.se/riktlinjer/154-mark-upp-vanliga-formularfalt-i-koden/) | ✔️ |
 |	1.4.1 | (A) |	[Använd inte enbart färg för att förmedla information](https://webbriktlinjer.se/riktlinjer/124-inte-bara-farg/) | ✔️ | Kunde inte hitta ställen där information förmedlas med färg
 |	1.4.10 | (AA) |	[Skapa en flexibel layout som fungerar vid förstoring eller liten skärm](https://webbriktlinjer.se/riktlinjer/91-skapa-en-flexibel-layout/) | ✔️ |
-|	1.4.11 | (AA) |	[Använd tillräckliga kontraster i komponenter och grafik](https://webbriktlinjer.se/riktlinjer/156-anvand-tillrackliga-kontraster-i-komponenter-och-grafik/) | ❔ |
+|	1.4.11 | (AA) |	[Använd tillräckliga kontraster i komponenter och grafik](https://webbriktlinjer.se/riktlinjer/156-anvand-tillrackliga-kontraster-i-komponenter-och-grafik/) | ✔️ | verkar OK
 |	1.4.12 | (AA) |	[Se till att det går att öka avstånd mellan tecken, rader, stycken och ord](https://webbriktlinjer.se/riktlinjer/157-avstand-mellan-tecken-rader-stycken-och-ord/) | ❔ |
 |	1.4.13 | (AA) |	[Popup-funktioner ska kunna hanteras och stängas av alla](https://webbriktlinjer.se/riktlinjer/158-popup-funktioner-ska-kunna-hanteras-och-stangas-av-alla/) | ❔ |
 |	1.4.2 | (A) |	[Ge användaren möjlighet att pausa, stänga av eller sänka ljud](https://webbriktlinjer.se/riktlinjer/125-kunna-pausa-ljud/) | ❔ |
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❔ |
 |	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ❔ |
-|	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ❔❔ |
+|	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ❔ |
 |	2.1.1 | (A) |	[Utveckla systemet så att det går att hantera med enbart tangentbordet](https://webbriktlinjer.se/riktlinjer/129-gar-att-hantera-med-tangentbord/) | ❔ |
 |	2.1.2 | (A) |	[Se till att markören inte fastnar vid tangentbordsnavigation](https://webbriktlinjer.se/riktlinjer/130-se-till-att-markoren-inte-fastnar-vid-tangentbordsnavigation/) | ❔ |
 |	2.1.4 | (A) |	[Skapa kortkommandon med varsamhet](https://webbriktlinjer.se/riktlinjer/68-skapa-snabbkommandon-for-viktiga-funktioner/) | ❔ |
 |	2.2.1 | (A) |	[Ge användarna möjlighet att justera tidsbegränsningar](https://webbriktlinjer.se/riktlinjer/131-ge-anvandarna-mojlighet-att-justera-tidsbegransningar/) | ❔ |
 |	2.2.2 | (A) |	[Ge användarna möjlighet att pausa eller stänga av rörelser](https://webbriktlinjer.se/riktlinjer/132-ge-anvandarna-mojlighet-att-pausa-eller-stanga-av-rorelser/) | ❔ |
-|	2.3.1 | (A) |	[Orsaka inte epileptiska anfall genom blinkande](https://webbriktlinjer.se/riktlinjer/133-orsaka-inte-epileptiska-anfall-genom-blinkande/) | ❔❔ |
+|	2.3.1 | (A) |	[Orsaka inte epileptiska anfall genom blinkande](https://webbriktlinjer.se/riktlinjer/133-orsaka-inte-epileptiska-anfall-genom-blinkande/) | ❔ |
 |	2.4.1 | (A) |	[Erbjud möjlighet att hoppa förbi återkommande innehåll](https://webbriktlinjer.se/riktlinjer/75-gruppera-och-skapa-mojlighet-att-hoppa-forbi-delar-pa-sidorna/) | ❔ |
 |	2.4.3 | (A) |	[Gör en logisk tab-ordning](https://webbriktlinjer.se/riktlinjer/136-gor-en-logisk-tab-ordning/) | ❔ |
 |	2.4.5 | (AA) |	[Erbjud användarna flera olika sätt att navigera](https://webbriktlinjer.se/riktlinjer/32-erbjud-besokaren-alternativa-orienteringsstod/) | ❔ |
