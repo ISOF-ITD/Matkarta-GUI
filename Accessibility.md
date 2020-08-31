@@ -21,7 +21,7 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.4.10 | (AA) |	[Skapa en flexibel layout som fungerar vid förstoring eller liten skärm](https://webbriktlinjer.se/riktlinjer/91-skapa-en-flexibel-layout/) | ✔️ |
 |	1.4.11 | (AA) |	[Använd tillräckliga kontraster i komponenter och grafik](https://webbriktlinjer.se/riktlinjer/156-anvand-tillrackliga-kontraster-i-komponenter-och-grafik/) | ✔️ | verkar OK
 |	1.4.12 | (AA) |	[Se till att det går att öka avstånd mellan tecken, rader, stycken och ord](https://webbriktlinjer.se/riktlinjer/157-avstand-mellan-tecken-rader-stycken-och-ord/) | ❌ | Problem med stora avstånd mellan rader och tecken: ![](Accessibility_files/1.png)  ![](Accessibility_files/2.png)
-|	1.4.13 | (AA) |	[Popup-funktioner ska kunna hanteras och stängas av alla](https://webbriktlinjer.se/riktlinjer/158-popup-funktioner-ska-kunna-hanteras-och-stangas-av-alla/) | ❌ | Fungerar inte med de nuvarande popup-meddelanden, de stängs för snabbt: ![](Accessibility_files/3.png)
+|	1.4.13 | (AA) |	[Popup-funktioner ska kunna hanteras och stängas av alla](https://webbriktlinjer.se/riktlinjer/158-popup-funktioner-ska-kunna-hanteras-och-stangas-av-alla/) | ❌ | Fungerar inte med de nuvarande popup-meddelanden, de stängs för snabbt (Se också 4.1.3): ![](Accessibility_files/3.png)
 |	1.4.2 | (A) |	[Ge användaren möjlighet att pausa, stänga av eller sänka ljud](https://webbriktlinjer.se/riktlinjer/125-kunna-pausa-ljud/) | ✔️ |
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❌ | Låg kontrast i kategorierna: ![](Accessibility_files/4.png)
 |	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ✔️/🟡 | - Fungerar med moderna webbläsare som kan förstora/zooma hela sidan.<br/>- Att bara zooma text fungerar inte: ![](Accessibility_files/5.png) 
@@ -42,14 +42,14 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	2.5.4 | (A) |	[Erbjud alternativ till rörelsestyrning](https://webbriktlinjer.se/riktlinjer/163-erbjud-alternativ-till-rorelsestyrning/) | ➖ |
 |	3.1.1 | (A) |	[Ange sidans språk i koden](https://webbriktlinjer.se/riktlinjer/141-ange-sidans-sprak-i-koden/) | ✔️ | OBS: Vid inbäddning måste SiteVision erbjuda lang.
 |	3.1.2 | (AA) |	[Ange språkförändringar i koden](https://webbriktlinjer.se/riktlinjer/142-ange-sprakforandringar-koden/) | ➖ | Berör redaktionen
-|	3.2.1 | (A) |	[Utför inga oväntade förändringar vid fokusering](https://webbriktlinjer.se/riktlinjer/143-utfor-inga-ovantade-forandringar-vid-fokusering/) | ❔ |
-|	3.2.2 | (A) |	[Utför inga oväntade förändringar vid inmatning](https://webbriktlinjer.se/riktlinjer/144-utfor-inga-ovantade-forandringar-vid-inmatning/) | ❔ |
-|	3.2.3 | (AA) |	[Var konsekvent i navigation, struktur och utformning](https://webbriktlinjer.se/riktlinjer/29-var-konsekvent-i-navigation-struktur-och-utformning/) | ❔ |
-|	3.2.4 | (AA) |	[Benämn funktioner konsekvent](https://webbriktlinjer.se/riktlinjer/146-benamn-funktioner-konsekvent/) | ❔ |
+|	3.2.1 | (A) |	[Utför inga oväntade förändringar vid fokusering](https://webbriktlinjer.se/riktlinjer/143-utfor-inga-ovantade-forandringar-vid-fokusering/) | ✔️ |
+|	3.2.2 | (A) |	[Utför inga oväntade förändringar vid inmatning](https://webbriktlinjer.se/riktlinjer/144-utfor-inga-ovantade-forandringar-vid-inmatning/) | ✔️ |
+|	3.2.3 | (AA) |	[Var konsekvent i navigation, struktur och utformning](https://webbriktlinjer.se/riktlinjer/29-var-konsekvent-i-navigation-struktur-och-utformning/) | ✔️ |
+|	3.2.4 | (AA) |	[Benämn funktioner konsekvent](https://webbriktlinjer.se/riktlinjer/146-benamn-funktioner-konsekvent/) | ✔️ |
 |	3.3.1 | (A) |	[Visa var ett fel uppstått och beskriv det tydligt](https://webbriktlinjer.se/riktlinjer/2-ge-begripliga-felmeddelanden/) | ❔ |
-|	3.3.2 | (A) |	[Skapa tydliga och klickbara fältetiketter](https://webbriktlinjer.se/riktlinjer/55-skapa-tydliga-och-klickbara-faltetiketter/) | ❔ |
-|	3.3.3 | (AA) |	[Ge förslag på hur fel kan rättas till](https://webbriktlinjer.se/riktlinjer/149-ge-forslag-pa-hur-fel-kan-rattas-till/) | ❔ |
-|	3.3.4 | (AA) |	[Ge möjlighet att ångra, korrigera eller bekräfta vid viktiga transaktioner](https://webbriktlinjer.se/riktlinjer/150-ge-mojlighet-att-angra-korrigera-eller-bekrafta-viktiga-transaktioner/) | ❔ |
-|	4.1.1 | (A) |	[Se till att koden validerar](https://webbriktlinjer.se/riktlinjer/84-se-till-att-koden-validerar/) | ❔ |
-|	4.1.2 | (A) |	[Se till att skräddarsydda komponenter fungerar i hjälpmedel](https://webbriktlinjer.se/riktlinjer/152-se-till-att-skraddarsydda-komponenter-fungerar-hjalpmedel/) | ❔ |
-|	4.1.3 | (AA) |	[Se till att hjälpmedel kan presentera meddelanden som inte är i fokus](https://webbriktlinjer.se/riktlinjer/164-meddelanden-som-inte-ar-fokus/) | ❔ |
+|	3.3.2 | (A) |	[Skapa tydliga och klickbara fältetiketter](https://webbriktlinjer.se/riktlinjer/55-skapa-tydliga-och-klickbara-faltetiketter/) | ✔️ |
+|	3.3.3 | (AA) |	[Ge förslag på hur fel kan rättas till](https://webbriktlinjer.se/riktlinjer/149-ge-forslag-pa-hur-fel-kan-rattas-till/) | ❌ |
+|	3.3.4 | (AA) |	[Ge möjlighet att ångra, korrigera eller bekräfta vid viktiga transaktioner](https://webbriktlinjer.se/riktlinjer/150-ge-mojlighet-att-angra-korrigera-eller-bekrafta-viktiga-transaktioner/) | ❌ |
+|	4.1.1 | (A) |	[Se till att koden validerar](https://webbriktlinjer.se/riktlinjer/84-se-till-att-koden-validerar/) | 🟡 | [HTML validerar](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.isof.se%2Fmatkult%2Fkartan.html), [CSS validerar inte](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.isof.se%2Fmatkult%2Fkartan.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+|	4.1.2 | (A) |	[Se till att skräddarsydda komponenter fungerar i hjälpmedel](https://webbriktlinjer.se/riktlinjer/152-se-till-att-skraddarsydda-komponenter-fungerar-hjalpmedel/) | ✔️ | 
+|	4.1.3 | (AA) |	[Se till att hjälpmedel kan presentera meddelanden som inte är i fokus](https://webbriktlinjer.se/riktlinjer/164-meddelanden-som-inte-ar-fokus/) | ❌ | Se också 1.4.13
