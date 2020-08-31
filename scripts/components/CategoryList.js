@@ -54,7 +54,7 @@ export default class CategoryList extends React.Component {
 				return <label key={index} data-index={index} className="item"><input value={item.category} onChange={this.selectionChangeHandler} type="checkbox"/>{item.label}</label>;
 			}
 			else {
-				return <a key={index} 
+				return <div key={index} 
 					data-index={index} 
 					className={'item'+(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() ? ' selected' : '')} 
 					onClick={this.itemClickHandler}>
@@ -87,7 +87,7 @@ export default class CategoryList extends React.Component {
 						<a href={item.url} title="Mer" className="info-link" >Mer</a>
 					}
 
-				</a>;
+				</div>;
 			}
 		}.bind(this));
 
