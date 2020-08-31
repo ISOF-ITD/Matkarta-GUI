@@ -13,10 +13,10 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |WCAG|Nivå|Riktlinje|Status|Kommentar|
 |---|---|---|---|---|
 |	1.3.1 | (A) |	[Ange i kod vad sidans olika delar har för roll](https://webbriktlinjer.se/riktlinjer/121-ange-i-kod-vad-sidans-olika-delar-har-for-roll/) | 🟡 | - R105. Skapa rubriker med h-element ✔️<br/> - R104. Använd rätt html-element när ni gör listor ✔️<br/>- R98. Skriv rubriker till tabeller✔️<br/>- R101. Markera obligatoriska fält i formulär ➖<br/>- Betona innehåll med elementet em och inte bara kursivering, eftersom det inte går att kursivera skärmläsarens tal. ✔️<br/>- Använd WAI-ARIA för sådant som inte går att uttrycka med vanlig html. ❔
-|	1.3.2 | (A) |	[Presentera innehållet i en meningsfull ordning för alla](https://webbriktlinjer.se/riktlinjer/122-meningsfull-ordning/) | ❔ |
-|	1.3.3 | (A) |	[Gör inte instruktioner beroende av sensoriska kännetecken](https://webbriktlinjer.se/riktlinjer/123-ej-beroende-av-sensoriska-kannetecken/) | ❔ |
-|	1.3.4 | (AA) |	[Se till att allt innehåll presenteras rätt oavsett skärmens riktning](https://webbriktlinjer.se/riktlinjer/153-fungerar-oavsett-skarmens-riktning/) | ❔ |
-|	1.3.5 | (AA) |	[Märk upp vanliga formulärfält i koden](https://webbriktlinjer.se/riktlinjer/154-mark-upp-vanliga-formularfalt-i-koden/) | ❔ |
+|	1.3.2 | (A) |	[Presentera innehållet i en meningsfull ordning för alla](https://webbriktlinjer.se/riktlinjer/122-meningsfull-ordning/) | ✔️ |
+|	1.3.3 | (A) |	[Gör inte instruktioner beroende av sensoriska kännetecken](https://webbriktlinjer.se/riktlinjer/123-ej-beroende-av-sensoriska-kannetecken/) | ✔️ |
+|	1.3.4 | (AA) |	[Se till att allt innehåll presenteras rätt oavsett skärmens riktning](https://webbriktlinjer.se/riktlinjer/153-fungerar-oavsett-skarmens-riktning/) | ✔️ |
+|	1.3.5 | (AA) |	[Märk upp vanliga formulärfält i koden](https://webbriktlinjer.se/riktlinjer/154-mark-upp-vanliga-formularfalt-i-koden/) | ✔️ |
 |	1.4.1 | (A) |	[Använd inte enbart färg för att förmedla information](https://webbriktlinjer.se/riktlinjer/124-inte-bara-farg/) | ❔ |
 |	1.4.10 | (AA) |	[Skapa en flexibel layout som fungerar vid förstoring eller liten skärm](https://webbriktlinjer.se/riktlinjer/91-skapa-en-flexibel-layout/) | ❔ |
 |	1.4.11 | (AA) |	[Använd tillräckliga kontraster i komponenter och grafik](https://webbriktlinjer.se/riktlinjer/156-anvand-tillrackliga-kontraster-i-komponenter-och-grafik/) | ❔ |
