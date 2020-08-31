@@ -20,7 +20,7 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.4.1 | (A) |	[Använd inte enbart färg för att förmedla information](https://webbriktlinjer.se/riktlinjer/124-inte-bara-farg/) | ✔️ | Kunde inte hitta ställen där information förmedlas med färg
 |	1.4.10 | (AA) |	[Skapa en flexibel layout som fungerar vid förstoring eller liten skärm](https://webbriktlinjer.se/riktlinjer/91-skapa-en-flexibel-layout/) | ✔️ |
 |	1.4.11 | (AA) |	[Använd tillräckliga kontraster i komponenter och grafik](https://webbriktlinjer.se/riktlinjer/156-anvand-tillrackliga-kontraster-i-komponenter-och-grafik/) | ✔️ | verkar OK
-|	1.4.12 | (AA) |	[Se till att det går att öka avstånd mellan tecken, rader, stycken och ord](https://webbriktlinjer.se/riktlinjer/157-avstand-mellan-tecken-rader-stycken-och-ord/) | ❔ |
+|	1.4.12 | (AA) |	[Se till att det går att öka avstånd mellan tecken, rader, stycken och ord](https://webbriktlinjer.se/riktlinjer/157-avstand-mellan-tecken-rader-stycken-och-ord/) | ❌ | Problem med stora avstånd mellan rader och tecken: ![](Accessibility_files/1.png)  ![](Accessibility_files/2.png)
 |	1.4.13 | (AA) |	[Popup-funktioner ska kunna hanteras och stängas av alla](https://webbriktlinjer.se/riktlinjer/158-popup-funktioner-ska-kunna-hanteras-och-stangas-av-alla/) | ❔ |
 |	1.4.2 | (A) |	[Ge användaren möjlighet att pausa, stänga av eller sänka ljud](https://webbriktlinjer.se/riktlinjer/125-kunna-pausa-ljud/) | ❔ |
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❔ |
