@@ -11,7 +11,7 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |❔|ej granskad|
 
 |WCAG|Nivå|Riktlinje|Status|Kommentar|
-|---|---|---|---|---|
+|---|---|---|:---:|---|
 |	1.3.1 | (A) |	[Ange i kod vad sidans olika delar har för roll](https://webbriktlinjer.se/riktlinjer/121-ange-i-kod-vad-sidans-olika-delar-har-for-roll/) | 🟡 | - R105. Skapa rubriker med h-element ✔️<br/> - R104. Använd rätt html-element när ni gör listor ✔️<br/>- R98. Skriv rubriker till tabeller✔️<br/>- R101. Markera obligatoriska fält i formulär ➖<br/>- Betona innehåll med elementet em och inte bara kursivering, eftersom det inte går att kursivera skärmläsarens tal. ✔️<br/>- Använd WAI-ARIA för sådant som inte går att uttrycka med vanlig html. ❔
 |	1.3.2 | (A) |	[Presentera innehållet i en meningsfull ordning för alla](https://webbriktlinjer.se/riktlinjer/122-meningsfull-ordning/) | ✔️ |
 |	1.3.3 | (A) |	[Gör inte instruktioner beroende av sensoriska kännetecken](https://webbriktlinjer.se/riktlinjer/123-ej-beroende-av-sensoriska-kannetecken/) | ✔️ |
@@ -24,7 +24,7 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.4.13 | (AA) |	[Popup-funktioner ska kunna hanteras och stängas av alla](https://webbriktlinjer.se/riktlinjer/158-popup-funktioner-ska-kunna-hanteras-och-stangas-av-alla/) | ❌ | Fungerar inte med de nuvarande popup-meddelanden, de stängs för snabbt (Se också 4.1.3): ![](Accessibility_files/3.png)
 |	1.4.2 | (A) |	[Ge användaren möjlighet att pausa, stänga av eller sänka ljud](https://webbriktlinjer.se/riktlinjer/125-kunna-pausa-ljud/) | ✔️ |
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❌ | Låg kontrast i kategorierna: ![](Accessibility_files/4.png)
-|	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ✔️/🟡 | - Fungerar med moderna webbläsare som kan förstora/zooma hela sidan.<br/>- Att bara zooma text fungerar inte: ![](Accessibility_files/5.png) 
+|	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ✔️&nbsp;/&nbsp;🟡 | - Fungerar med moderna webbläsare som kan förstora/zooma hela sidan.<br/>- Att bara zooma text fungerar inte: ![](Accessibility_files/5.png) 
 |	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ✔️ |
 |	2.1.1 | (A) |	[Utveckla systemet så att det går att hantera med enbart tangentbordet](https://webbriktlinjer.se/riktlinjer/129-gar-att-hantera-med-tangentbord/) | ❌ | Omöjligt att fokussera category menu bara med tangentbord
 |	2.1.2 | (A) |	[Se till att markören inte fastnar vid tangentbordsnavigation](https://webbriktlinjer.se/riktlinjer/130-se-till-att-markoren-inte-fastnar-vid-tangentbordsnavigation/) | ❌ | relaterad till 2.1.1
