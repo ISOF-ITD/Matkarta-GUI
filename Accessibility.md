@@ -25,7 +25,7 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	1.4.2 | (A) |	[Ge användaren möjlighet att pausa, stänga av eller sänka ljud](https://webbriktlinjer.se/riktlinjer/125-kunna-pausa-ljud/) | ✔️ |
 |	1.4.3 | (AA) |	[Använd tillräcklig kontrast mellan text och bakgrund](https://webbriktlinjer.se/riktlinjer/126-tillrackliga-kontraster/) | ❌ | Låg kontrast i kategorierna: ![](Accessibility_files/4.png)
 |	1.4.4 | (AA) |	[Se till att text går att förstora utan problem](https://webbriktlinjer.se/riktlinjer/127-se-till-att-text-gar-att-forstora-utan-problem/) | ✔️/🟡 | - Fungerar med moderna webbläsare som kan förstora/zooma hela sidan.<br/>- Att bara zooma text fungerar inte: ![](Accessibility_files/5.png) 
-|	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ❔ |
+|	1.4.5 | (AA) |	[Använd text, inte bilder, för att visa text](https://webbriktlinjer.se/riktlinjer/128-anvand-text-inte-bilder-for-att-visa-text/) | ✔️ |
 |	2.1.1 | (A) |	[Utveckla systemet så att det går att hantera med enbart tangentbordet](https://webbriktlinjer.se/riktlinjer/129-gar-att-hantera-med-tangentbord/) | ❔ |
 |	2.1.2 | (A) |	[Se till att markören inte fastnar vid tangentbordsnavigation](https://webbriktlinjer.se/riktlinjer/130-se-till-att-markoren-inte-fastnar-vid-tangentbordsnavigation/) | ❔ |
 |	2.1.4 | (A) |	[Skapa kortkommandon med varsamhet](https://webbriktlinjer.se/riktlinjer/68-skapa-snabbkommandon-for-viktiga-funktioner/) | ❔ |
