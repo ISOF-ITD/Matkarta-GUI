@@ -243,7 +243,7 @@
 				.transition(all 200ms ease-in-out);
 			}
 
-			&:hover, &.selected {
+			&:hover, &:focus, &:focus-within, &.selected {
 				height: 80px;
 
 				text-decoration: none !important;
@@ -264,7 +264,7 @@
 				}
 			}
 
-			&:hover {
+			&:hover, &:focus, &:focus-within {
 				.image {
 					opacity: 0.8;
 				}
@@ -563,7 +563,7 @@
 					}
 				}
 
-				&:hover {
+				&:hover, &:focus, &:focus-within {
 					.info-link {
 						opacity: 0.8;
 					}

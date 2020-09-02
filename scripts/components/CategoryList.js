@@ -9,8 +9,15 @@ export default class CategoryList extends React.Component {
 		super(props);
 
 		this.itemClickHandler = this.itemClickHandler.bind(this);
+		this.itemKeyUpHandler = this.itemKeyUpHandler.bind(this);
 		this.selectionChangeHandler = this.selectionChangeHandler.bind(this);
 
+	}
+
+	itemKeyUpHandler(event){
+		if(event.keyCode == 13){
+			this.itemClickHandler(event);
+		} 
 	}
 
 	itemClickHandler(event) {
@@ -54,10 +61,11 @@ export default class CategoryList extends React.Component {
 				return <label key={index} data-index={index} className="item"><input value={item.category} onChange={this.selectionChangeHandler} type="checkbox"/>{item.label}</label>;
 			}
 			else {
-				return <div key={index} 
+				return <div key={index}
+					tabIndex={0}
 					data-index={index} 
 					className={'item'+(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() ? ' selected' : '')} 
-					onClick={this.itemClickHandler}>
+					onClick={this.itemClickHandler} onKeyUp={this.itemKeyUpHandler}>
 
 					{
 						item.image &&
@@ -76,6 +84,8 @@ export default class CategoryList extends React.Component {
 									data-index={index}
 									data-subindex={subIndex}
 									onClick={this.itemClickHandler}
+									onKeyUp={this.itemKeyUpHandler}
+									tabIndex={0}
 									key={index+'-'+subIndex}>{link.label}</span>
 								}.bind(this))
 							}

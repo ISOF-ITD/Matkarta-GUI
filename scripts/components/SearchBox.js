@@ -147,16 +147,17 @@ export default class SearchBox extends React.Component {
 				onClick={this.searchBoxClickHandler} 
 				className={'search-box map-floating-control'+(this.state.expanded ? ' expanded' : '')}
 			>
-				<input ref="searchInput" type="text" 
+				<input tabIndex='0' ref="searchInput" type="text" 
+					autoFocus={true}
 					value={this.state.searchValue} 
 					// placeholder={'t.ex. '+this.searchSuggestions[Math.floor(Math.random()*this.searchSuggestions.length)]}
 					onChange={this.searchValueChangeHandler} 
 					onKeyPress={this.inputKeyPressHandler}
 				></input>
 
-				<div className={'search-placeholder'+(this.state.searchValue.length == 0 ? ' visible' : '')}>{this.state.expanded ? this.state.searchSuggestion : 'Sök'}</div>
+				<div className={'search-placeholder'+(this.state.searchValue.length == 0 ? ' visible' : '')} tabIndex={0}>{this.state.expanded ? this.state.searchSuggestion : 'Sök'}</div>
 
-				<button className="search-button" onClick={this.executeSimpleSearch}></button>
+				<button tabIndex={0} className="search-button" onClick={this.executeSimpleSearch}></button>
 			</div>
 		);
 	}
