@@ -32,8 +32,8 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	2.2.1 | (A) |	[Ge användarna möjlighet att justera tidsbegränsningar](https://webbriktlinjer.se/riktlinjer/131-ge-anvandarna-mojlighet-att-justera-tidsbegransningar/) | ➖ |
 |	2.2.2 | (A) |	[Ge användarna möjlighet att pausa eller stänga av rörelser](https://webbriktlinjer.se/riktlinjer/132-ge-anvandarna-mojlighet-att-pausa-eller-stanga-av-rorelser/) | ➖ |
 |	2.3.1 | (A) |	[Orsaka inte epileptiska anfall genom blinkande](https://webbriktlinjer.se/riktlinjer/133-orsaka-inte-epileptiska-anfall-genom-blinkande/) | ✔️ |
-|	2.4.1 | (A) |	[Erbjud möjlighet att hoppa förbi återkommande innehåll](https://webbriktlinjer.se/riktlinjer/75-gruppera-och-skapa-mojlighet-att-hoppa-forbi-delar-pa-sidorna/) | ❌ |
-|	2.4.3 | (A) |	[Gör en logisk tab-ordning](https://webbriktlinjer.se/riktlinjer/136-gor-en-logisk-tab-ordning/) | ❌ | Inte helt logisk ordning
+|	2.4.1 | (A) |	[Erbjud möjlighet att hoppa förbi återkommande innehåll](https://webbriktlinjer.se/riktlinjer/75-gruppera-och-skapa-mojlighet-att-hoppa-forbi-delar-pa-sidorna/) | ➖ |
+|	2.4.3 | (A) |	[Gör en logisk tab-ordning](https://webbriktlinjer.se/riktlinjer/136-gor-en-logisk-tab-ordning/) | ✔️ | 
 |	2.4.5 | (AA) |	[Erbjud användarna flera olika sätt att navigera](https://webbriktlinjer.se/riktlinjer/32-erbjud-besokaren-alternativa-orienteringsstod/) | 🟡 | - Det finns en sökfunktion och kartan. Borde vi även införa en lista/tabell med alla uppteckningar uppdelade efter landskap/socken? Eller är det utanför kartans användningsområde?<br/>- Borde vi ha en FAQ (Vanliga frågor)?
 |	2.4.7 | (AA) |	[Markera tydligt vilket fält eller element som är i fokus](https://webbriktlinjer.se/riktlinjer/140-markera-element-i-fokus/) | ✔️ |
 |	2.5.1 | (A) |	[Erbjud alternativ till komplexa fingerrörelser](https://webbriktlinjer.se/riktlinjer/160-erbjud-alternativ-till-komplexa-fingerrorelser/) | ❌ | Lägg till pilknappar för att förflytta sig i olika riktningar på kartan!
@@ -48,8 +48,8 @@ Se https://webbriktlinjer.se/riktlinjer/?filter=on&guidelineorder=a&freetext-fil
 |	3.2.4 | (AA) |	[Benämn funktioner konsekvent](https://webbriktlinjer.se/riktlinjer/146-benamn-funktioner-konsekvent/) | ✔️ |
 |	3.3.1 | (A) |	[Visa var ett fel uppstått och beskriv det tydligt](https://webbriktlinjer.se/riktlinjer/2-ge-begripliga-felmeddelanden/) | ❔ |
 |	3.3.2 | (A) |	[Skapa tydliga och klickbara fältetiketter](https://webbriktlinjer.se/riktlinjer/55-skapa-tydliga-och-klickbara-faltetiketter/) | ✔️ |
-|	3.3.3 | (AA) |	[Ge förslag på hur fel kan rättas till](https://webbriktlinjer.se/riktlinjer/149-ge-forslag-pa-hur-fel-kan-rattas-till/) | ❌ |
-|	3.3.4 | (AA) |	[Ge möjlighet att ångra, korrigera eller bekräfta vid viktiga transaktioner](https://webbriktlinjer.se/riktlinjer/150-ge-mojlighet-att-angra-korrigera-eller-bekrafta-viktiga-transaktioner/) | ❌ |
+|	3.3.3 | (AA) |	[Ge förslag på hur fel kan rättas till](https://webbriktlinjer.se/riktlinjer/149-ge-forslag-pa-hur-fel-kan-rattas-till/) | ➖ |
+|	3.3.4 | (AA) |	[Ge möjlighet att ångra, korrigera eller bekräfta vid viktiga transaktioner](https://webbriktlinjer.se/riktlinjer/150-ge-mojlighet-att-angra-korrigera-eller-bekrafta-viktiga-transaktioner/) | ➖ |
 |	4.1.1 | (A) |	[Se till att koden validerar](https://webbriktlinjer.se/riktlinjer/84-se-till-att-koden-validerar/) | 🟡 | [HTML validerar](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.isof.se%2Fmatkult%2Fkartan.html), [CSS validerar inte](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.isof.se%2Fmatkult%2Fkartan.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 |	4.1.2 | (A) |	[Se till att skräddarsydda komponenter fungerar i hjälpmedel](https://webbriktlinjer.se/riktlinjer/152-se-till-att-skraddarsydda-komponenter-fungerar-hjalpmedel/) | ✔️ | 
 |	4.1.3 | (AA) |	[Se till att hjälpmedel kan presentera meddelanden som inte är i fokus](https://webbriktlinjer.se/riktlinjer/164-meddelanden-som-inte-ar-fokus/) | ❌ | Se också 1.4.13
