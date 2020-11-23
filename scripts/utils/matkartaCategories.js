@@ -70,6 +70,30 @@ export default {
 			url: 'https://www.isof.se/matkult/jordbruket-och-maten.html'
 		},
 		{
+			category: 'MK-11',
+			label: 'Mjölrätter',
+			image: 'https://www.isof.se/images/18.78c830061631a67c264c895e/1529494038502/12807-ragaker.jpg',
+			url: 'https://www.isof.se/matkult/jordbruket-och-maten.html'
+		},
+		{
+			category: 'MK-12',
+			label: 'Kött',
+			image: '',
+			url: ''
+		},
+		{
+			category: 'MK-13',
+			label: '???',
+			image: '',
+			url: ''
+		},
+		{
+			category: 'MK-14',
+			label: 'Fisk',
+			image: '',
+			url: ''
+		},
+		{
 			category: 'MK-10',
 			label: 'Kokboken',
 			image: 'https://frigg.isof.se/static/js-apps/matkartan/img/categories/kokbok.jpg',
