@@ -83,9 +83,9 @@ export default {
 		},
 		{
 			category: 'MK-13',
-			label: '???',
+			label: 'Maten som kulturarv',
 			image: '',
-			url: ''
+			url: 'https://www.isof.se/matkult/maten-som-kulturarv.html'
 		},
 		{
 			category: 'MK-14',
