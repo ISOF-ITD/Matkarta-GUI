@@ -75,6 +75,7 @@ export default {
 			image: 'https://www.isof.se/images/18.78c830061631a67c264c895e/1529494038502/12807-ragaker.jpg',
 			url: 'https://www.isof.se/matkult/jordbruket-och-maten.html'
 		},
+		/*
 		{
 			category: 'MK-12',
 			label: 'Kött',
@@ -87,11 +88,12 @@ export default {
 			image: '',
 			url: 'https://www.isof.se/matkult/maten-som-kulturarv.html'
 		},
+		*/
 		{
 			category: 'MK-14',
 			label: 'Fisk',
-			image: '',
-			url: ''
+			image: 'https://www.isof.se/images/18.78abb6c61764bda823bcf6a/1607688211799/43790761-river-fish-with-red-fins-and-silver-scales-lies-on.jpg',
+			url: 'https://www.isof.se/matkult/fisk.html'
 		},
 		{
 			category: 'MK-10',
@@ -107,12 +109,10 @@ export default {
 					category: 'MK-3',
 					label: 'Bröd'
 				},
-				/*
 				{
 					category: 'MK-2',
 					label: 'Bär och frukt'
 				},
-				*/
 				{
 					category: 'MK-5',
 					label: 'Honung'
