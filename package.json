@@ -10,9 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
-    "@turf/boolean-point-in-polygon": "^6.0.1",
+    "@turf/boolean-point-in-polygon": "^6.2.0",
     "babelify": "^10.0.0",
     "browserify": "^16.5.2",
     "eventbusjs": "^0.2.0",
