@@ -82,7 +82,8 @@ export default class MatkartaMenu extends React.Component {
 
 				<a href="https://www.isof.se/matkult" className="matkult-header"></a>
 
-				<div className={'point-type-options option-'+this.state.pointTypeOption}>
+				{/* removed point-type-switcher for now */}
+				{/* <div className={'point-type-options option-'+this.state.pointTypeOption}>
 
 					<a className="option-item" data-option="1" onClick={this.pointTypeOptionClickHandler}>
 						<span className="icon icon-marker-normal"></span>
@@ -96,7 +97,7 @@ export default class MatkartaMenu extends React.Component {
 
 					<span className="selected-line"></span>
 
-				</div>
+				</div> */}
 
 				<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler}
