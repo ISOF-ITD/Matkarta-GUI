@@ -7,7 +7,7 @@ export default {
 	*/
 	requiredParams: {
 		type: 'matkarta',
-		mark_metadata: 'sitevision_url',
+		// mark_metadata: 'sitevision_url',
 	},
 
 	siteOptions: {
