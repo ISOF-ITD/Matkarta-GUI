@@ -75,25 +75,29 @@ export default {
 			image: 'https://www.isof.se/images/18.78c830061631a67c264c895e/1529494038502/12807-ragaker.jpg',
 			url: 'https://www.isof.se/matkult/jordbruket-och-maten.html'
 		},
-		/*
 		{
 			category: 'MK-12',
 			label: 'Kött',
-			image: '',
+			image: 'https://www.isof.se/images/18.759da6c1177103a284a38de7/1611218558374/kottkategori.jpg',
 			url: ''
 		},
-		{
-			category: 'MK-13',
-			label: 'Maten som kulturarv',
-			image: '',
-			url: 'https://www.isof.se/matkult/maten-som-kulturarv.html'
-		},
-		*/
 		{
 			category: 'MK-14',
 			label: 'Fisk',
 			image: 'https://www.isof.se/images/18.78abb6c61764bda823bcf6a/1607688211799/43790761-river-fish-with-red-fins-and-silver-scales-lies-on.jpg',
 			url: 'https://www.isof.se/matkult/fisk.html'
+		},
+		// {
+			// 	category: 'MK-15',
+			// 	label: 'Ägg',
+			// 	image: 'https://www.isof.se/images/18.759da6c1177103a284a38de8/1611218558425/agg-kategori.jpg',
+			// 	url: ''
+			// },
+		{
+			category: 'MK-13',
+			label: 'Maten som kulturarv',
+			image: 'https://www.isof.se/images/18.759da6c1177103a284a38de9/1611218558485/kulturarv-kategori.jpg',
+			url: 'https://www.isof.se/matkult/maten-som-kulturarv.html'
 		},
 		{
 			category: 'MK-10',
@@ -132,7 +136,11 @@ export default {
 				{
 					category: 'MK-4',
 					label: 'Öl och svagdricka'
-				}
+				},
+				{
+					category: 'MK-12',
+					label: 'Kött'
+				},
 			]
 		}
 	]
