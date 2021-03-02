@@ -27,13 +27,13 @@ export default class MatkartaMenu extends React.Component {
 
 	componentDidMount() {
 		this.setState({
-			pointTypeOption: this.props.searchMetadata == 'sitevision_url' ? 2 : 1
+			pointTypeOption: this.props.searchMetadata == 'sitevision_url,matkarta_edited' ? 2 : 1
 		});
 	}
 
 	UNSAFE_componentWillReceiveProps(props) {
 		var state = {
-			pointTypeOption: props.searchMetadata == 'sitevision_url' ? 2 : 1
+			pointTypeOption: props.searchMetadata == 'sitevision_url,matkarta_edited' ? 2 : 1
 		};
 
 		this.setState(state);
@@ -67,7 +67,7 @@ export default class MatkartaMenu extends React.Component {
 	}
 
 	updateRoute(selectedCategory, selectedSubcategory) {
-		this.props.history.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(selectedCategory ? '/category/'+selectedCategory+(selectedSubcategory ? ','+selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url' : ''));
+		this.props.history.push('/places'+(this.state.searchValue && this.state.searchValue != '' ? '/search/'+this.state.searchValue : '')+(selectedCategory ? '/category/'+selectedCategory+(selectedSubcategory ? ','+selectedSubcategory : '') : '')+(this.state.pointTypeOption == 2 ? '/has_metadata/sitevision_url,matkarta_edited' : ''));
 	}
 
 	render() {
@@ -82,8 +82,8 @@ export default class MatkartaMenu extends React.Component {
 
 				<a href="https://www.isof.se/matkult" className="matkult-header"></a>
 
-				{/* removed point-type-switcher for now */}
-				{/* <div className={'point-type-options option-'+this.state.pointTypeOption}>
+				
+				<div className={'point-type-options option-'+this.state.pointTypeOption}>
 
 					<a className="option-item" data-option="1" onClick={this.pointTypeOptionClickHandler}>
 						<span className="icon icon-marker-normal"></span>
@@ -92,12 +92,12 @@ export default class MatkartaMenu extends React.Component {
 
 					<a className="option-item" data-option="2" onClick={this.pointTypeOptionClickHandler}>
 						<span className="icon icon-marker-curated"></span>
-						<span className="label">Utvalda</span>
+						<span className="label">Renskrivna</span>
 					</a>
 
 					<span className="selected-line"></span>
 
-				</div> */}
+				</div>
 
 				<SearchBox ref="searchBox" 
 					onSizeChange={this.searchBoxSizeChangeHandler}
