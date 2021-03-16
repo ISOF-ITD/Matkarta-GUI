@@ -64,7 +64,11 @@ export default class CategoryList extends React.Component {
 				return <div key={index}
 					tabIndex={0}
 					data-index={index} 
-					className={'item'+(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() ? ' selected' : '')} 
+					className={
+						'item'+
+						(this.props.selectedCategory && item.category.toUpperCase() == this.props.selectedCategory.toUpperCase() ? ' selected' : '')+
+						(item.class ? ` ${item.class}` : '')
+					} 
 					onClick={this.itemClickHandler} onKeyUp={this.itemKeyUpHandler}>
 
 					{
