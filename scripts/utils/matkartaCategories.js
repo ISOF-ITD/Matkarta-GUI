@@ -79,7 +79,7 @@ export default {
 			category: 'MK-12',
 			label: 'Kött',
 			image: 'https://www.isof.se/images/18.759da6c1177103a284a38de7/1611218558374/kottkategori.jpg',
-			url: ''
+			url: 'https://www.isof.se/matkult/kott'
 		},
 		{
 			category: 'MK-14',
