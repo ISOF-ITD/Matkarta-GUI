@@ -43,14 +43,15 @@ export default {
 	imageUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/',
 	audioUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/dialekter/',
 
-	appUrl: 'https://frigg.isof.se/static/js-apps/matkartan/',
+	appUrl: 'https://matkartan-test.isof.se/',
+	// appUrl: 'https://frigg.isof.se/static/js-apps/matkartan/',
 	// appUrl: 'https://frigg-test.isof.se/static/js-apps/matkartan/',
 	// Old site:
 	//siteUrl: 'https://www.isof.se/matkult/kartan.html',
 	siteUrl: 'https://www.matkult.se/matkartan',
 
-	apiUrl: 'https://frigg.isof.se/sagendatabas/api/es/',
+	apiUrl: 'https://garm.isof.se/folkeservice/api/es/',
 	// apiUrl: 'https://frigg-test.isof.se/TradarkSearchServiceES7/api/es/',
-	restApiUrl: 'https://frigg.isof.se/sagendatabas/api/',
-	isofHomepageUrl: 'https://frigg.isof.se/sagendatabas/api/isofhomepage/'
+	restApiUrl: 'https://garm.isof.se/folkeservice/api/',
+	isofHomepageUrl: 'https://garm.isof.se/folkeservice/api/isofhomepage/'
 };
