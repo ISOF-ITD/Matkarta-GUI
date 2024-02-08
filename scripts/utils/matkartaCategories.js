@@ -81,7 +81,7 @@ export default {
 		{
 			category: 'MK-14',
 			label: 'Fisk',
-			image: 'https://www.isof.se/images/18.78abb6c61764bda823bcf6a/1607688211799/43790761-river-fish-with-red-fins-and-silver-scales-lies-on.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53cc39/1707382520789/fisk-kategori.jpg',
 			url: 'https://www.matkult.se/fisk.html'
 		},
 		{
