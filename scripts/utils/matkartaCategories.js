@@ -105,7 +105,7 @@ export default {
 		{
 			category: 'MK-12',
 			label: 'Kött',
-			image: 'https://www.isof.se/images/18.759da6c1177103a284a38de7/1611218558374/kottkategori.jpg',
+			image: 'https://www.matkult.se/images/18.463ffe2f17978f40c25c565e/1611218558374/kottkategori.jpg',
 			url: 'https://www.matkult.se/kott'
 		},
 		{
