@@ -43,7 +43,8 @@ export default {
 	imageUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/',
 	audioUrl: 'https://www4.isof.se/Folkminnen/Svenska_sagor_filer/dialekter/',
 
-	appUrl: 'https://matkartan-test.isof.se/',
+	// appUrl: 'https://matkartan-test.isof.se/',
+	appUrl: 'https://matkartan.isof.se/',
 	// appUrl: 'https://frigg.isof.se/static/js-apps/matkartan/',
 	// appUrl: 'https://frigg-test.isof.se/static/js-apps/matkartan/',
 	// Old site:
