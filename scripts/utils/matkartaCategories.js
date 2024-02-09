@@ -81,7 +81,7 @@ export default {
 		{
 			category: 'MK-14',
 			label: 'Fisk',
-			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53cc39/1707382520789/fisk-kategori.jpg',
+			image: 'https://www.matkult.se/images/18.463ffe2f17978f40c25c50fa/1607688211799/43790761-river-fish-with-red-fins-and-silver-scales-lies-on.jpg',
 			url: 'https://www.matkult.se/fisk.html'
 		},
 		{
@@ -117,7 +117,7 @@ export default {
 		{
 			category: 'MK-11',
 			label: 'Mjölrätter',
-			image: 'https://www.isof.se/images/18.78c830061631a67c264c895e/1529494038502/12807-ragaker.jpg',
+			image: 'https://www.matkult.se/images/18.463ffe2f17978f40c25b83e5/1529494383288/12807-ragaker.jpg',
 			url: 'https://www.matkult.se/jordbruket-och-maten.html'
 		},
 		{
@@ -141,7 +141,7 @@ export default {
 		{
 			category: 'MK-13',
 			label: 'Maten som kulturarv',
-			image: 'https://www.isof.se/images/18.759da6c1177103a284a38de9/1611218558485/kulturarv-kategori.jpg',
+			image: 'https://www.matkult.se/images/18.463ffe2f17978f40c25c565c/1611218558485/kulturarv-kategori.jpg',
 			url: 'https://www.matkult.se/maten-som-kulturarv.html'
 		},
 	]
