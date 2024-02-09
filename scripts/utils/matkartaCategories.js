@@ -19,7 +19,7 @@ export default {
 			category: 'MK-10',
 			label: 'Kokboken',
 			class: 'recept',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/kokbok.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6541/1707467374144/kokbok.jpg',
 			url: 'https://www.matkult.se/kokboken.html',
 			subCategories: [
 				{
@@ -63,19 +63,19 @@ export default {
 		{
 			category: 'MK-6',
 			label: 'Baljväxter',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/baljvaxter.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6545/1707467420028/baljvaxter.jpg',
 			url: 'https://www.matkult.se/baljvaxter.html'
 		},
 		{
 			category: 'MK-3',
 			label: 'Bröd',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/brod.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6547/1707467447077/brod.jpg',
 			url: 'https://www.matkult.se/brod.html'
 		},
 		{
 			category: 'MK-2',
 			label: 'Bär och frukt',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/barochfrukt.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6549/1707467505831/barochfrukt.jpg',
 			url: 'https://www.matkult.se/bar-och-frukt.html'
 		},
 		{
@@ -87,19 +87,19 @@ export default {
 		{
 			category: 'MK-9',
 			label: 'Grödor och spannmål',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/grodorochspannmal.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6552/1707467569765/grodorochspannmal.jpg',
 			url: 'https://www.matkult.se/jordbruket-och-maten.html'
 		},
 		{
 			category: 'MK-5',
 			label: 'Honung',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/honung.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6554/1707467614035/honung.jpg',
 			url: 'https://www.matkult.se/honung.html'
 		},
 		{
 			category: 'MK-7',
 			label: 'Kål',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/kal.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6560/1707467644468/kal.jpg',
 			url: 'https://www.matkult.se/kal.html'
 		},
 		{
@@ -111,7 +111,7 @@ export default {
 		{
 			category: 'MK-1',
 			label: 'Mjölk',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/mjolk.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c6565/1707467684285/mjolk.jpg',
 			url: 'https://www.matkult.se/mjolk.html'
 		},
 		{
@@ -123,19 +123,19 @@ export default {
 		{
 			category: 'MK-8',
 			label: 'Potatis',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/potatis.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c65bb/1707467709020/potatis.jpg',
 			url: 'https://www.matkult.se/potatis.html'
 		},
 		{
 			category: 'MK-4',
 			label: 'Öl och svagdricka',
-			image: 'https://garm.isof.se/static/js-apps/matkartan/img/categories/olochsvagdricka.jpg',
+			image: 'https://www.matkult.se/images/18.6736d8cd18d8738c53c65be/1707467734876/olochsvagdricka.jpg',
 			url: 'https://www.matkult.se/ol-och-svagdricka.html'
 		},
 		// {
 			// 	category: 'MK-15',
 			// 	label: 'Ägg',
-			// 	image: 'https://www.isof.se/images/18.759da6c1177103a284a38de8/1611218558425/agg-kategori.jpg',
+			// 	image: 'https://www.matkult.se/images/18.463ffe2f17978f40c25c565d/1611218558425/agg-kategori.jpg',
 			// 	url: ''
 			// },
 		{
