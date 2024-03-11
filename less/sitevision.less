@@ -1,0 +1,616 @@
+/* Standard SiteVision CSS classes */
+.svhidden,
+.sv-hidden {
+   display:none !important
+}
+
+/* Hidden visually, visible for screenreaders  */
+.sv-visuallyhidden {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.sv-old-list {
+  margin-top: 0;
+  margin-left: 0.7em;
+   padding-left:0.7em
+}
+
+.sv-defaultlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+   border-color:#AAA !important
+}
+
+.sv-defaultlist-noleft {
+  list-style-type: none;
+  padding-left: 0;
+   margin-left:0
+}
+
+.sv-no-list-style {
+   list-style:none
+}
+
+.sv-nomargin {
+   margin:0
+}
+
+.sv-nopadding {
+   padding:0
+}
+
+/*
+ * Unused in SiteVision
+ * left behind for legacy reasons - SV-30061
+ */
+.sv-noleft {
+  margin-left: 0;
+   padding-left:0
+}
+
+.sv-default-margin {
+   margin:11px !important
+}
+
+.sv-default-bottom-margin {
+   margin-bottom:11px
+}
+
+.sv-notopmargin {
+   margin-top:0
+}
+
+.sv-noborder {
+   border-style:none
+}
+
+.sv-vamiddle {
+   vertical-align:middle
+}
+
+.sv-vatop {
+   vertical-align:top
+}
+
+.sv-vabottom {
+   vertical-align:bottom
+}
+
+.sv-noborder-nospacing {
+  border-style: none !important;
+  margin: 0 !important;
+   padding:0 !important
+}
+
+.sv-noborder-vamiddle {
+  border-style: none;
+   vertical-align:middle
+}
+
+.sv-linkicon {
+  padding-left: 2px;
+   border-style:none
+}
+
+.sv-linkbutton-remove {
+  text-decoration: none;
+}
+
+.sv-linkbutton-remove:after {
+   content: "\00D7"; /* Math symbol X */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 0.66667;
+  color: #000;
+  opacity: 0.4;
+}
+
+.sv-linkbutton-remove:hover:after,
+.sv-linkbutton-remove:focus:after {
+  opacity: 1;
+}
+
+.sv-corner-all {
+   border-radius:4px
+}
+
+.sv-clear-left {
+   clear:left
+}
+
+.sv-clear-right {
+   clear:right
+}
+
+.sv-inline {
+   display:inline
+}
+
+.sv-text-align-left {
+   text-align:left !important
+}
+
+.sv-text-align-center {
+   text-align:center !important
+}
+
+.sv-text-align-right {
+   text-align:right !important
+}
+
+.sv-text-align-justify {
+   text-align:justify
+}
+
+.sv-channel-paragraph {
+  display: block;
+   margin-bottom:1em
+}
+
+.sv-channelmenu-use-img {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+   padding-left:1.5em
+}
+
+/* These two has to be separated, it's an IE issue it will
+   ignore rules if there is an unrecognized selector. In this case '>'... */
+.sv-horizontal .sv-horizontal-column,
+.sv-float-left,
+.sv-horizontal-list li {
+   float:left
+}
+
+.sv-horizontal > div.ui-state-highlight {
+   float:left
+}
+
+.sv-float-right {
+  float: right;
+}
+
+.sv-border-box {
+   box-sizing:border-box
+}
+
+.sv-clear-both {
+   clear:both
+}
+
+.sv-wrap-words {
+   word-wrap:break-word
+}
+
+.sv-fixed-position {
+  position: fixed;
+  top: 0;
+   left:0
+}
+
+.sv-full-width {
+   width:100%
+}
+
+.sv-full-size {
+  width: 100%;
+  height: 100%;
+}
+
+.selfservice-fieldset {
+  margin-top: 1.2em;
+  border: 1px solid transparent;
+   position:relative
+}
+
+/* Customized View */
+.sv-view-selector-form {
+   font-size:14px
+}
+
+.sv-custom-views-list-item {
+    padding:.5em;
+    border-top:1px solid #eee
+}
+
+.sv-custom-views-list-item:first-child {
+   border-top:none
+}
+
+.sv-view-selector-form .sv-form-row {
+   margin-top:.5em
+}
+
+.sv-view-selector-form input[type=checkbox],
+.sv-view-selector-form input[type=radio] {
+   float:left
+}
+
+.sv-view-selector-form label,
+.sv-view-selector-form .sv-custom-view-list-description {
+  display: block;
+   margin-left:25px
+}
+
+.sv-custom-views-list label,
+.sv-custom-views-list .sv-custom-view-list-description {
+   cursor:move
+}
+
+.sv-custom-view-list-description {
+  font-size: 13px;
+   color:#888
+}
+
+.sv-view-selection-placeholder {
+   border:1px solid #CCC;
+   background-color:#FAFAFA
+}
+
+/* Paging in search results */
+.pagination a {
+  text-decoration: none;
+   border:1px solid #CBCBCB;
+   color:#404040
+}
+
+.pagination a:hover {
+   background:none repeat scroll 0 0 #F3F3F3;
+   color:#404040
+}
+
+.pagination a,
+.pagination span {
+  display: block;
+  float: left;
+  padding: 0.3em 0.5em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  min-width: 1em;
+   text-align:center
+}
+
+.pagination .current {
+   background:none repeat scroll 0 0 #F4F4F4;
+   border:1px solid #CBCBCB;
+   font-weight:bold
+}
+
+.pagination .current.prev,
+.pagination .current.next {
+   border:1px solid #EDEDED;
+   color:#CCCCCC;
+  font-weight: normal;
+   background-color:#FFFFFF
+}
+
+.sv-use-margins h1,
+.sv-use-margins h2,
+.sv-use-margins h3,
+.sv-use-margins h4,
+.sv-use-margins h5,
+.sv-use-margins h6 {
+   display:block
+}
+
+.sv-fontsize-reset {
+   font-size:100% !important
+}
+
+.sv-text-portlet strong,
+.sv-text-portlet strong * {
+   font-weight:bold !important
+}
+
+.sv-text-portlet em,
+.sv-text-portlet em * {
+   font-style:italic !important
+}
+
+/**
+ * Fix issue with multiple consecutive spaces not showing
+ * Browsers normally don't care about multiple consecutive spaces they interpret them as one single space
+ * therefore we have to set the whitespace property to pre-wrap according to:
+ * http://dev.w3.org/html5/spec/editing.html#best-practices-for-in-page-editors
+ */
+.sv-text-portlet-content *,
+.sv-text-portlet-cloned-content * {
+   white-space:pre-wrap
+}
+
+/* HTML5 reset */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section {
+   display:block
+}
+
+.sv-loading-icon {
+  background-repeat: no-repeat;
+  background-position: 2px 2px;
+  padding: 2px 2px 2px 24px;
+  background-image: url(./img/loading_16_grey.gif);
+}
+
+.sv-create-blog-entry {
+  background-repeat: no-repeat;
+  background-position: 2px 2px;
+  padding: 2px 2px 2px 24px;
+  background-image: url(./img/document_new_16.png);
+}
+
+.sv-display-inline-block {
+   display:inline-block
+}
+
+/* fix for images with HTML5-doctypes adds extra padding underneath See SV-9978 for details */
+.sv-image-portlet,
+.sv-image-portlet a {
+   line-height:0
+}
+
+p.sv-portlet-image-caption {
+   margin-top:3px
+}
+
+.sv-responsive .sv-image-portlet img,
+.sv-responsive .sv-buddyicon-portlet img,
+.sv-responsive .sv-randomimage-portlet img,
+.sv-responsive .sv-archive-portlet .sv-channel-image,
+.sv-responsive .sv-linklist-portlet .sv-channel-image,
+.sv-responsive .sv-blog-portlet .sv-channel-image {
+  width: 100%;
+   height:auto
+}
+
+.sv-table-portlet caption {
+   display:table-caption !important
+}
+
+/* Proxyportlet */
+.sv-proxy-portlet h1 a,
+.sv-proxy-portlet h2 a,
+.sv-proxy-portlet h3 a,
+.sv-proxy-portlet h4 a,
+.sv-proxy-portlet h5 a,
+.sv-proxy-portlet h6 a {
+   font-size:100% !important
+}
+
+/* Custom view classes */
+.sv-relative {
+   position:relative
+}
+
+.sv-toolitem {
+   float:left
+}
+
+/* Scalable youtube videos */
+.sv-responsive .sv-video-wrapper {
+   max-width:100%
+}
+
+.sv-responsive .sv-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+   overflow:hidden
+}
+
+.sv-responsive .sv-youtube-portlet iframe,
+.sv-responsive .sv-youtube-portlet object,
+.sv-responsive .sv-youtube-portlet embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+   max-height:100%
+}
+
+.sv-video-portlet video {
+  width: 100%;
+}
+
+/**
+ * To clear floats add class 'sv-clearfix' to the
+ * parent of the floated elements
+ */
+.sv-horizontal:after,
+.sv-clearfix:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.bootstrap .dropdown-menu a,
+.bootstrap .btn {
+   text-decoration:none
+}
+
+.sv-buddy-icon {
+  border: none;
+}
+
+.sv-buddy-icon,
+.sv-corner-all {
+  /* top left */
+   border-radius:3px
+}
+
+.ui-helper-hidden-accessible {
+   display:none !important
+}
+
+/* Default table css */
+.sv-linklist-portlet table,
+.sv-blog-portlet table,
+.sv-archive-portlet table,
+.sv-text-portlet table {
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+table.sv-border-collapse-separate {
+  border-collapse: separate;
+}
+
+.sv-cellpadding-1 th,
+.sv-cellpadding-1 td {
+  padding: 1px;
+}
+
+.sv-cellpadding-2 th,
+.sv-cellpadding-2 td {
+  padding: 2px;
+}
+
+.sv-linklist-portlet th,
+.sv-blog-portlet th,
+.sv-archive-portlet th,
+.sv-text-portlet th {
+  text-align: left;
+}
+
+.sv-linklist-portlet table p,
+.sv-blog-portlet table p,
+.sv-archive-portlet table p,
+.sv-text-portlet table p {
+  margin: 0;
+}
+
+.sv-linklist-portlet table col[class*="col-"],
+.sv-blog-portlet table col[class*="col-"],
+.sv-archive-portlet table col[class*="col-"],
+.sv-text-portlet table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+
+.sv-linklist-portlet table td[class*="col-"],
+.sv-blog-portlet table td[class*="col-"],
+.sv-archive-portlet table td[class*="col-"],
+.sv-text-portlet table td[class*="col-"],
+.sv-archive-portlet  table th[class*="col-"],
+.sv-text-portlet table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+
+/* Content list styles */
+.sv-edit-mode .sv-contentlist-portlet .pagecontent {
+  outline: none;
+}
+
+/* Quotes and blockquotes, different for each language */
+/* Standard behaviour */
+blockquote.sv-blockquote {
+  margin: 1em 10px;
+  min-height: 25px;
+  padding-left: 40px;
+  background: transparent url(../../Text/img/quote.gif) no-repeat;
+}
+
+blockquote.sv-blockquote-edit {
+  margin: 1em 10px;
+  padding-left: 40px;
+  background: transparent url(../../Text/img/quote.gif) no-repeat;
+}
+
+blockquote.sv-blockquote-edit-min-height {
+  min-height: 25px;
+}
+
+/* Swedish */
+.sv-text-portlet:lang(sv) q {
+  quotes: '”' '”';
+}
+
+blockquote.sv-blockquote:lang(sv),
+blockquote.sv-blockquote-edit:lang(sv) {
+  background: none;
+  position: relative;
+}
+
+blockquote.sv-blockquote:lang(sv)::before,
+blockquote.sv-blockquote-edit:lang(sv)::before {
+   content: " ";
+  position: absolute;
+  background: transparent url(../../Text/img/quote.gif) no-repeat;
+  transform: rotate(180deg);
+  width: 30px;
+  height: 25px;
+  left: 0;
+}
+
+@media print {
+  .sv-template-portlet,
+  #sv-editor-menu {
+    display: none;
+    padding: 0;
+      margin:0
+  }
+
+  .sv-template-layout {
+    border: none;
+    background: white;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+      float:none !important
+  }
+
+  body {
+    background: white;
+      font-size:12pt
+  }
+
+  * {
+      font-family:"Times New Roman",serif !important
+  }
+}
+
+.sv-toast__container {
+  position: fixed;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+}
+
+.sv-bottom-left .env-toast {
+  bottom: -200px;
+}
+
+.sv-bottom-left .env-toast.env-toast--visible {
+  bottom: 0;
+}
+
+.sv-bottom-left .env-toast--hide {
+  transform: translateX(-1000px);
+}
+
+.sv-toast__container.sv-bottom-left {
+  bottom: var(--env-spacing-medium);
+  left: var(--env-spacing-medium);
+  margin-right: var(--env-spacing-medium);
+}

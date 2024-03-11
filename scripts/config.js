@@ -7,6 +7,7 @@ export default {
 	*/
 	requiredParams: {
 		type: 'matkarta',
+		// mark_metadata: 'sitevision_url,matkarta_edited',
 		mark_metadata: 'sitevision_url,matkarta_edited',
 	},
 
@@ -54,5 +55,5 @@ export default {
 	apiUrl: 'https://garm.isof.se/folkeservice/api/es/',
 	// apiUrl: 'https://frigg-test.isof.se/TradarkSearchServiceES7/api/es/',
 	restApiUrl: 'https://garm.isof.se/folkeservice/api/',
-	isofHomepageUrl: 'https://garm.isof.se/folkeservice/api/isofhomepage/'
+	isofHomepageUrl: 'https://matkult.se/'
 };
