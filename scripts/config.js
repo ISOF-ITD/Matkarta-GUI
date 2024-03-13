@@ -50,7 +50,7 @@ export default {
 	// appUrl: 'https://frigg-test.isof.se/static/js-apps/matkartan/',
 	// Old site:
 	//siteUrl: 'https://www.isof.se/matkult/kartan.html',
-	siteUrl: 'https://www.matkult.se/matkartan',
+	siteUrl: 'https://kartan.matkult.se',
 
 	apiUrl: 'https://garm.isof.se/folkeservice/api/es/',
 	// apiUrl: 'https://frigg-test.isof.se/TradarkSearchServiceES7/api/es/',
