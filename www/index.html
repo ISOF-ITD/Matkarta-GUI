@@ -24,68 +24,75 @@
       src="https://www.matkult.se/sitevision/system-resource/e56f16a3958b84d2ab5e21b558684b3e91108d9de0d89aaaa9d72bca7a0b5c30/js/jquery.js"></script>
 
    <script type="text/javascript">
-      // Matomo 
-
+      // Matomo
       const hostname = window.location.hostname;
-      const is_dev = ["127.0.0.1", "localhost", "0.0.0.0"].some((element) =>
-         hostname.includes(element)
-      );
-      const is_test = ["-test."].some((element) => hostname.includes(element));
+      const is_dev = ["127.0.0.1", "localhost", "0.0.0.0"].some(h => hostname.includes(h));
+      const is_test = hostname.includes("-test.");
       const ENV = is_dev ? "dev" : is_test ? "test" : "prod";
 
-
       const matomo_site_ids = {
-         'dev': null,
-         'test': null,
-         'prod': 75,
-      }
+         dev: null,
+         test: null,
+         prod: 75,
+      };
 
       const siteId = matomo_site_ids[ENV];
 
-      if (ENV !== 'prod') {
-         console.log("Matomo siteId: " + siteId);
-      }
+      if (ENV !== "prod") console.log("Matomo ENV:", ENV, "siteId:", siteId);
 
-      var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      currentUrl = '/' + window.location.hash.substr(1);
-      //wait for new title before sending data to matomo
-      setTimeout(function () {
-         _paq.push(['setCustomUrl', currentUrl]);
-         _paq.push(['setDocumentTitle', document.title]);
-         _paq.push(['enableLinkTracking']);
-         _paq.push(['trackPageView']);
+      if (!siteId) {
+         console.info("Matomo inaktiverad: siteId saknas");
+      } else {
+         var _paq = window._paq = window._paq || [];
+         var u = "https://matomo.isof.se/";
+
+         function currentPathFromHash() {
+            return "/" + (window.location.hash ? window.location.hash.substring(1) : "");
+         }
+
+         // Init (viktigt: siteId + trackerUrl före trackPageView)
+         _paq.push(["setTrackerUrl", u + "matomo.php"]);
+         _paq.push(["setSiteId", siteId]);
+         _paq.push(["enableLinkTracking"]);
+
+         // Ladda matomo.js (detta är det som annars orsakar nätverksanrop)
          (function () {
-            var u = "https://matomo.isof.se/";
-            _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', siteId]);
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+            var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
+            g.async = true;
+            g.src = u + "matomo.js";
+            s.parentNode.insertBefore(g, s);
          })();
-      }, 1000);
 
-      var currentUrl = location.href;
-      window.addEventListener('hashchange', function () {
-         //wait for new title before sending data to matomo
+         // Första sidvisningen (efter liten delay för titel)
          setTimeout(function () {
-            _paq.push(['setReferrerUrl', currentUrl]);
-            currentUrl = '/' + window.location.hash.substr(1);
-            _paq.push(['setCustomUrl', currentUrl]);
-            _paq.push(['setDocumentTitle', document.title]);
-
-            // remove all previously assigned custom variables, requires Matomo (formerly Piwik) 3.0.2
-            _paq.push(['deleteCustomVariables', 'page']);
-            _paq.push(['trackPageView']);
-
-            // make Matomo aware of newly added content
-            var content = document.getElementById('app');
-            _paq.push(['MediaAnalytics::scanForMedia', content]);
-            _paq.push(['FormAnalytics::scanForForms', content]);
-            _paq.push(['trackContentImpressionsWithinNode', content]);
-            _paq.push(['enableLinkTracking']);
+            _paq.push(["setCustomUrl", currentPathFromHash()]);
+            _paq.push(["setDocumentTitle", document.title]);
+            _paq.push(["trackPageView"]);
          }, 1000);
-      });
+
+         // SPA hash-navigering
+         var referrerUrl = window.location.href;
+         window.addEventListener("hashchange", function () {
+            setTimeout(function () {
+               _paq.push(["setReferrerUrl", referrerUrl]);
+               referrerUrl = window.location.href;
+
+               _paq.push(["setCustomUrl", currentPathFromHash()]);
+               _paq.push(["setDocumentTitle", document.title]);
+               _paq.push(["deleteCustomVariables", "page"]);
+               _paq.push(["trackPageView"]);
+
+               var content = document.getElementById("app");
+               if (content) {
+                  _paq.push(["MediaAnalytics::scanForMedia", content]);
+                  _paq.push(["FormAnalytics::scanForForms", content]);
+                  _paq.push(["trackContentImpressionsWithinNode", content]);
+               }
+            }, 1000);
+         });
+      }
    </script>
+
    <!-- End Matomo Code -->
 
 
