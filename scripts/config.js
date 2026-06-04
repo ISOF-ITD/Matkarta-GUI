@@ -52,8 +52,8 @@ export default {
 	//siteUrl: 'https://www.isof.se/matkult/kartan.html',
 	siteUrl: 'https://kartan.matkult.se',
 
-	apiUrl: 'https://garm.isof.se/folkeservice/api/es/',
+	apiUrl: 'https://ull.isof.se/folkeservice/api/es/',
 	// apiUrl: 'https://frigg-test.isof.se/TradarkSearchServiceES7/api/es/',
-	restApiUrl: 'https://garm.isof.se/folkeservice/api/',
+	restApiUrl: 'https://ull.isof.se/folkeservice/api/',
 	isofHomepageUrl: 'https://matkult.se/'
 };
